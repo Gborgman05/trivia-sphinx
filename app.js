@@ -33,6 +33,7 @@ function resetCategory(catId, itemCount) {
 let activeCategoryId = CATEGORIES[0].id;
 let shuffledOrder = {}; // catId -> array of indices
 let hideKnown = {}; // catId -> bool
+let stopCurrentTrack = null; // stops whichever music card is currently playing
 
 function baseOrder(cat) {
   return cat.items.map((_, i) => i);
@@ -50,17 +51,45 @@ function shuffleOrder(cat) {
   shuffledOrder[cat.id] = arr;
 }
 
+function activateCategory(id, opts = {}) {
+  activeCategoryId = id;
+  render();
+  if (opts.focusTab !== false) {
+    const btn = document.getElementById(`tab-${id}`);
+    if (btn) btn.focus();
+  }
+}
+
+function handleTabsKeydown(e) {
+  const idx = CATEGORIES.findIndex(c => c.id === activeCategoryId);
+  let nextIdx = null;
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') nextIdx = (idx + 1) % CATEGORIES.length;
+  else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') nextIdx = (idx - 1 + CATEGORIES.length) % CATEGORIES.length;
+  else if (e.key === 'Home') nextIdx = 0;
+  else if (e.key === 'End') nextIdx = CATEGORIES.length - 1;
+  if (nextIdx !== null) {
+    e.preventDefault();
+    activateCategory(CATEGORIES[nextIdx].id);
+  }
+}
+
 function renderTabs() {
   const tabs = document.getElementById('tabs');
   tabs.innerHTML = '';
+  tabs.setAttribute('role', 'tablist');
+  tabs.setAttribute('aria-label', 'Trivia categories');
+  tabs.onkeydown = handleTabsKeydown;
   CATEGORIES.forEach(cat => {
+    const isActive = cat.id === activeCategoryId;
     const btn = document.createElement('button');
-    btn.className = 'tab-btn' + (cat.id === activeCategoryId ? ' active' : '');
+    btn.id = `tab-${cat.id}`;
+    btn.className = 'tab-btn' + (isActive ? ' active' : '');
     btn.textContent = cat.shortName || cat.name;
-    btn.addEventListener('click', () => {
-      activeCategoryId = cat.id;
-      render();
-    });
+    btn.setAttribute('role', 'tab');
+    btn.setAttribute('aria-selected', String(isActive));
+    btn.setAttribute('aria-controls', 'main');
+    btn.tabIndex = isActive ? 0 : -1;
+    btn.addEventListener('click', () => activateCategory(cat.id, { focusTab: false }));
     tabs.appendChild(btn);
   });
 }
@@ -193,7 +222,7 @@ function renderMusicCard(cat, idx) {
   top.className = 'card-top';
   const q = document.createElement('div');
   q.className = 'card-question';
-  q.innerHTML = `Track ${idx + 1}: <span class="music-hidden">song &amp; artist hidden — press play to reveal</span>`;
+  q.innerHTML = `Track ${idx + 1}: <span class="music-hidden">song &amp; artist hidden</span>`;
   top.appendChild(q);
   if (item.likelihood) {
     const tag = document.createElement('span');
@@ -206,13 +235,23 @@ function renderMusicCard(cat, idx) {
   const revealArea = document.createElement('div');
   revealArea.className = 'music-reveal';
 
+  const controls = document.createElement('div');
+  controls.className = 'music-controls';
+
   const playBtn = document.createElement('button');
   playBtn.className = 'play-btn';
-  playBtn.textContent = '▶ Play & Reveal';
+  playBtn.textContent = '▶ Play song';
+
+  const showBtn = document.createElement('button');
+  showBtn.className = 'reveal-btn';
+  showBtn.textContent = '🔎 Show title & artist';
+
+  controls.appendChild(playBtn);
+  controls.appendChild(showBtn);
 
   const details = document.createElement('div');
+  details.className = 'card-answer';
   details.style.display = 'none';
-
   const titleLine = document.createElement('div');
   titleLine.className = 'music-title-artist';
   titleLine.textContent = `"${item.title}"`;
@@ -221,7 +260,6 @@ function renderMusicCard(cat, idx) {
   artistLine.textContent = item.artist;
   details.appendChild(titleLine);
   details.appendChild(artistLine);
-
   if (item.notes) {
     const notes = document.createElement('div');
     notes.className = 'card-notes';
@@ -233,24 +271,52 @@ function renderMusicCard(cat, idx) {
   playerWrap.className = 'player-wrap';
   playerWrap.style.display = 'none';
 
+  const mask = document.createElement('div');
+  mask.className = 'player-mask';
+  mask.textContent = '🎧 Playing — name the song and artist before revealing';
+  playerWrap.appendChild(mask);
+
+  function stopTrack() {
+    const iframe = playerWrap.querySelector('iframe');
+    if (iframe) iframe.remove();
+    delete playerWrap.dataset.loaded;
+    playerWrap.style.display = 'none';
+    mask.style.display = 'flex';
+    playBtn.disabled = false;
+    playBtn.textContent = '▶ Play song';
+    details.style.display = 'none';
+    showBtn.textContent = '🔎 Show title & artist';
+  }
+
   playBtn.addEventListener('click', () => {
-    details.style.display = 'block';
+    if (stopCurrentTrack && stopCurrentTrack !== stopTrack) stopCurrentTrack();
+    stopCurrentTrack = stopTrack;
+
     playerWrap.style.display = 'block';
     if (!playerWrap.dataset.loaded) {
       const iframe = document.createElement('iframe');
-      iframe.src = `https://www.youtube.com/embed/${item.youtubeId}?autoplay=1&rel=0`;
-      iframe.title = `${item.title} - ${item.artist}`;
+      const startSeconds = item.startSeconds || 0;
+      iframe.src = `https://www.youtube.com/embed/${item.youtubeId}?autoplay=1&rel=0&start=${startSeconds}`;
+      iframe.title = `Track ${idx + 1} audio player`;
       iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
       iframe.allowFullscreen = true;
       playerWrap.appendChild(iframe);
       playerWrap.dataset.loaded = '1';
     }
-    playBtn.style.display = 'none';
+    playBtn.disabled = true;
+    playBtn.textContent = '▶ Playing…';
   });
 
-  revealArea.appendChild(playBtn);
-  revealArea.appendChild(details);
+  showBtn.addEventListener('click', () => {
+    const showing = details.style.display !== 'none';
+    details.style.display = showing ? 'none' : 'block';
+    mask.style.display = showing ? 'flex' : 'none';
+    showBtn.textContent = showing ? '🔎 Show title & artist' : '🙈 Hide title & artist';
+  });
+
+  revealArea.appendChild(controls);
   revealArea.appendChild(playerWrap);
+  revealArea.appendChild(details);
   card.appendChild(revealArea);
 
   const actions = document.createElement('div');
@@ -261,71 +327,16 @@ function renderMusicCard(cat, idx) {
   return card;
 }
 
-function renderPictureCard(cat, idx) {
-  const item = cat.items[idx];
-  const card = document.createElement('div');
-  card.className = 'card' + (isKnown(cat.id, idx) ? ' known' : '');
-
-  const top = document.createElement('div');
-  top.className = 'card-top';
-  const q = document.createElement('div');
-  q.className = 'card-question';
-  q.textContent = `Practice ${idx + 1}: what does this line-art depict?`;
-  top.appendChild(q);
-  if (item.likelihood) {
-    const tag = document.createElement('span');
-    tag.className = `likelihood ${item.likelihood}`;
-    tag.textContent = likelihoodLabel(item.likelihood);
-    top.appendChild(tag);
-  }
-  card.appendChild(top);
-
-  const svgWrap = document.createElement('div');
-  svgWrap.className = 'svg-wrap';
-  svgWrap.innerHTML = item.svg;
-  card.appendChild(svgWrap);
-
-  const answerBox = document.createElement('div');
-  answerBox.className = 'card-answer';
-  answerBox.style.display = 'none';
-  const answerLabel = document.createElement('span');
-  answerLabel.className = 'answer-label';
-  answerLabel.textContent = 'Answer';
-  answerBox.appendChild(answerLabel);
-  const answerText = document.createElement('div');
-  answerText.textContent = item.a;
-  answerBox.appendChild(answerText);
-  if (item.notes) {
-    const notes = document.createElement('div');
-    notes.className = 'card-notes';
-    notes.textContent = item.notes;
-    answerBox.appendChild(notes);
-  }
-  card.appendChild(answerBox);
-
-  const actions = document.createElement('div');
-  actions.className = 'card-actions';
-  const revealBtn = document.createElement('button');
-  revealBtn.className = 'reveal-btn';
-  revealBtn.textContent = 'Reveal answer';
-  revealBtn.addEventListener('click', () => {
-    const showing = answerBox.style.display !== 'none';
-    answerBox.style.display = showing ? 'none' : 'block';
-    revealBtn.textContent = showing ? 'Reveal answer' : 'Hide answer';
-  });
-  actions.appendChild(revealBtn);
-  actions.appendChild(makeKnownButton(cat, idx));
-  card.appendChild(actions);
-
-  return card;
-}
-
 function render() {
   renderTabs();
   const main = document.getElementById('main');
   main.innerHTML = '';
+  stopCurrentTrack = null;
 
   const cat = CATEGORIES.find(c => c.id === activeCategoryId);
+  main.setAttribute('role', 'tabpanel');
+  main.setAttribute('aria-labelledby', `tab-${cat.id}`);
+  main.tabIndex = 0;
 
   const header = document.createElement('div');
   header.className = 'category-header';
@@ -354,7 +365,6 @@ function render() {
     if (hideKnown[cat.id] && isKnown(cat.id, idx)) return;
     let cardEl;
     if (cat.type === 'music') cardEl = renderMusicCard(cat, idx);
-    else if (cat.type === 'pictures') cardEl = renderPictureCard(cat, idx);
     else cardEl = renderQuizCard(cat, idx);
     grid.appendChild(cardEl);
   });
