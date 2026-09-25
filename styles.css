@@ -8,9 +8,10 @@
   --accent-2: #ff6ca0;
   --good: #3ddc97;
   --warn: #ffb454;
-  --high: #ff6b6b;
-  --med: #ffd166;
-  --low: #7fd8be;
+  --danger: #ff6b6b;
+  --easier: #7fd8be;
+  --moderate: #ffd166;
+  --challenge: #ff6b6b;
   --radius: 14px;
 }
 
@@ -110,7 +111,7 @@ main {
   font-size: 0.85rem;
 }
 .toolbar button:hover { border-color: var(--accent); }
-.toolbar button.danger:hover { border-color: var(--high); }
+.toolbar button.danger:hover { border-color: var(--danger); }
 
 .progress-wrap {
   flex: 1 1 160px;
@@ -155,7 +156,7 @@ main {
   margin-bottom: 10px;
 }
 
-.likelihood {
+.difficulty {
   font-size: 0.7rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -164,9 +165,9 @@ main {
   border-radius: 999px;
   white-space: nowrap;
 }
-.likelihood.high { background: rgba(255,107,107,0.18); color: var(--high); }
-.likelihood.medium { background: rgba(255,209,102,0.18); color: var(--med); }
-.likelihood.low { background: rgba(127,216,190,0.18); color: var(--low); }
+.difficulty.easy-medium { background: rgba(127,216,190,0.18); color: var(--easier); }
+.difficulty.medium { background: rgba(255,209,102,0.18); color: var(--moderate); }
+.difficulty.medium-hard { background: rgba(255,107,107,0.18); color: var(--challenge); }
 
 .card-question {
   font-size: 1.02rem;
@@ -248,6 +249,21 @@ button.reveal-btn {
   font-weight: 600;
   margin-bottom: 12px;
 }
+.music-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 4px;
+}
+.music-links a {
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.16em;
+}
+.music-links a:hover { text-decoration-thickness: 2px; }
+
 .player-wrap {
   position: relative;
   padding-top: 30%;

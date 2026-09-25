@@ -94,9 +94,21 @@ function renderTabs() {
   });
 }
 
-function likelihoodLabel(level) {
-  const map = { high: 'Likely to appear', medium: 'Possible', low: 'Long shot' };
+function difficultyLabel(level) {
+  const map = {
+    'easy-medium': 'Easier',
+    medium: 'Moderate',
+    'medium-hard': 'Challenge'
+  };
   return map[level] || level;
+}
+
+function appendExternalLinkText(link, icon, label) {
+  const iconSpan = document.createElement('span');
+  iconSpan.setAttribute('aria-hidden', 'true');
+  iconSpan.textContent = icon;
+  link.appendChild(iconSpan);
+  link.appendChild(document.createTextNode(` ${label} (opens in new tab)`));
 }
 
 function renderToolbar(cat) {
@@ -170,10 +182,10 @@ function renderQuizCard(cat, idx) {
   q.className = 'card-question';
   q.textContent = item.q;
   top.appendChild(q);
-  if (item.likelihood) {
+  if (item.difficulty) {
     const tag = document.createElement('span');
-    tag.className = `likelihood ${item.likelihood}`;
-    tag.textContent = likelihoodLabel(item.likelihood);
+    tag.className = `difficulty ${item.difficulty}`;
+    tag.textContent = difficultyLabel(item.difficulty);
     top.appendChild(tag);
   }
   card.appendChild(top);
@@ -224,10 +236,10 @@ function renderMusicCard(cat, idx) {
   q.className = 'card-question';
   q.innerHTML = `Track ${idx + 1}: <span class="music-hidden">song &amp; artist hidden</span>`;
   top.appendChild(q);
-  if (item.likelihood) {
+  if (item.difficulty) {
     const tag = document.createElement('span');
-    tag.className = `likelihood ${item.likelihood}`;
-    tag.textContent = likelihoodLabel(item.likelihood);
+    tag.className = `difficulty ${item.difficulty}`;
+    tag.textContent = difficultyLabel(item.difficulty);
     top.appendChild(tag);
   }
   card.appendChild(top);
@@ -265,6 +277,28 @@ function renderMusicCard(cat, idx) {
     notes.className = 'card-notes';
     notes.textContent = item.notes;
     details.appendChild(notes);
+  }
+  const hasSpotifyTrackUrl = /^https:\/\/open\.spotify\.com\/track\/[A-Za-z0-9]+$/.test(item.spotifyUrl || '');
+  if (item.youtubeId || hasSpotifyTrackUrl) {
+    const links = document.createElement('div');
+    links.className = 'music-links';
+    if (item.youtubeId) {
+      const yt = document.createElement('a');
+      yt.href = `https://www.youtube.com/watch?v=${item.youtubeId}`;
+      yt.target = '_blank';
+      yt.rel = 'noopener noreferrer';
+      appendExternalLinkText(yt, '▶', 'Open in YouTube');
+      links.appendChild(yt);
+    }
+    if (hasSpotifyTrackUrl) {
+      const sp = document.createElement('a');
+      sp.href = item.spotifyUrl;
+      sp.target = '_blank';
+      sp.rel = 'noopener noreferrer';
+      appendExternalLinkText(sp, '🎧', 'Open in Spotify');
+      links.appendChild(sp);
+    }
+    details.appendChild(links);
   }
 
   const playerWrap = document.createElement('div');
