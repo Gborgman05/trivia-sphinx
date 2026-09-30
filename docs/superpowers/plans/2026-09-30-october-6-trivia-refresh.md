@@ -17,7 +17,8 @@
 - Bonus answer: Borneo.
 - Create 30 distinct rows for each included round, totaling 120 rows.
 - Use only `easy-medium`, `medium`, or `medium-hard` difficulty values.
-- Music rows must identify a Disney-song cover title and performer and include verified YouTube and Spotify track URLs.
+- Music rows must identify a Disney-song cover title and performer, include verified YouTube and Spotify
+  track URLs, and use a nonzero playback offset that starts inside the song.
 - Do not modify `app.js` or `styles.css`.
 - Preserve unrelated work.
 
@@ -29,7 +30,7 @@
 - Create: `trivia-2026-10-06-juanita-cantina.csv`
 
 **Interfaces:**
-- Produces columns `round,category,question,answer,notes,difficulty,youtube_url,spotify_url`
+- Produces columns `round,category,question,answer,notes,difficulty,youtube_url,spotify_url,start_seconds`
 - Produces exactly 30 rows each for rounds 1, 2, 4, and 5
 
 - [ ] Research 30 stable, fact-checkable entries for TV Character Catchphrases, Ancient Rome, Disney Covers, and Potpourri.
@@ -46,7 +47,7 @@ from pathlib import Path
 path = Path("trivia-2026-10-06-juanita-cantina.csv")
 expected_header = [
     "round", "category", "question", "answer", "notes", "difficulty",
-    "youtube_url", "spotify_url",
+    "youtube_url", "spotify_url", "start_seconds",
 ]
 with path.open(newline="", encoding="utf-8") as f:
     reader = csv.DictReader(f)
@@ -62,8 +63,9 @@ for row in rows:
     if row["round"] == "4":
         assert row["youtube_url"].startswith("https://www.youtube.com/watch?v="), row
         assert row["spotify_url"].startswith("https://open.spotify.com/track/"), row
+        assert 10 <= int(row["start_seconds"]) <= 30, row
     else:
-        assert not row["youtube_url"] and not row["spotify_url"], row
+        assert not row["youtube_url"] and not row["spotify_url"] and not row["start_seconds"], row
 print("CSV validation passed: 120 rows; 30 per included round")
 PY
 ```
@@ -89,7 +91,7 @@ potpourri                 type: quiz   30 items
 bonus                     type: quiz    1 item
 ```
 
-- [ ] Map quiz rows to `{ q, a, notes, difficulty }`; map music rows to `{ title, artist, youtubeId, spotifyUrl, startSeconds, difficulty, notes }`; omit empty notes and set `startSeconds` to `0`.
+- [ ] Map quiz rows to `{ q, a, notes, difficulty }`; map music rows to `{ title, artist, youtubeId, spotifyUrl, startSeconds, difficulty, notes }`; omit empty notes and copy each integer `start_seconds` CSV value to `startSeconds`.
 - [ ] Add the bonus item `{ q: "What is the 3rd largest island (by area) in the world?", a: "Borneo" }` without a difficulty.
 - [ ] Validate syntax and structure:
 

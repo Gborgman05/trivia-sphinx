@@ -400,7 +400,7 @@ const CATEGORIES = [
         "artist": "Kacey Musgraves",
         "youtubeId": "eWsj9wC9zMU",
         "spotifyUrl": "https://open.spotify.com/track/5ohYQZfcLlD4Lvf8lt3VCA",
-        "startSeconds": 0,
+        "startSeconds": 20,
         "difficulty": "easy-medium",
         "notes": "Country-pop cover of the Mary Poppins song, released on We Love Disney (2015)."
       },
@@ -409,7 +409,7 @@ const CATEGORIES = [
         "artist": "Jessie J",
         "youtubeId": "Qd__KQryieg",
         "spotifyUrl": "https://open.spotify.com/track/4UW8c9JSzoyjErfmmMkInw",
-        "startSeconds": 0,
+        "startSeconds": 20,
         "difficulty": "easy-medium",
         "notes": "Pop-soul cover of the song from The Little Mermaid, released on We Love Disney (2015)."
       },
@@ -418,7 +418,7 @@ const CATEGORIES = [
         "artist": "Tori Kelly",
         "youtubeId": "XpIMGamlvwg",
         "spotifyUrl": "https://open.spotify.com/track/7qgM0MdETmhd3mORTqvJRm",
-        "startSeconds": 0,
+        "startSeconds": 20,
         "difficulty": "easy-medium",
         "notes": "R&B-pop cover of the Pocahontas song, released on We Love Disney (2015)."
       },
@@ -427,7 +427,7 @@ const CATEGORIES = [
         "artist": "Ne-Yo",
         "youtubeId": "r21fH-ysABs",
         "spotifyUrl": "https://open.spotify.com/track/0GzjDErRS86SEetLDn2ZXN",
-        "startSeconds": 0,
+        "startSeconds": 20,
         "difficulty": "easy-medium",
         "notes": "R&B cover of the Aladdin song, released on We Love Disney (2015)."
       },
@@ -436,7 +436,7 @@ const CATEGORIES = [
         "artist": "Ariana Grande",
         "youtubeId": "4fTLqV17VZo",
         "spotifyUrl": "https://open.spotify.com/track/21DxcOtDKlVOlmeYed1IG3",
-        "startSeconds": 0,
+        "startSeconds": 20,
         "difficulty": "easy-medium",
         "notes": "Pop cover of the Hercules song, released on We Love Disney (2015)."
       },
@@ -445,7 +445,7 @@ const CATEGORIES = [
         "artist": "Fall Out Boy",
         "youtubeId": "uiI5Xh2520U",
         "spotifyUrl": "https://open.spotify.com/track/6zMNLIFrUss4qklFUdpzjp",
-        "startSeconds": 0,
+        "startSeconds": 20,
         "difficulty": "medium",
         "notes": "Rock cover of the Jungle Book song, released on We Love Disney (2015)."
       },
@@ -454,7 +454,7 @@ const CATEGORIES = [
         "artist": "Gwen Stefani",
         "youtubeId": "538UpUeRmqw",
         "spotifyUrl": "https://open.spotify.com/track/37guUG3IuyJBo0poxQ54gc",
-        "startSeconds": 0,
+        "startSeconds": 20,
         "difficulty": "medium",
         "notes": "Pop cover of the Muppet Movie song, released on We Love Disney (2015)."
       },
@@ -463,7 +463,7 @@ const CATEGORIES = [
         "artist": "Jessie Ware",
         "youtubeId": "k2HX9_AB0qg",
         "spotifyUrl": "https://open.spotify.com/track/4XECYwPN9YaGHTf7X9XJJA",
-        "startSeconds": 0,
+        "startSeconds": 20,
         "difficulty": "medium",
         "notes": "Pop-soul cover of the Cinderella song, released on We Love Disney (2015)."
       },
@@ -472,7 +472,7 @@ const CATEGORIES = [
         "artist": "Raven-Symoné",
         "youtubeId": "SCysAd3hQos",
         "spotifyUrl": "https://open.spotify.com/track/4HxukyGNRDjnZm3Q6jUDTT",
-        "startSeconds": 0,
+        "startSeconds": 20,
         "difficulty": "easy-medium",
         "notes": "Pop cover of the Little Mermaid song, released on Disneymania 3 (2005)."
       },
@@ -481,7 +481,7 @@ const CATEGORIES = [
         "artist": "Miley Cyrus",
         "youtubeId": "FPxdLa6ditw",
         "spotifyUrl": "https://open.spotify.com/track/6MIPvQ8kOzEf8mwrqbgUj2",
-        "startSeconds": 0,
+        "startSeconds": 20,
         "difficulty": "medium",
         "notes": "Pop-rock cover of the Song of the South standard, released on Disneymania 4 (2006)."
       },
@@ -490,7 +490,7 @@ const CATEGORIES = [
         "artist": "Jonas Brothers",
         "youtubeId": "t4lTWetaftw",
         "spotifyUrl": "https://open.spotify.com/track/1alCMHZkJxkP18NNzvCLeb",
-        "startSeconds": 0,
+        "startSeconds": 20,
         "difficulty": "easy-medium",
         "notes": "Pop-rock cover of the Little Mermaid villain song, released in 2006."
       },
@@ -499,7 +499,7 @@ const CATEGORIES = [
         "artist": "Ashley Tisdale",
         "youtubeId": "06t0tbr3aH4",
         "spotifyUrl": "https://open.spotify.com/track/6kkFjjMbO9EL1YxNt8BKm3",
-        "startSeconds": 0,
+        "startSeconds": 20,
         "difficulty": "easy-medium",
         "notes": "Pop cover of the Little Mermaid song, released in 2006."
       },
@@ -508,7 +508,7 @@ const CATEGORIES = [
         "artist": "Selena Gomez",
         "youtubeId": "Je9ZfezquCI",
         "spotifyUrl": "https://open.spotify.com/track/6NO2DmPusZLT5KTsrfpGLW",
-        "startSeconds": 0,
+        "startSeconds": 20,
         "difficulty": "easy-medium",
         "notes": "Pop-rock cover of the 101 Dalmatians song, recorded for Disneymania 6."
       },
@@ -517,7 +517,7 @@ const CATEGORIES = [
         "artist": "Demi Lovato",
         "youtubeId": "1KMIUfPQ_5o",
         "spotifyUrl": "https://open.spotify.com/track/1jdJ8luWSATnyr4MOiIoHO",
-        "startSeconds": 0,
+        "startSeconds": 20,
         "difficulty": "medium",
         "notes": "Pop cover of Amy Adams's Enchanted number, released on Disneymania 6 (2008)."
       },
@@ -526,7 +526,7 @@ const CATEGORIES = [
         "artist": "Billy Joel",
         "youtubeId": "gXjGh-Ql5Po",
         "spotifyUrl": "https://open.spotify.com/track/2NPFirx1Ig2Uy970OIBQDO",
-        "startSeconds": 0,
+        "startSeconds": 20,
         "difficulty": "easy-medium",
         "notes": "Pop cover of the Pinocchio standard, released on Simply Mad About the Mouse (1991)."
       },
@@ -535,7 +535,7 @@ const CATEGORIES = [
         "artist": "Usher",
         "youtubeId": "dl_mFvd28R0",
         "spotifyUrl": "https://open.spotify.com/track/1nayTAuWAW9qILHyobKlBa",
-        "startSeconds": 0,
+        "startSeconds": 20,
         "difficulty": "easy-medium",
         "notes": "R&B cover of Phil Collins's Tarzan song, released on Disneymania (2002)."
       },
@@ -544,7 +544,7 @@ const CATEGORIES = [
         "artist": "Marilyn Manson",
         "youtubeId": "jU6iP0WLsU8",
         "spotifyUrl": "https://open.spotify.com/track/7aoInyY7amyKi0NFDLFZbP",
-        "startSeconds": 0,
+        "startSeconds": 20,
         "difficulty": "easy-medium",
         "notes": "Industrial-rock cover from The Nightmare Before Christmas special edition (2006)."
       },
@@ -553,7 +553,7 @@ const CATEGORIES = [
         "artist": "Amy Lee",
         "youtubeId": "RQj2iOEx-V8",
         "spotifyUrl": "https://open.spotify.com/track/3U0rLVR2IN3kvVQGfvQKEH",
-        "startSeconds": 0,
+        "startSeconds": 20,
         "difficulty": "medium",
         "notes": "Gothic-rock cover from Nightmare Revisited (2008)."
       },
@@ -562,7 +562,7 @@ const CATEGORIES = [
         "artist": "Lana Del Rey",
         "youtubeId": "8waJ7W3QcJc",
         "spotifyUrl": "https://open.spotify.com/track/3sXq7EPSrhRY5TO0y6ePUy",
-        "startSeconds": 0,
+        "startSeconds": 20,
         "difficulty": "easy-medium",
         "notes": "Dark pop cover of the Sleeping Beauty song, recorded for Maleficent (2014)."
       },
@@ -571,7 +571,7 @@ const CATEGORIES = [
         "artist": "Arcade Fire",
         "youtubeId": "qpYOstfcQBs",
         "spotifyUrl": "https://open.spotify.com/track/2ufkOFn5LKYNoAdss0GUKR",
-        "startSeconds": 0,
+        "startSeconds": 20,
         "difficulty": "medium",
         "notes": "Indie-rock cover of the Dumbo lullaby, recorded for the 2019 remake."
       },
@@ -580,7 +580,7 @@ const CATEGORIES = [
         "artist": "Weezer",
         "youtubeId": "QnEWs8D9zu8",
         "spotifyUrl": "https://open.spotify.com/track/6bd3X6eXfamHGEHOHe86nn",
-        "startSeconds": 0,
+        "startSeconds": 20,
         "difficulty": "easy-medium",
         "notes": "Rock cover of Jonathan Groff's Frozen 2 song, released on the 2019 soundtrack."
       },
@@ -589,7 +589,7 @@ const CATEGORIES = [
         "artist": "Panic! At The Disco",
         "youtubeId": "jp-CVYGEsjg",
         "spotifyUrl": "https://open.spotify.com/track/0v622a7rlXRYcT6m3xwutU",
-        "startSeconds": 0,
+        "startSeconds": 20,
         "difficulty": "easy-medium",
         "notes": "Rock cover of Idina Menzel and AURORA's Frozen 2 song, released in 2019."
       },
@@ -598,7 +598,7 @@ const CATEGORIES = [
         "artist": "Bridgit Mendler",
         "youtubeId": "yivyABmG0s8",
         "spotifyUrl": "https://open.spotify.com/track/16oPtblayhsbzWxSrlLIN6",
-        "startSeconds": 0,
+        "startSeconds": 20,
         "difficulty": "medium",
         "notes": "Pop cover of Sarah McLachlan's Toy Story 2 song, released on Disneymania 7 (2010)."
       },
@@ -607,7 +607,7 @@ const CATEGORIES = [
         "artist": "George Jones & Kathy Mattea",
         "youtubeId": "j5OD1kVvGyY",
         "spotifyUrl": "https://open.spotify.com/track/0JSiLxY5SBznAkT4ERoOKV",
-        "startSeconds": 0,
+        "startSeconds": 20,
         "difficulty": "medium-hard",
         "notes": "Country duet cover of the Toy Story song, released in 1996."
       },
@@ -616,7 +616,7 @@ const CATEGORIES = [
         "artist": "Rascal Flatts & Lucy Hale",
         "youtubeId": "OrWddfkIhpc",
         "spotifyUrl": "https://open.spotify.com/track/1clvTB87GDFoeImLrE0HuH",
-        "startSeconds": 0,
+        "startSeconds": 20,
         "difficulty": "medium",
         "notes": "Country-pop duet cover of the Frozen anthem, released on We Love Disney (2015)."
       },
@@ -625,7 +625,7 @@ const CATEGORIES = [
         "artist": "Disney Channel Circle of Stars",
         "youtubeId": "oZeVPywKNcQ",
         "spotifyUrl": "https://open.spotify.com/track/70IUh8iL1FyzDdYB6SF84x",
-        "startSeconds": 0,
+        "startSeconds": 20,
         "difficulty": "medium-hard",
         "notes": "Disney Channel ensemble cover and remix of the Lion King opener, released in 2003."
       },
@@ -634,7 +634,7 @@ const CATEGORIES = [
         "artist": "Baha Men",
         "youtubeId": "jzc0W5eKhbU",
         "spotifyUrl": "https://open.spotify.com/track/1RfK7agnEdpyxUlDKOvqVN",
-        "startSeconds": 0,
+        "startSeconds": 20,
         "difficulty": "medium",
         "notes": "Caribbean-pop cover of the Lion King song, released on Disneymania (2002)."
       },
@@ -643,7 +643,7 @@ const CATEGORIES = [
         "artist": "Jason Derulo",
         "youtubeId": "MIHyg5VoiCo",
         "spotifyUrl": "https://open.spotify.com/track/6Z08ekE36sgK3J3jBIi285",
-        "startSeconds": 0,
+        "startSeconds": 20,
         "difficulty": "medium",
         "notes": "Pop and R&B cover of the Lion King songs, released on We Love Disney (2015)."
       },
@@ -652,7 +652,7 @@ const CATEGORIES = [
         "artist": "Aaron Carter",
         "youtubeId": "LCfEHbedWbk",
         "spotifyUrl": "https://open.spotify.com/track/21of6iq6Ks76fbG34MJeHO",
-        "startSeconds": 0,
+        "startSeconds": 20,
         "difficulty": "medium-hard",
         "notes": "Teen-pop cover of the Lion King song, released on Disneymania (2002)."
       },
@@ -661,7 +661,7 @@ const CATEGORIES = [
         "artist": "Keke Palmer",
         "youtubeId": "9PUcfZCZcVU",
         "spotifyUrl": "https://open.spotify.com/track/4viVOQNAlEptAKjavq4qq1",
-        "startSeconds": 0,
+        "startSeconds": 20,
         "difficulty": "medium-hard",
         "notes": "Pop cover of the Mulan end-title song, released in 2008."
       }

@@ -5,7 +5,7 @@ description: Find this week's Beat the Geek categories for Juanita Cantina, writ
 # Weekly Trivia Prep — Juanita Cantina (Beat the Geek)
 
 Run this every week (usually Wednesday, once the coming Tuesday's categories are posted) to rebuild this
-repo's content from that week's real, published categories. Work through all four steps below in order
+repo's content from that week's real, published categories. Work through all five steps below in order
 and don't skip the verification steps — fabricated links or facts defeat the purpose of this tool.
 
 **Venue:** Beat the Geek Trivia with Ben at Juanita Cantina, Kirkland, WA (Tuesdays, 7:30 PM).
@@ -34,7 +34,7 @@ Produce a CSV named `trivia-YYYY-MM-DD-juanita-cantina.csv` (use the actual even
 with columns:
 
 ```
-round,category,question,answer,notes,difficulty,youtube_url,spotify_url
+round,category,question,answer,notes,difficulty,youtube_url,spotify_url,start_seconds
 ```
 
 - **30 rows per category** (30 × 4 categories = 120 rows total). If a category genuinely can't support
@@ -47,7 +47,7 @@ round,category,question,answer,notes,difficulty,youtube_url,spotify_url
   middle and avoid stacking too many at once extreme.
 - Every fact must be real and checkable — use web search to verify dates, names, and spellings before
   writing a row. Do not invent plausible-sounding trivia.
-- `youtube_url` / `spotify_url` are blank except for the Music round (see Step 3).
+- `youtube_url` / `spotify_url` / `start_seconds` are blank except for the Music round (see Steps 3–4).
 - Leave `notes` blank unless there's a genuinely useful tidbit (a disambiguation, a "why this matters"
   aside, or a heads-up that a fact might change before trivia night).
 
@@ -59,6 +59,7 @@ score points for the title and the artist separately, capture both explicitly:
 - `category` = the round's theme (e.g. "Music – Songs About Body Parts")
 - `question` = the song title
 - `answer` = the artist (feat. credits included, e.g. "Shakira ft. Wyclef Jean")
+- `start_seconds` = a nonzero playback offset chosen as described in Step 4
 - Pick songs that clearly fit the theme and skew toward broadly recognizable radio/pop-culture hits —
   same difficulty guidance as Step 2 (not the single most obvious song in the theme, not a deep cut).
   Vary era/genre across the 30 so it isn't 30 of the same decade or style.
@@ -82,6 +83,11 @@ Do not guess IDs or paste a plausible-looking link. For each of the 30 songs in 
    before including it. Cross-reference against the YouTube result (same title/artist) as a sanity check.
 5. Record the full URLs in `youtube_url` (`https://www.youtube.com/watch?v=VIDEO_ID`) and `spotify_url`
    (`https://open.spotify.com/track/TRACK_ID`) columns of the CSV.
+6. Set `start_seconds` so playback begins inside the song instead of at the opening. Use `20` seconds
+   by default; adjust within roughly 10–30 seconds when needed to skip silence, spoken setup, or a long
+   instrumental intro. Preview the timestamp and make sure recognizable music has started, while avoiding
+   an immediate title lyric or chorus when that would give away the answer. This offset controls the
+   embedded YouTube player; the external Spotify link still opens the track from the beginning.
 
 ## Step 5 — Sync the study site
 
@@ -93,8 +99,9 @@ Once the CSV is finalized:
    - Replace each category's `items` array with that round's 30 rows from the CSV (`type: 'quiz'` for
      non-music rounds using `{ q, a, notes, difficulty }`; `type: 'music'` for the Music round using
      `{ title, artist, youtubeId, spotifyUrl, startSeconds, difficulty, notes }`, extracting `youtubeId`
-     from the `youtube_url` column). Preserve each CSV `difficulty` value exactly; do not translate it
-     into likelihood or probability. Do not include a category for round 3.
+     from `youtube_url` and copying the integer `start_seconds` value to `startSeconds`). Preserve each
+     CSV `difficulty` value exactly; do not translate it into likelihood or probability. Do not include
+     a category for round 3.
    - Keep (or replace) the `bonus` category with the week's actual bonus question from Step 1. The bonus
      does not come from the CSV and should not have a `difficulty` field or badge.
 2. Update `README.md`'s first line to name the new date/categories, and mention the CSV filename.
