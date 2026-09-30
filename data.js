@@ -1,861 +1,859 @@
 // Study content for "Beat the Geek" trivia night.
-// Categories confirmed from the Sep. 29, 2026 event listing at Juanita Cantina (Ben, 7:30pm):
-// Blue Stuff, Mythological Human Hybrids, Pictures – Watercolor Cinema,
-// Music – 2000s Women Musicians, and Forget About It. Bonus: A "prickle" is a group of what animals?
-// The picture round (Pictures – Watercolor Cinema, always round 3 at this venue) is intentionally
-// omitted below — there's no way to predict the exact image, so it can't be turned into
-// fact-checked Q&A. This is the curated 120-question set (30 per remaining round) from
-// trivia-2026-09-29-juanita-cantina.csv, generated via .claude/commands/weekly-trivia.md.
-// difficulty preserves the CSV's bar-trivia tiers: "easy-medium" | "medium" | "medium-hard".
+// Categories confirmed from the Oct. 6, 2026 event listing at Juanita Cantina (Ben, 7:30pm):
+// TV Character Catchphrases, Ancient Rome, Rebuses, Disney Covers, and Potpourri.
+// Bonus: What is the 3rd largest island (by area) in the world?
+// The visual Rebuses round (round 3) is intentionally omitted. This is the curated
+// 120-question set from trivia-2026-10-06-juanita-cantina.csv.
+// difficulty preserves the CSV tiers: "easy-medium" | "medium" | "medium-hard".
 
 const CATEGORIES = [
   {
-    "id": "blue-stuff",
-    "name": "Blue Stuff",
-    "shortName": "Blue Stuff",
-    "blurb": "Everything blue — nature, chemistry, art, geography, pop culture, and the science of why things look blue. Bar trivia loves the iconic hits (blue whale, indigo jeans, Blue Man Group) but also pulls from pigment history and structural coloration.",
-    "infoBox": "<strong>How to use this:</strong> learn both the straightforward facts (largest animal, which planet looks blue) and the slightly deeper ones (Rayleigh scattering, lapis lazuli, structural vs. pigment color). Questions often hinge on a specific detail in the clue — the gemstone, the protein, the artist.",
+    "id": "tv-character-catchphrases",
+    "name": "TV Character Catchphrases",
+    "shortName": "TV Catchphrases",
+    "blurb": "Match signature lines to the television characters and series that made them famous, from classic sitcoms to modern animation.",
+    "infoBox": "<strong>Study tip:</strong> connect each quotation to both the speaker and the show; either may be the missing part of a clue.",
     "type": "quiz",
     "items": [
       {
-        "q": "What is the largest animal known to have ever lived?",
-        "a": "Blue whale",
+        "q": "Which animated TV dad is famous for exclaiming \"D'oh!\"?",
+        "a": "Homer Simpson",
         "difficulty": "easy-medium",
-        "notes": "Adults can exceed 100 feet and 150 metric tons."
+        "notes": "The character is voiced by Dan Castellaneta on The Simpsons."
       },
       {
-        "q": "Which planet, the farthest from the Sun, is known for its deep-blue appearance and supersonic winds?",
-        "a": "Neptune",
+        "q": "\"How you doin'?\" is the signature pickup line of which Friends character?",
+        "a": "Joey Tribbiani",
+        "difficulty": "easy-medium",
+        "notes": "Matt LeBlanc played Joey throughout the sitcom's original run."
+      },
+      {
+        "q": "Which Diff'rent Strokes character made \"What'choo talkin' 'bout, Willis?\" his trademark response?",
+        "a": "Arnold Jackson",
+        "difficulty": "easy-medium",
+        "notes": "Gary Coleman played Arnold; published versions vary slightly in spelling but preserve this wording."
+      },
+      {
+        "q": "\"Did I do that?\" was the catchphrase of which accident-prone Family Matters character?",
+        "a": "Steve Urkel",
+        "difficulty": "easy-medium",
+        "notes": "Jaleel White played the Winslows' nerdy neighbor Steve Urkel."
+      },
+      {
+        "q": "Which physicist on The Big Bang Theory punctuated his pranks with \"Bazinga!\"?",
+        "a": "Sheldon Cooper",
+        "difficulty": "easy-medium",
+        "notes": "Jim Parsons played Sheldon Cooper."
+      },
+      {
+        "q": "Which How I Met Your Mother character repeatedly urged his friends to \"Suit up!\"?",
+        "a": "Barney Stinson",
+        "difficulty": "easy-medium",
+        "notes": "Neil Patrick Harris played the suit-obsessed Barney."
+      },
+      {
+        "q": "On Seinfeld, which minor character barks \"No soup for you!\" at customers who break his rules?",
+        "a": "The Soup Nazi",
+        "difficulty": "easy-medium",
+        "notes": "Larry Thomas played the character Yev Kassem in the episode The Soup Nazi."
+      },
+      {
+        "q": "\"That's what she said\" became a reflexive punch line for which boss on the U.S. version of The Office?",
+        "a": "Michael Scott",
+        "difficulty": "easy-medium",
+        "notes": "Steve Carell played Dunder Mifflin manager Michael Scott."
+      },
+      {
+        "q": "Which Stone Age cartoon father shouts \"Yabba dabba doo!\"?",
+        "a": "Fred Flintstone",
+        "difficulty": "easy-medium",
+        "notes": "Fred is the central character of The Flintstones."
+      },
+      {
+        "q": "Which Star Trek character is most associated with the Vulcan farewell \"Live long and prosper\"?",
+        "a": "Spock",
+        "difficulty": "easy-medium",
+        "notes": "Spock accompanies the phrase with the Vulcan salute."
+      },
+      {
+        "q": "Captain Jean-Luc Picard's command \"Make it so\" comes from which Star Trek series?",
+        "a": "Star Trek: The Next Generation",
         "difficulty": "medium",
-        "notes": "Methane and atmospheric scattering contribute to Neptune's blue appearance; Uranus is the next planet inward."
+        "notes": "Patrick Stewart played Captain Picard on the series."
       },
       {
-        "q": "What scattering process makes Earth's daytime sky appear blue?",
-        "a": "Rayleigh scattering",
+        "q": "Which Hawaii Five-O detective captain regularly ordered \"Book 'em, Danno!\"?",
+        "a": "Steve McGarrett",
         "difficulty": "medium",
-        "notes": "Shorter blue wavelengths are scattered more strongly by air molecules."
+        "notes": "Jack Lord played McGarrett in the original 1968 series."
       },
       {
-        "q": "The prized ultramarine pigment was historically made by grinding what blue gemstone?",
-        "a": "Lapis lazuli",
+        "q": "\"Just one more thing...\" is the deceptively casual refrain of which rumpled TV detective?",
+        "a": "Columbo",
+        "difficulty": "medium",
+        "notes": "Peter Falk's Lieutenant Columbo often used the line as he turned back to a suspect."
+      },
+      {
+        "q": "Which lollipop-loving TV detective asked \"Who loves ya, baby?\"?",
+        "a": "Theo Kojak",
+        "difficulty": "medium",
+        "notes": "Telly Savalas played Lieutenant Theo Kojak on Kojak."
+      },
+      {
+        "q": "\"I love it when a plan comes together\" belongs to which leader of The A-Team?",
+        "a": "John \"Hannibal\" Smith",
+        "difficulty": "medium",
+        "notes": "George Peppard played Colonel John Hannibal Smith."
+      },
+      {
+        "q": "On Lost in Space, which nonhuman character warned \"Danger, Will Robinson!\"?",
+        "a": "The Robot",
+        "difficulty": "medium",
+        "notes": "The Robot served as a protector and companion to young Will Robinson."
+      },
+      {
+        "q": "\"Exterminate!\" is the battle cry of what recurring Doctor Who villains?",
+        "a": "The Daleks",
+        "difficulty": "medium",
+        "notes": "The Daleks debuted in Doctor Who in 1963."
+      },
+      {
+        "q": "Which Friday Night Lights coach leads the chant \"Clear eyes, full hearts, can't lose\"?",
+        "a": "Eric Taylor",
+        "difficulty": "medium",
+        "notes": "Kyle Chandler played Dillon Panthers coach Eric Taylor."
+      },
+      {
+        "q": "\"Everybody lies\" is the diagnostic credo of which title character on House?",
+        "a": "Dr. Gregory House",
+        "difficulty": "medium",
+        "notes": "Hugh Laurie played the brilliant and abrasive diagnostician."
+      },
+      {
+        "q": "\"The truth is out there\" is most closely associated with which believer on The X-Files?",
+        "a": "Fox Mulder",
+        "difficulty": "medium",
+        "notes": "David Duchovny played FBI agent Fox Mulder."
+      },
+      {
+        "q": "Sgt. Phil Esterhaus ended roll call with \"Let's be careful out there\" on what police drama?",
+        "a": "Hill Street Blues",
         "difficulty": "medium-hard",
-        "notes": "Natural ultramarine was once more expensive than gold."
+        "notes": "Michael Conrad played Esterhaus during the show's early seasons."
       },
       {
-        "q": "Which chemical element, atomic number 27, gives many blue glasses and ceramic glazes their characteristic color?",
-        "a": "Cobalt",
-        "difficulty": "medium",
-        "notes": "Compounds of this element have colored glass blue since antiquity."
-      },
-      {
-        "q": "What early modern synthetic blue pigment was discovered accidentally in Berlin around 1706?",
-        "a": "Prussian blue",
+        "q": "\"Would you believe...?\" introduced increasingly desperate bluffs by which bumbling secret agent?",
+        "a": "Maxwell Smart",
         "difficulty": "medium-hard",
-        "notes": "It was the first modern synthetic pigment."
+        "notes": "Don Adams played Agent 86 on Get Smart."
       },
       {
-        "q": "What plant-derived dye gave blue jeans their traditional color?",
-        "a": "Indigo",
-        "difficulty": "easy-medium",
-        "notes": "Modern denim usually uses synthetic indigo."
-      },
-      {
-        "q": "The brilliant blue of a morpho butterfly's wings comes mainly from pigment or microscopic structure?",
-        "a": "Microscopic structure (structural coloration)",
-        "difficulty": "medium",
-        "notes": "Wing scales reflect and interfere with light to produce the color."
-      },
-      {
-        "q": "Male members of what Galápagos seabird use their bright blue feet in courtship displays?",
-        "a": "Blue-footed booby",
-        "difficulty": "easy-medium",
-        "notes": "Bluer feet can signal better condition to potential mates."
-      },
-      {
-        "q": "The blue color in a blue jay's feathers is produced mainly by what optical phenomenon?",
-        "a": "Structural coloration",
+        "q": "Which Fantasy Island character announced arriving guests by shouting \"De plane! De plane!\"?",
+        "a": "Tattoo",
         "difficulty": "medium-hard",
-        "notes": "The feathers contain no blue pigment; nanostructures scatter blue light."
+        "notes": "Hervé Villechaize played Tattoo on the original series."
       },
       {
-        "q": "What marine animal flashes iridescent blue rings when threatened and carries tetrodotoxin?",
-        "a": "Blue-ringed octopus",
-        "difficulty": "medium",
-        "notes": "Its venom can cause paralysis and has no known antivenom."
-      },
-      {
-        "q": "What genus of mold creates the blue-green veins in blue cheeses such as Roquefort?",
-        "a": "Penicillium",
-        "difficulty": "easy-medium",
-        "notes": "Species such as Penicillium roqueforti create the characteristic veins and flavor."
-      },
-      {
-        "q": "Blue Curaçao liqueur is traditionally flavored with the peel of what type of fruit?",
-        "a": "Laraha orange",
+        "q": "\"Kiss my grits!\" was the trademark put-down of which waitress on Alice?",
+        "a": "Florence \"Flo\" Castleberry",
         "difficulty": "medium-hard",
-        "notes": "Laraha is a bitter citrus associated with Curaçao."
+        "notes": "Polly Holliday played Flo and later carried the character into a spin-off."
       },
       {
-        "q": "The Blue Nile flows from Lake Tana in what country?",
-        "a": "Ethiopia",
-        "difficulty": "medium",
-        "notes": "It joins the White Nile at Khartoum, Sudan."
-      },
-      {
-        "q": "What natural compounds released by trees help create the bluish haze of the Blue Ridge Mountains?",
-        "a": "Isoprene (hydrocarbons)",
+        "q": "Which Good Times character made \"Dy-no-mite!\" a 1970s television catchphrase?",
+        "a": "J.J. Evans",
         "difficulty": "medium-hard",
-        "notes": "The compounds form aerosols that scatter blue light."
+        "notes": "Jimmie Walker played James J.J. Evans Jr."
       },
       {
-        "q": "In common North American usage, what is a 'blue moon'?",
-        "a": "The second full moon in a calendar month",
-        "difficulty": "easy-medium",
-        "notes": "An older seasonal definition also exists."
-      },
-      {
-        "q": "What deep-blue copper carbonate mineral, often found with green malachite, was historically ground into pigment?",
-        "a": "Azurite",
-        "difficulty": "medium",
-        "notes": "Azurite has the formula Cu3(CO3)2(OH)2."
-      },
-      {
-        "q": "The 'Blue Screen of Death' is an error screen associated with what operating-system family?",
-        "a": "Microsoft Windows",
-        "difficulty": "easy-medium",
-        "notes": "It appears after a critical system error."
-      },
-      {
-        "q": "So-called blue laws traditionally restrict commerce or activities on what day of the week?",
-        "a": "Sunday",
-        "difficulty": "medium",
-        "notes": "Many historically limited Sunday alcohol sales or business hours."
-      },
-      {
-        "q": "What copper-containing protein makes horseshoe crab blood appear blue?",
-        "a": "Hemocyanin",
+        "q": "\"Marcia, Marcia, Marcia!\" is the frustrated cry of which Brady Bunch sister?",
+        "a": "Jan Brady",
         "difficulty": "medium-hard",
-        "notes": "Hemocyanin transports oxygen using copper rather than iron."
+        "notes": "Eve Plumb played middle sister Jan Brady."
       },
       {
-        "q": "What medical term describes bluish skin or lips caused by insufficient oxygen in the blood?",
-        "a": "Cyanosis",
-        "difficulty": "medium",
-        "notes": "The word derives from Greek for dark blue."
-      },
-      {
-        "q": "What blue-white star in Orion marks the hunter's left foot or knee?",
-        "a": "Rigel",
-        "difficulty": "medium",
-        "notes": "Rigel is a luminous blue supergiant system."
-      },
-      {
-        "q": "Which French artist developed an intense ultramarine paint using a synthetic-resin binder and registered its process in a 1960 Soleau envelope?",
-        "a": "Yves Klein",
+        "q": "Which alien title character on Mork & Mindy used the Orkan greeting \"Na-Nu, Na-Nu\"?",
+        "a": "Mork",
         "difficulty": "medium-hard",
-        "notes": "The paint became known as International Klein Blue; the registration established priority but was not a patent on the color itself."
+        "notes": "Robin Williams played Mork from the planet Ork."
       },
       {
-        "q": "Blue sapphire and ruby are color varieties of what mineral?",
-        "a": "Corundum",
-        "difficulty": "medium",
-        "notes": "Trace elements produce their different colors."
-      },
-      {
-        "q": "What astaxanthin-binding shell protein is overproduced in many unusually blue American lobsters?",
-        "a": "Crustacyanin",
+        "q": "\"You rang?\" was the deadpan response of which towering Addams Family servant?",
+        "a": "Lurch",
         "difficulty": "medium-hard",
-        "notes": "Crustacyanin binding shifts red astaxanthin toward blue; heat denatures the protein and reveals the red pigment."
+        "notes": "Ted Cassidy played Lurch in the 1960s television series."
       },
       {
-        "q": "What performance-art trio is famous for bald blue-painted characters and percussion-heavy shows?",
-        "a": "Blue Man Group",
-        "difficulty": "easy-medium",
-        "notes": "The group began performing in New York in the late 1980s."
+        "q": "\"Nip it in the bud!\" was the emphatic advice of which deputy on The Andy Griffith Show?",
+        "a": "Barney Fife",
+        "difficulty": "medium-hard",
+        "notes": "Don Knotts played Mayberry deputy Barney Fife."
       },
       {
-        "q": "Which jazz trumpeter released the landmark 1959 album Kind of Blue?",
-        "a": "Miles Davis",
-        "difficulty": "easy-medium",
-        "notes": "The album features John Coltrane and Cannonball Adderley."
-      },
-      {
-        "q": "What 1986 David Lynch mystery film stars Isabella Rossellini as nightclub singer Dorothy Vallens?",
-        "a": "Blue Velvet",
-        "difficulty": "medium",
-        "notes": "Its title comes from the song featured in the film."
-      },
-      {
-        "q": "Which Picasso period, roughly 1901–1904, is known for somber paintings dominated by cool colors?",
-        "a": "The Blue Period",
-        "difficulty": "easy-medium",
-        "notes": "Poverty and melancholy are recurring subjects."
-      },
-      {
-        "q": "What children's television dog leaves paw-print clues for viewers to solve?",
-        "a": "Blue (from Blue's Clues)",
-        "difficulty": "easy-medium",
-        "notes": "The Nickelodeon series premiered in 1996."
+        "q": "Which animated sci-fi character cries \"Wubba Lubba Dub-Dub\"?",
+        "a": "Rick Sanchez",
+        "difficulty": "medium-hard",
+        "notes": "Rick uses the phrase on Rick and Morty."
       }
     ]
   },
   {
-    "id": "mythological-hybrids",
-    "name": "Mythological Human Hybrids",
-    "shortName": "Hybrids",
-    "blurb": "Creatures that combine human and animal (or other) parts across Greek, Roman, Egyptian, Hindu, Mesopotamian, and other traditions. Know the canonical form of each — artistic depictions vary by era and culture.",
-    "infoBox": "<strong>How to use this:</strong> focus on the body-part combo in the clue (human + horse, human + bull head, human + fish tail). Many answers are Greek, but Egyptian gods and Mesopotamian lamassu show up too. Note when a creature's ancient form differs from its modern image (sirens, satyrs, Scylla).",
+    "id": "ancient-rome",
+    "name": "Ancient Rome",
+    "shortName": "Ancient Rome",
+    "blurb": "The Roman Republic and Empire: rulers, wars, engineering, religion, daily life, geography, and enduring Latin terms.",
+    "infoBox": "<strong>Study tip:</strong> distinguish the Republic from the Empire and pair major people with their offices, wars, and monuments.",
     "type": "quiz",
     "items": [
       {
-        "q": "What Greek mythological creature has a human upper body and a horse's lower body?",
-        "a": "Centaur",
+        "q": "What two annually elected officials were the highest ordinary magistrates of the Roman Republic?",
+        "a": "Consuls",
         "difficulty": "easy-medium",
-        "notes": "Chiron is the best-known wise centaur."
+        "notes": "Each consul could veto the other; their one-year terms limited individual power."
       },
       {
-        "q": "What Cretan monster had a man's body and a bull's head?",
-        "a": "Minotaur",
+        "q": "Which Roman officials could use a veto to protect plebeians from actions by magistrates?",
+        "a": "Tribunes of the plebs",
+        "difficulty": "medium",
+        "notes": "The Latin word veto means \"I forbid.\""
+      },
+      {
+        "q": "What was the name of Rome's earliest written law code, traditionally dated to 451-450 BCE?",
+        "a": "The Twelve Tables",
         "difficulty": "easy-medium",
-        "notes": "Theseus killed it in the Labyrinth."
+        "notes": "The code was produced amid conflict between patricians and plebeians."
       },
       {
-        "q": "What male nature spirit and companion of Dionysus had horse ears and a horse tail in early Greek art?",
-        "a": "Satyr",
+        "q": "During the Republic, what elite body advised magistrates and became highly influential in finance and foreign policy?",
+        "a": "The Senate",
         "difficulty": "easy-medium",
-        "notes": "Goat features became common later, partly through association with Pan and Roman fauns."
+        "notes": "Its decrees carried great weight even though it was formally advisory."
       },
       {
-        "q": "What Roman nature spirit, counterpart to the Greek satyr, is part human and part goat?",
-        "a": "Faun",
+        "q": "In a Republican emergency, what temporary office could be appointed with extraordinary authority?",
+        "a": "Dictator",
         "difficulty": "medium",
-        "notes": "Faunus is the Roman woodland god behind the name."
+        "notes": "Unlike the modern meaning, this was a recognized Roman magistracy appointed for a limited emergency."
       },
       {
-        "q": "What legendary aquatic being has a woman's upper body and a fish's tail?",
-        "a": "Mermaid",
+        "q": "Who became Rome's first emperor in 27 BCE?",
+        "a": "Augustus",
         "difficulty": "easy-medium",
-        "notes": "The male counterpart is a merman."
+        "notes": "Also known as Octavian, he ruled as princeps or \"first citizen.\""
       },
       {
-        "q": "In early Greek art, what dangerous singers were depicted as women with birds' bodies?",
-        "a": "Sirens",
+        "q": "Under which emperor did the Roman Empire reach its greatest territorial extent in 117 CE?",
+        "a": "Trajan",
         "difficulty": "medium",
-        "notes": "Their later fish-tailed image differs from the ancient Greek form."
+        "notes": "Trajan ruled from 98 to 117 CE and was one of the Five Good Emperors."
       },
       {
-        "q": "What Greek creatures have women's heads and torsos with birds' wings and claws?",
-        "a": "Harpies",
+        "q": "What four-ruler system of power sharing was introduced by Emperor Diocletian?",
+        "a": "The Tetrarchy",
+        "difficulty": "medium-hard",
+        "notes": "It comprised two senior augusti and two junior caesars."
+      },
+      {
+        "q": "Which emperor refounded Byzantium as Constantinople and made it an imperial capital?",
+        "a": "Constantine I",
         "difficulty": "medium",
-        "notes": "Their name is associated with snatching or carrying away."
+        "notes": "Constantine dedicated Constantinople in 330 CE."
       },
       {
-        "q": "What riddle-posing monster has a human head, lion's body, and bird's wings?",
-        "a": "Sphinx",
+        "q": "The death of which emperor in 68 CE ended the Julio-Claudian dynasty?",
+        "a": "Nero",
+        "difficulty": "medium",
+        "notes": "Nero was the fifth Roman emperor and ruled from 54 to 68 CE."
+      },
+      {
+        "q": "What was the name of the short sword closely associated with Roman legionaries?",
+        "a": "Gladius",
         "difficulty": "easy-medium",
-        "notes": "Oedipus answered its famous riddle."
+        "notes": "The classic gladius was a cut-and-thrust weapon roughly two feet long."
       },
       {
-        "q": "What Greek monster was a woman from the waist up and a serpent below, and mothered many monsters with Typhon?",
-        "a": "Echidna",
-        "difficulty": "medium-hard",
-        "notes": "Her children include Cerberus and the Hydra."
-      },
-      {
-        "q": "What serpent-human beings appear in Hindu and Buddhist traditions?",
-        "a": "Nagas",
+        "q": "What was the pilum carried by Roman legionaries?",
+        "a": "A javelin",
         "difficulty": "medium",
-        "notes": "They are often associated with water and subterranean realms."
+        "notes": "Legionaries threw the pilum before closing with the gladius."
       },
       {
-        "q": "What Hindu deity has a human body and an elephant's head?",
-        "a": "Ganesha",
+        "q": "A standard imperial Roman legion was commonly divided into ten units called what?",
+        "a": "Cohorts",
+        "difficulty": "medium",
+        "notes": "The cohort replaced the smaller maniple as the legion's principal tactical unit."
+      },
+      {
+        "q": "What professional Roman officer commanded a unit called a centuria?",
+        "a": "Centurion",
         "difficulty": "easy-medium",
-        "notes": "He is widely revered as a remover of obstacles."
+        "notes": "Centurions were the principal professional officers of the Roman army."
       },
       {
-        "q": "What Egyptian god of embalming is commonly shown with a human body and jackal head?",
-        "a": "Anubis",
+        "q": "Rome fought the three Punic Wars against what North African power?",
+        "a": "Carthage",
         "difficulty": "easy-medium",
-        "notes": "He guided and protected the dead."
+        "notes": "The wars ran from 264 to 146 BCE and ended with Carthage's destruction."
       },
       {
-        "q": "What Egyptian sky god is commonly depicted with a human body and falcon head?",
-        "a": "Horus",
-        "difficulty": "medium",
-        "notes": "The Eye of Horus became a symbol of protection."
-      },
-      {
-        "q": "What ibis-headed Egyptian god is associated with writing and wisdom?",
-        "a": "Thoth",
-        "difficulty": "medium",
-        "notes": "He was also linked with the moon and reckoning of time."
-      },
-      {
-        "q": "What Hindu divine hero is commonly portrayed with monkey-like features and is devoted to Rama?",
-        "a": "Hanuman",
+        "q": "On what river was the city of Rome founded?",
+        "a": "The Tiber",
         "difficulty": "easy-medium",
-        "notes": "He is a central figure in the Ramayana."
+        "notes": "Rome lies about 15 miles inland from the Tyrrhenian Sea."
       },
       {
-        "q": "What Greek god of shepherds has a man's torso, goat legs, and horns?",
-        "a": "Pan",
+        "q": "Which two major European rivers formed much of Rome's northern frontier?",
+        "a": "The Rhine and the Danube",
+        "difficulty": "medium",
+        "notes": "Roman territory generally extended west of the Rhine and south of the Danube."
+      },
+      {
+        "q": "What term did Romans use for a conquered territorial subdivision governed in Rome's name?",
+        "a": "Province",
         "difficulty": "easy-medium",
-        "notes": "The word panic derives from his name."
+        "notes": "The Latin provincia originally meant a magistrate's sphere of authority."
       },
       {
-        "q": "What snake-haired women of Greek myth included Medusa?",
-        "a": "Gorgons",
+        "q": "What famous road begun in 312 BCE linked Rome southward toward Capua and later Brundisium?",
+        "a": "The Appian Way",
         "difficulty": "medium",
-        "notes": "Medusa alone among the three sisters was mortal."
+        "notes": "It was the first great Roman military road and was commissioned by Appius Claudius Caecus."
       },
       {
-        "q": "What monster was shown in later classical art with a woman's upper body and canine foreparts emerging above a fishlike tail?",
-        "a": "Scylla",
+        "q": "What force moved water through most Roman aqueduct channels?",
+        "a": "Gravity",
+        "difficulty": "easy-medium",
+        "notes": "Engineers maintained a very gradual downward slope across long distances."
+      },
+      {
+        "q": "What volcanic material did Roman builders mix with lime to make durable hydraulic cement?",
+        "a": "Pozzolana",
         "difficulty": "medium-hard",
-        "notes": "This artistic form differs from Homer's monster with twelve feet, six long necks, and yelping voices."
+        "notes": "The mixture strengthened mortar and concrete and improved water resistance."
       },
       {
-        "q": "What colossal Greek monster, often described with a human torso and serpents for legs, challenged Zeus?",
-        "a": "Typhon",
+        "q": "What is the name of the circular opening at the center of the Pantheon's dome?",
+        "a": "The oculus",
+        "difficulty": "easy-medium",
+        "notes": "The open oculus is the rotunda's principal direct source of light."
+      },
+      {
+        "q": "What was the Colosseum called in ancient Rome?",
+        "a": "The Flavian Amphitheater",
         "difficulty": "medium-hard",
-        "notes": "Zeus ultimately defeated and buried him."
+        "notes": "Construction began under Vespasian, the first Flavian emperor; the name Colosseum arose later."
       },
       {
-        "q": "What Japanese yōkai are often portrayed as bird-human mountain beings with long noses or beaks?",
-        "a": "Tengu",
-        "difficulty": "medium-hard",
-        "notes": "They evolved from birdlike forms into red-faced long-nosed figures."
+        "q": "The Vestal Virgins tended the sacred fire of which goddess?",
+        "a": "Vesta",
+        "difficulty": "easy-medium",
+        "notes": "Vesta was the Roman goddess of the hearth; her priestesses traditionally served for 30 years."
       },
       {
-        "q": "What Slavic legendary creature has a woman's head and chest with a bird's body and sings beautifully?",
-        "a": "Alkonost",
-        "difficulty": "medium-hard",
-        "notes": "Its name derives from the Greek figure Alcyone."
-      },
-      {
-        "q": "What Mesopotamian protective figures combine a human head, bull or lion body, and eagle wings?",
-        "a": "Lamassu",
+        "q": "What kind of Roman religious official interpreted omens such as the flight and behavior of birds?",
+        "a": "An augur",
         "difficulty": "medium",
-        "notes": "Monumental lamassu guarded Assyrian gateways."
+        "notes": "Augurs sought signs of divine approval or disapproval before proposed actions."
       },
       {
-        "q": "What beings guard the gate at Mount Mashu and admit Gilgamesh into the sun's dark passage?",
-        "a": "Scorpion men (Girtablilu)",
-        "difficulty": "medium-hard",
-        "notes": "Mesopotamian art depicts these guardians with human and scorpion anatomy."
+        "q": "Which Roman god was honored by the winter festival Saturnalia?",
+        "a": "Saturn",
+        "difficulty": "easy-medium",
+        "notes": "The festival featured suspended business, gift-giving, and temporary social license."
       },
       {
-        "q": "What Akkadian term names Mesopotamian sages whose protective images include bird-headed, human-bodied hybrids and figures wearing fish-skin cloaks?",
-        "a": "Apkallu",
-        "difficulty": "medium-hard",
-        "notes": "The term is associated with the antediluvian Seven Sages and Enki; other apkallu images are fully human."
-      },
-      {
-        "q": "What Greek king and autochthonous founder of Athens was depicted as human above and snake below?",
-        "a": "Cecrops",
-        "difficulty": "medium-hard",
-        "notes": "He judged the contest between Athena and Poseidon."
-      },
-      {
-        "q": "What sea deity, son of Poseidon and Amphitrite, is usually shown as a merman blowing a conch shell?",
-        "a": "Triton",
+        "q": "What Latin term named the male legal head of a Roman household?",
+        "a": "Paterfamilias",
         "difficulty": "medium",
-        "notes": "He served as a herald of the sea."
+        "notes": "He exercised patria potestas over descendants and household property, though that authority changed over time."
       },
       {
-        "q": "What Greek sea creatures combine a human upper body, horse forequarters, and fish tail?",
-        "a": "Ichthyocentaurs",
-        "difficulty": "medium-hard",
-        "notes": "They are marine counterparts to centaurs."
+        "q": "What were the multi-story apartment or tenement buildings housing many ordinary Romans called?",
+        "a": "Insulae",
+        "difficulty": "medium",
+        "notes": "The singular is insula; shops and workshops commonly occupied street level."
       },
       {
-        "q": "What Scandinavian forest being looks like a woman but has a cow's tail and sometimes a hollow back?",
-        "a": "Huldra",
-        "difficulty": "medium-hard",
-        "notes": "She is known in Norwegian folklore."
+        "q": "Spanish, French, Italian, Portuguese, and Romanian developed primarily from what language of Rome?",
+        "a": "Latin",
+        "difficulty": "easy-medium",
+        "notes": "These are called Romance languages because they descend from varieties of Latin used across the Roman world."
       },
       {
-        "q": "What medieval creature combines a human torso with the body of a donkey rather than a horse?",
-        "a": "Onocentaur",
-        "difficulty": "medium-hard",
-        "notes": "Its name literally means donkey-centaur."
-      },
-      {
-        "q": "What legendary creature from Islamic tradition carried Muhammad on the Night Journey and is often depicted with a human face, wings, and an equine body?",
-        "a": "Buraq",
-        "difficulty": "medium-hard",
-        "notes": "Its appearance varies across artistic traditions."
+        "q": "Which Roman poet wrote the epic Aeneid about the Trojan hero Aeneas?",
+        "a": "Virgil",
+        "difficulty": "easy-medium",
+        "notes": "The 12-book Latin epic links Aeneas with the legendary origins of Roman greatness."
       }
     ]
   },
   {
-    "id": "music-2000s-women",
-    "name": "Music – 2000s Women Musicians",
-    "shortName": "Music",
-    "blurb": "You need both title and artist here, and it clicks much faster once you've actually heard the hook rather than just reading the title. Press play on each — these are 2000–2009 hits by women solo artists and women-fronted acts.",
-    "infoBox": "<strong>How to use this:</strong> hit play, see how fast you can name the song + artist before the reveal, then check yourself. Every YouTube ID and Spotify link below was individually vetted — the YouTube ID via the oEmbed API (confirming the returned title actually names this song/artist) and the Spotify link via a matching search result cross-checked against the YouTube title.",
+    "id": "disney-covers",
+    "name": "Disney Covers",
+    "shortName": "Disney Covers",
+    "blurb": "Recognizable Disney songs reinterpreted by pop, rock, country, jazz, and alternative artists.",
+    "infoBox": "<strong>How to practice:</strong> play each track with its title and performer hidden, then identify both before revealing the answer.",
     "type": "music",
     "items": [
       {
-        "title": "Fallin'",
-        "artist": "Alicia Keys",
-        "youtubeId": "Urdlvw0SSEc",
-        "spotifyUrl": "https://open.spotify.com/track/3unsLiH5FXmaDWtT5Imolu",
+        "title": "A Spoonful of Sugar",
+        "artist": "Kacey Musgraves",
+        "youtubeId": "eWsj9wC9zMU",
+        "spotifyUrl": "https://open.spotify.com/track/5ohYQZfcLlD4Lvf8lt3VCA",
+        "startSeconds": 0,
+        "difficulty": "easy-medium",
+        "notes": "Country-pop cover of the Mary Poppins song, released on We Love Disney (2015)."
+      },
+      {
+        "title": "Part of Your World",
+        "artist": "Jessie J",
+        "youtubeId": "Qd__KQryieg",
+        "spotifyUrl": "https://open.spotify.com/track/4UW8c9JSzoyjErfmmMkInw",
+        "startSeconds": 0,
+        "difficulty": "easy-medium",
+        "notes": "Pop-soul cover of the song from The Little Mermaid, released on We Love Disney (2015)."
+      },
+      {
+        "title": "Colors of the Wind",
+        "artist": "Tori Kelly",
+        "youtubeId": "XpIMGamlvwg",
+        "spotifyUrl": "https://open.spotify.com/track/7qgM0MdETmhd3mORTqvJRm",
+        "startSeconds": 0,
+        "difficulty": "easy-medium",
+        "notes": "R&B-pop cover of the Pocahontas song, released on We Love Disney (2015)."
+      },
+      {
+        "title": "Friend Like Me",
+        "artist": "Ne-Yo",
+        "youtubeId": "r21fH-ysABs",
+        "spotifyUrl": "https://open.spotify.com/track/0GzjDErRS86SEetLDn2ZXN",
+        "startSeconds": 0,
+        "difficulty": "easy-medium",
+        "notes": "R&B cover of the Aladdin song, released on We Love Disney (2015)."
+      },
+      {
+        "title": "Zero to Hero",
+        "artist": "Ariana Grande",
+        "youtubeId": "4fTLqV17VZo",
+        "spotifyUrl": "https://open.spotify.com/track/21DxcOtDKlVOlmeYed1IG3",
+        "startSeconds": 0,
+        "difficulty": "easy-medium",
+        "notes": "Pop cover of the Hercules song, released on We Love Disney (2015)."
+      },
+      {
+        "title": "I Wan'na Be Like You",
+        "artist": "Fall Out Boy",
+        "youtubeId": "uiI5Xh2520U",
+        "spotifyUrl": "https://open.spotify.com/track/6zMNLIFrUss4qklFUdpzjp",
         "startSeconds": 0,
         "difficulty": "medium",
-        "notes": "2001 debut single from Songs in A Minor."
+        "notes": "Rock cover of the Jungle Book song, released on We Love Disney (2015)."
       },
       {
-        "title": "Complicated",
-        "artist": "Avril Lavigne",
-        "youtubeId": "5NPBIwQyPWE",
-        "spotifyUrl": "https://open.spotify.com/track/5xEM5hIgJ1jjgcEBfpkt2F",
-        "startSeconds": 0,
-        "difficulty": "easy-medium",
-        "notes": "2002 single from Let Go."
-      },
-      {
-        "title": "A Thousand Miles",
-        "artist": "Vanessa Carlton",
-        "youtubeId": "Cwkej79U3ek",
-        "spotifyUrl": "https://open.spotify.com/track/6t6rudGjkLftasgUiSGcPN",
-        "startSeconds": 0,
-        "difficulty": "easy-medium",
-        "notes": "2002 single built around a signature piano riff."
-      },
-      {
-        "title": "Whenever, Wherever",
-        "artist": "Shakira",
-        "youtubeId": "weRHyjj34ZE",
-        "spotifyUrl": "https://open.spotify.com/track/2lnzGkdtDj5mtlcOW2yRtG",
-        "startSeconds": 0,
-        "difficulty": "easy-medium",
-        "notes": "2001 English-language crossover single."
-      },
-      {
-        "title": "Crazy in Love",
-        "artist": "Beyoncé ft. Jay-Z",
-        "youtubeId": "ViwtNLUqkMY",
-        "spotifyUrl": "https://open.spotify.com/track/5IVuqXILoxVWvWEPm82Jxr",
-        "startSeconds": 0,
-        "difficulty": "easy-medium",
-        "notes": "2003 lead single from Dangerously in Love."
-      },
-      {
-        "title": "Since U Been Gone",
-        "artist": "Kelly Clarkson",
-        "youtubeId": "E5Lt9MHuUNc",
-        "spotifyUrl": "https://open.spotify.com/track/0wFX3vyirwADaItS9Hq54I",
-        "startSeconds": 0,
-        "difficulty": "easy-medium",
-        "notes": "2004 single from Breakaway; the album's Spotify listing is dated 2005 in some markets."
-      },
-      {
-        "title": "Promiscuous",
-        "artist": "Nelly Furtado ft. Timbaland",
-        "youtubeId": "0J3vgcE5i2o",
-        "spotifyUrl": "https://open.spotify.com/track/2gam98EZKrF9XuOkU13ApN",
+        "title": "Rainbow Connection",
+        "artist": "Gwen Stefani",
+        "youtubeId": "538UpUeRmqw",
+        "spotifyUrl": "https://open.spotify.com/track/37guUG3IuyJBo0poxQ54gc",
         "startSeconds": 0,
         "difficulty": "medium",
-        "notes": "2006 single from Loose."
+        "notes": "Pop cover of the Muppet Movie song, released on We Love Disney (2015)."
       },
       {
-        "title": "Rehab",
-        "artist": "Amy Winehouse",
-        "youtubeId": "KUmZp8pR1uc",
-        "spotifyUrl": "https://open.spotify.com/track/1L5tZi0izXsi5Kk5OJf4W0",
-        "startSeconds": 0,
-        "difficulty": "easy-medium",
-        "notes": "2006 single from Back to Black."
-      },
-      {
-        "title": "Umbrella",
-        "artist": "Rihanna ft. Jay-Z",
-        "youtubeId": "CvBfHwUxHIk",
-        "spotifyUrl": "https://open.spotify.com/track/4FgQ7jK068Eb6v016MxmJn",
-        "startSeconds": 0,
-        "difficulty": "easy-medium",
-        "notes": "2007 single from Good Girl Gone Bad."
-      },
-      {
-        "title": "Bleeding Love",
-        "artist": "Leona Lewis",
-        "youtubeId": "Vzo-EL_62fQ",
-        "spotifyUrl": "https://open.spotify.com/track/7wZUrN8oemZfsEd1CGkbXE",
-        "startSeconds": 0,
-        "difficulty": "easy-medium",
-        "notes": "2007 single from Spirit."
-      },
-      {
-        "title": "Pocketful of Sunshine",
-        "artist": "Natasha Bedingfield",
-        "youtubeId": "gte3BoXKwP0",
-        "spotifyUrl": "https://open.spotify.com/track/49Qh6RdJKP92onI3FpE0c4",
+        "title": "A Dream Is a Wish Your Heart Makes",
+        "artist": "Jessie Ware",
+        "youtubeId": "k2HX9_AB0qg",
+        "spotifyUrl": "https://open.spotify.com/track/4XECYwPN9YaGHTf7X9XJJA",
         "startSeconds": 0,
         "difficulty": "medium",
-        "notes": "Recorded in 2007 and released as a US single in 2008."
+        "notes": "Pop-soul cover of the Cinderella song, released on We Love Disney (2015)."
       },
       {
-        "title": "So What",
-        "artist": "P!nk",
-        "youtubeId": "FJfFZqTlWrQ",
-        "spotifyUrl": "https://open.spotify.com/track/6qYGUxPjQt5PJtWdiNppZx",
+        "title": "Under the Sea",
+        "artist": "Raven-Symoné",
+        "youtubeId": "SCysAd3hQos",
+        "spotifyUrl": "https://open.spotify.com/track/4HxukyGNRDjnZm3Q6jUDTT",
         "startSeconds": 0,
         "difficulty": "easy-medium",
-        "notes": "2008 lead single from Funhouse."
+        "notes": "Pop cover of the Little Mermaid song, released on Disneymania 3 (2005)."
       },
       {
-        "title": "I Kissed a Girl",
-        "artist": "Katy Perry",
-        "youtubeId": "tAp9BKosZXs",
-        "spotifyUrl": "https://open.spotify.com/track/005lwxGU1tms6HGELIcUv9",
-        "startSeconds": 0,
-        "difficulty": "easy-medium",
-        "notes": "2008 breakthrough single from One of the Boys."
-      },
-      {
-        "title": "Love Story",
-        "artist": "Taylor Swift",
-        "youtubeId": "8xg3vE8Ie_E",
-        "spotifyUrl": "https://open.spotify.com/track/5MONKNdpMcrynzmq5sMkB0",
-        "startSeconds": 0,
-        "difficulty": "easy-medium",
-        "notes": "2008 lead single from Fearless."
-      },
-      {
-        "title": "Everywhere",
-        "artist": "Michelle Branch",
-        "youtubeId": "HLCasyAh7ic",
-        "spotifyUrl": "https://open.spotify.com/track/1u0l8zWpQeMYStFkc2mLD7",
+        "title": "Zip-A-Dee-Doo-Dah",
+        "artist": "Miley Cyrus",
+        "youtubeId": "FPxdLa6ditw",
+        "spotifyUrl": "https://open.spotify.com/track/6MIPvQ8kOzEf8mwrqbgUj2",
         "startSeconds": 0,
         "difficulty": "medium",
-        "notes": "2001 lead single from her major-label debut album, The Spirit Room."
+        "notes": "Pop-rock cover of the Song of the South standard, released on Disneymania 4 (2006)."
       },
       {
-        "title": "Bubbly",
-        "artist": "Colbie Caillat",
-        "youtubeId": "AWGqoCNbsvM",
-        "spotifyUrl": "https://open.spotify.com/track/0rFOs9paloAvEtzwDX1Kmc",
-        "startSeconds": 0,
-        "difficulty": "medium",
-        "notes": "2007 breakthrough single from Coco."
-      },
-      {
-        "title": "Put Your Records On",
-        "artist": "Corinne Bailey Rae",
-        "youtubeId": "rjOhZZyn30k",
-        "spotifyUrl": "https://open.spotify.com/track/2nGFzvICaeEWjIrBrL2RAx",
-        "startSeconds": 0,
-        "difficulty": "medium",
-        "notes": "2006 single from her self-titled debut album."
-      },
-      {
-        "title": "Beautiful",
-        "artist": "Christina Aguilera",
-        "youtubeId": "eAfyFTzZDMM",
-        "spotifyUrl": "https://open.spotify.com/track/3TCauNPqFiniaYHBvEVoHG",
+        "title": "Poor Unfortunate Souls",
+        "artist": "Jonas Brothers",
+        "youtubeId": "t4lTWetaftw",
+        "spotifyUrl": "https://open.spotify.com/track/1alCMHZkJxkP18NNzvCLeb",
         "startSeconds": 0,
         "difficulty": "easy-medium",
-        "notes": "2002 single from Stripped."
+        "notes": "Pop-rock cover of the Little Mermaid villain song, released in 2006."
       },
       {
-        "title": "Toxic",
-        "artist": "Britney Spears",
-        "youtubeId": "LOZuxwVk7TU",
-        "spotifyUrl": "https://open.spotify.com/track/6I9VzXrHxO9rA9A5euc8Ak",
+        "title": "Kiss the Girl",
+        "artist": "Ashley Tisdale",
+        "youtubeId": "06t0tbr3aH4",
+        "spotifyUrl": "https://open.spotify.com/track/6kkFjjMbO9EL1YxNt8BKm3",
         "startSeconds": 0,
         "difficulty": "easy-medium",
-        "notes": "2003 single from In the Zone; released in 2004 in the United States."
+        "notes": "Pop cover of the Little Mermaid song, released in 2006."
       },
       {
-        "title": "Milkshake",
-        "artist": "Kelis",
-        "youtubeId": "pGL2rytTraA",
-        "spotifyUrl": "https://open.spotify.com/track/4LmzPJDil70LpiApWfOI6O",
+        "title": "Cruella De Vil",
+        "artist": "Selena Gomez",
+        "youtubeId": "Je9ZfezquCI",
+        "spotifyUrl": "https://open.spotify.com/track/6NO2DmPusZLT5KTsrfpGLW",
         "startSeconds": 0,
         "difficulty": "easy-medium",
-        "notes": "2003 single from Tasty."
+        "notes": "Pop-rock cover of the 101 Dalmatians song, recorded for Disneymania 6."
       },
       {
-        "title": "Bootylicious",
-        "artist": "Destiny's Child",
-        "youtubeId": "IyYnnUcgeMc",
-        "spotifyUrl": "https://open.spotify.com/track/1hJ9fQMfjZiBzz0Hs8DuMj",
+        "title": "That's How You Know",
+        "artist": "Demi Lovato",
+        "youtubeId": "1KMIUfPQ_5o",
+        "spotifyUrl": "https://open.spotify.com/track/1jdJ8luWSATnyr4MOiIoHO",
         "startSeconds": 0,
         "difficulty": "medium",
-        "notes": "2001 single from Survivor."
+        "notes": "Pop cover of Amy Adams's Enchanted number, released on Disneymania 6 (2008)."
       },
       {
-        "title": "Poker Face",
-        "artist": "Lady Gaga",
-        "youtubeId": "bESGLojNYSo",
-        "spotifyUrl": "https://open.spotify.com/track/1QV6tiMFM6fSOKOGLMHYYg",
+        "title": "When You Wish Upon a Star",
+        "artist": "Billy Joel",
+        "youtubeId": "gXjGh-Ql5Po",
+        "spotifyUrl": "https://open.spotify.com/track/2NPFirx1Ig2Uy970OIBQDO",
         "startSeconds": 0,
         "difficulty": "easy-medium",
-        "notes": "2008 single from The Fame."
+        "notes": "Pop cover of the Pinocchio standard, released on Simply Mad About the Mouse (1991)."
       },
       {
-        "title": "Paper Planes",
-        "artist": "M.I.A.",
-        "youtubeId": "ewRjZoRtu0Y",
-        "spotifyUrl": "https://open.spotify.com/track/3ZlFUr0RBrUYYsmlcFvD0e",
+        "title": "You'll Be in My Heart",
+        "artist": "Usher",
+        "youtubeId": "dl_mFvd28R0",
+        "spotifyUrl": "https://open.spotify.com/track/1nayTAuWAW9qILHyobKlBa",
+        "startSeconds": 0,
+        "difficulty": "easy-medium",
+        "notes": "R&B cover of Phil Collins's Tarzan song, released on Disneymania (2002)."
+      },
+      {
+        "title": "This Is Halloween",
+        "artist": "Marilyn Manson",
+        "youtubeId": "jU6iP0WLsU8",
+        "spotifyUrl": "https://open.spotify.com/track/7aoInyY7amyKi0NFDLFZbP",
+        "startSeconds": 0,
+        "difficulty": "easy-medium",
+        "notes": "Industrial-rock cover from The Nightmare Before Christmas special edition (2006)."
+      },
+      {
+        "title": "Sally's Song",
+        "artist": "Amy Lee",
+        "youtubeId": "RQj2iOEx-V8",
+        "spotifyUrl": "https://open.spotify.com/track/3U0rLVR2IN3kvVQGfvQKEH",
         "startSeconds": 0,
         "difficulty": "medium",
-        "notes": "2007 album track from Kala; released as a single in 2008."
+        "notes": "Gothic-rock cover from Nightmare Revisited (2008)."
       },
       {
-        "title": "Maps",
-        "artist": "Yeah Yeah Yeahs",
-        "youtubeId": "oIIxlgcuQRU",
-        "spotifyUrl": "https://open.spotify.com/track/4EwNG7uCvLEm5a6KgerCHf",
+        "title": "Once Upon a Dream",
+        "artist": "Lana Del Rey",
+        "youtubeId": "8waJ7W3QcJc",
+        "spotifyUrl": "https://open.spotify.com/track/3sXq7EPSrhRY5TO0y6ePUy",
+        "startSeconds": 0,
+        "difficulty": "easy-medium",
+        "notes": "Dark pop cover of the Sleeping Beauty song, recorded for Maleficent (2014)."
+      },
+      {
+        "title": "Baby Mine",
+        "artist": "Arcade Fire",
+        "youtubeId": "qpYOstfcQBs",
+        "spotifyUrl": "https://open.spotify.com/track/2ufkOFn5LKYNoAdss0GUKR",
+        "startSeconds": 0,
+        "difficulty": "medium",
+        "notes": "Indie-rock cover of the Dumbo lullaby, recorded for the 2019 remake."
+      },
+      {
+        "title": "Lost in the Woods",
+        "artist": "Weezer",
+        "youtubeId": "QnEWs8D9zu8",
+        "spotifyUrl": "https://open.spotify.com/track/6bd3X6eXfamHGEHOHe86nn",
+        "startSeconds": 0,
+        "difficulty": "easy-medium",
+        "notes": "Rock cover of Jonathan Groff's Frozen 2 song, released on the 2019 soundtrack."
+      },
+      {
+        "title": "Into the Unknown",
+        "artist": "Panic! At The Disco",
+        "youtubeId": "jp-CVYGEsjg",
+        "spotifyUrl": "https://open.spotify.com/track/0v622a7rlXRYcT6m3xwutU",
+        "startSeconds": 0,
+        "difficulty": "easy-medium",
+        "notes": "Rock cover of Idina Menzel and AURORA's Frozen 2 song, released in 2019."
+      },
+      {
+        "title": "When She Loved Me",
+        "artist": "Bridgit Mendler",
+        "youtubeId": "yivyABmG0s8",
+        "spotifyUrl": "https://open.spotify.com/track/16oPtblayhsbzWxSrlLIN6",
+        "startSeconds": 0,
+        "difficulty": "medium",
+        "notes": "Pop cover of Sarah McLachlan's Toy Story 2 song, released on Disneymania 7 (2010)."
+      },
+      {
+        "title": "You've Got a Friend in Me",
+        "artist": "George Jones & Kathy Mattea",
+        "youtubeId": "j5OD1kVvGyY",
+        "spotifyUrl": "https://open.spotify.com/track/0JSiLxY5SBznAkT4ERoOKV",
         "startSeconds": 0,
         "difficulty": "medium-hard",
-        "notes": "2003 single from Fever to Tell, fronted by Karen O."
+        "notes": "Country duet cover of the Toy Story song, released in 1996."
       },
       {
-        "title": "Bring Me to Life",
-        "artist": "Evanescence",
-        "youtubeId": "3YxaaGgTQYM",
-        "spotifyUrl": "https://open.spotify.com/track/0COqiPhxzoWICwFCS4eZcp",
-        "startSeconds": 0,
-        "difficulty": "easy-medium",
-        "notes": "2003 single from Fallen, fronted by Amy Lee."
-      },
-      {
-        "title": "Don't Know Why",
-        "artist": "Norah Jones",
-        "youtubeId": "tO4dxvguQDk",
-        "spotifyUrl": "https://open.spotify.com/track/6ybViy2qrO9sIi41EgRJgx",
+        "title": "Let It Go",
+        "artist": "Rascal Flatts & Lucy Hale",
+        "youtubeId": "OrWddfkIhpc",
+        "spotifyUrl": "https://open.spotify.com/track/1clvTB87GDFoeImLrE0HuH",
         "startSeconds": 0,
         "difficulty": "medium",
-        "notes": "2002 single from Come Away with Me."
+        "notes": "Country-pop duet cover of the Frozen anthem, released on We Love Disney (2015)."
       },
       {
-        "title": "Hollaback Girl",
-        "artist": "Gwen Stefani",
-        "youtubeId": "Kgjkth6BRRY",
-        "spotifyUrl": "https://open.spotify.com/track/0LzrhCZFXW94Y8nwtTuRlw",
+        "title": "Circle of Life",
+        "artist": "Disney Channel Circle of Stars",
+        "youtubeId": "oZeVPywKNcQ",
+        "spotifyUrl": "https://open.spotify.com/track/70IUh8iL1FyzDdYB6SF84x",
         "startSeconds": 0,
-        "difficulty": "easy-medium",
-        "notes": "2005 single from Love. Angel. Music. Baby."
+        "difficulty": "medium-hard",
+        "notes": "Disney Channel ensemble cover and remix of the Lion King opener, released in 2003."
       },
       {
-        "title": "Work It",
-        "artist": "Missy Elliott",
-        "youtubeId": "cjIvu7e6Wq8",
-        "spotifyUrl": "https://open.spotify.com/track/3jagJCUbdqhDSPuxP8cAqF",
-        "startSeconds": 0,
-        "difficulty": "easy-medium",
-        "notes": "2002 single from Under Construction."
-      },
-      {
-        "title": "Hips Don't Lie",
-        "artist": "Shakira ft. Wyclef Jean",
-        "youtubeId": "DUT5rEU6pqM",
-        "spotifyUrl": "https://open.spotify.com/track/6sEtce6qTCrPZQQMGY3nRD",
-        "startSeconds": 0,
-        "difficulty": "easy-medium",
-        "notes": "2006 single from the reissue of Oral Fixation, Vol. 2."
-      },
-      {
-        "title": "Big Girls Don't Cry",
-        "artist": "Fergie",
-        "youtubeId": "agrXgrAgQ0U",
-        "spotifyUrl": "https://open.spotify.com/track/4AniPkv5vgdE1n6VKreiyI",
+        "title": "Hakuna Matata",
+        "artist": "Baha Men",
+        "youtubeId": "jzc0W5eKhbU",
+        "spotifyUrl": "https://open.spotify.com/track/1RfK7agnEdpyxUlDKOvqVN",
         "startSeconds": 0,
         "difficulty": "medium",
-        "notes": "2007 single from the 2006 album The Dutchess."
+        "notes": "Caribbean-pop cover of the Lion King song, released on Disneymania (2002)."
+      },
+      {
+        "title": "Can You Feel the Love Tonight / Nants' Ingonyama",
+        "artist": "Jason Derulo",
+        "youtubeId": "MIHyg5VoiCo",
+        "spotifyUrl": "https://open.spotify.com/track/6Z08ekE36sgK3J3jBIi285",
+        "startSeconds": 0,
+        "difficulty": "medium",
+        "notes": "Pop and R&B cover of the Lion King songs, released on We Love Disney (2015)."
+      },
+      {
+        "title": "I Just Can't Wait to Be King",
+        "artist": "Aaron Carter",
+        "youtubeId": "LCfEHbedWbk",
+        "spotifyUrl": "https://open.spotify.com/track/21of6iq6Ks76fbG34MJeHO",
+        "startSeconds": 0,
+        "difficulty": "medium-hard",
+        "notes": "Teen-pop cover of the Lion King song, released on Disneymania (2002)."
+      },
+      {
+        "title": "True to Your Heart",
+        "artist": "Keke Palmer",
+        "youtubeId": "9PUcfZCZcVU",
+        "spotifyUrl": "https://open.spotify.com/track/4viVOQNAlEptAKjavq4qq1",
+        "startSeconds": 0,
+        "difficulty": "medium-hard",
+        "notes": "Pop cover of the Mulan end-title song, released in 2008."
       }
     ]
   },
   {
-    "id": "forget-about-it",
-    "name": "Forget About It",
-    "shortName": "Forget About It",
-    "blurb": "Memory, forgetting, amnesia, idioms, and pop culture built around forgetting. Covers neuroscience basics, classic psychology, famous cases, familiar sayings, and films and songs tied to the theme.",
-    "infoBox": "<strong>How to use this:</strong> split your study between memory science and the category title’s other plausible reading: familiar idioms, sayings, and cultural references about forgetting.",
+    "id": "potpourri",
+    "name": "Potpourri",
+    "shortName": "Potpourri",
+    "blurb": "A mixed general-knowledge round spanning science, history, geography, arts, language, sports, food, and pop culture.",
+    "infoBox": "<strong>Expect variety:</strong> this round rewards broad recall rather than mastery of one theme.",
     "type": "quiz",
     "items": [
       {
-        "q": "What seahorse-shaped brain structure is crucial for forming new episodic memories?",
-        "a": "Hippocampus",
-        "difficulty": "easy-medium",
-        "notes": "Damage to both hippocampi can severely impair new-memory formation."
-      },
-      {
-        "q": "What type of amnesia prevents a person from forming new long-term memories after its onset?",
-        "a": "Anterograde amnesia",
+        "q": "Which planet has a day longer than its year, taking about 243 Earth days to rotate but about 225 to orbit the Sun?",
+        "a": "Venus",
         "difficulty": "medium",
-        "notes": "Older memories may remain relatively intact."
+        "notes": "NASA lists Venus's rotation period as 243 Earth days and its orbital period as 225."
       },
       {
-        "q": "What type of amnesia involves loss of memories formed before an injury or illness?",
-        "a": "Retrograde amnesia",
-        "difficulty": "medium",
-        "notes": "The loss often affects recent memories more than remote ones."
-      },
-      {
-        "q": "What progressive disease is the most common cause of dementia?",
-        "a": "Alzheimer's disease",
+        "q": "How many hearts does an octopus have?",
+        "a": "Three",
         "difficulty": "easy-medium",
-        "notes": "It impairs memory, thinking, and eventually daily functioning."
+        "notes": "Two branchial hearts pump blood through the gills, while one systemic heart pumps it through the body."
       },
       {
-        "q": "Which psychologist's experiments produced the famous forgetting curve?",
-        "a": "Hermann Ebbinghaus",
+        "q": "What mineral defines 10 on the Mohs scale of hardness?",
+        "a": "Diamond",
+        "difficulty": "easy-medium",
+        "notes": "The Mohs scale ranks ten reference minerals by scratch resistance, from talc at 1 to diamond at 10."
+      },
+      {
+        "q": "Which chemical element has the symbol W, derived from its alternative name wolfram?",
+        "a": "Tungsten",
+        "difficulty": "medium",
+        "notes": "Tungsten has atomic number 74; W comes from wolfram, reflected in the ore name wolframite."
+      },
+      {
+        "q": "At what temperature do the Celsius and Fahrenheit scales show the same numerical value?",
+        "a": "Minus 40 degrees",
+        "difficulty": "medium",
+        "notes": "The conversion equations meet at −40, so −40 °C equals −40 °F."
+      },
+      {
+        "q": "What is the world's largest inland body of water?",
+        "a": "The Caspian Sea",
+        "difficulty": "easy-medium",
+        "notes": "The Caspian is also the world's largest salt lake and has no natural outlet."
+      },
+      {
+        "q": "What European river flows through or along the borders of ten countries before reaching the Black Sea?",
+        "a": "The Danube",
+        "difficulty": "medium",
+        "notes": "The Danube is Europe's second-longest river after the Volga."
+      },
+      {
+        "q": "The Bay of Fundy, famous for the world's highest tidal range, lies between which two Canadian provinces?",
+        "a": "New Brunswick and Nova Scotia",
+        "difficulty": "medium",
+        "notes": "At Burntcoat Head, the tidal range can reach about 53 feet (16 metres)."
+      },
+      {
+        "q": "What is Bolivia's constitutional capital?",
+        "a": "Sucre",
         "difficulty": "medium-hard",
-        "notes": "He published Memory in 1885."
+        "notes": "La Paz is the seat of government, but Sucre is the capital named in Bolivia's constitution."
       },
       {
-        "q": "What study technique reviews material at expanding intervals to resist forgetting?",
-        "a": "Spaced repetition",
-        "difficulty": "easy-medium",
-        "notes": "It exploits the spacing effect."
-      },
-      {
-        "q": "In the familiar saying, what animal 'never forgets'?",
-        "a": "Elephant",
-        "difficulty": "easy-medium",
-        "notes": "The proverb draws on elephants' reputation for strong long-term memory."
-      },
-      {
-        "q": "Complete the idiom for something quickly forgotten once absent: 'Out of sight, out of ____.'",
-        "a": "Mind",
-        "difficulty": "easy-medium",
-        "notes": "'Out of sight, out of mind' has been proverbial in English for centuries."
-      },
-      {
-        "q": "In what 1997 crime film does Johnny Depp's undercover agent explain the many meanings of the phrase 'forget about it'?",
-        "a": "Donnie Brasco",
-        "difficulty": "medium",
-        "notes": "Al Pacino's character Lefty demonstrates several meanings of the phrase in the film."
-      },
-      {
-        "q": "What short-term mental workspace holds and manipulates information during reasoning?",
-        "a": "Working memory",
-        "difficulty": "easy-medium",
-        "notes": "It has limited capacity."
-      },
-      {
-        "q": "What type of long-term memory stores skills and habits such as riding a bicycle?",
-        "a": "Procedural memory",
-        "difficulty": "easy-medium",
-        "notes": "It is a form of implicit memory."
-      },
-      {
-        "q": "What type of memory stores general facts and concepts rather than personal experiences?",
-        "a": "Semantic memory",
-        "difficulty": "medium",
-        "notes": "Knowing that Paris is France's capital is an example."
-      },
-      {
-        "q": "What type of memory records personally experienced events tied to a time and place?",
-        "a": "Episodic memory",
-        "difficulty": "medium",
-        "notes": "It is often described as autobiographical event memory."
-      },
-      {
-        "q": "What 1982 Patrice Rushen hit, later sampled in Will Smith's 'Men in Black,' has a title naming small reminders?",
-        "a": "Forget Me Nots",
-        "difficulty": "medium",
-        "notes": "The song appeared on Rushen's album Straight from the Heart."
-      },
-      {
-        "q": "Which psychologist pioneered research on the misinformation effect and eyewitness memory?",
-        "a": "Elizabeth Loftus",
-        "difficulty": "medium",
-        "notes": "Her work showed that later wording can alter recollection."
-      },
-      {
-        "q": "What is the familiar feeling that a known word or name is temporarily just out of reach?",
-        "a": "Tip-of-the-tongue phenomenon",
-        "difficulty": "easy-medium",
-        "notes": "Partial information about the word is often still accessible."
-      },
-      {
-        "q": "What term describes adults' inability to recall events from the first few years of life?",
-        "a": "Infantile amnesia (childhood amnesia)",
-        "difficulty": "medium",
-        "notes": "Most adults retain few autobiographical memories from before age three."
-      },
-      {
-        "q": "What temporary syndrome causes sudden inability to form new memories, usually resolving within 24 hours?",
-        "a": "Transient global amnesia",
+        "q": "Which country is crossed by both the Equator and the Tropic of Capricorn?",
+        "a": "Brazil",
         "difficulty": "medium-hard",
-        "notes": "Identity and basic skills are usually preserved."
+        "notes": "The Equator crosses northern Brazil, while the Tropic of Capricorn crosses the country's south."
       },
       {
-        "q": "Patient H.M., central to memory research, was publicly identified after death by what name?",
-        "a": "Henry Molaison",
+        "q": "Which three writing systems appear on the Rosetta Stone?",
+        "a": "Egyptian hieroglyphs, Demotic script, and Ancient Greek",
         "difficulty": "medium-hard",
-        "notes": "A 1953 operation removed much of both medial temporal lobes."
+        "notes": "The same 196 BCE decree appears in all three, helping scholars decipher hieroglyphs."
       },
       {
-        "q": "Which British musician developed profound amnesia after herpes encephalitis in 1985?",
-        "a": "Clive Wearing",
-        "difficulty": "medium-hard",
-        "notes": "His case illustrates severe damage to episodic memory."
-      },
-      {
-        "q": "What forgetful blue tang is voiced by Ellen DeGeneres in Finding Nemo?",
-        "a": "Dory",
-        "difficulty": "easy-medium",
-        "notes": "Dory describes herself as having short-term memory loss."
-      },
-      {
-        "q": "What Christopher Nolan film tells Leonard Shelby's investigation in a reverse-ordered narrative?",
-        "a": "Memento",
-        "difficulty": "easy-medium",
-        "notes": "Leonard cannot form new long-term memories."
-      },
-      {
-        "q": "What 2004 film has a couple use a procedure to erase memories of their relationship?",
-        "a": "Eternal Sunshine of the Spotless Mind",
-        "difficulty": "easy-medium",
-        "notes": "Jim Carrey and Kate Winslet star."
-      },
-      {
-        "q": "What 2004 romantic comedy stars Drew Barrymore as a woman who forgets each day's events?",
-        "a": "50 First Dates",
-        "difficulty": "easy-medium",
-        "notes": "Adam Sandler plays a man who courts her anew."
-      },
-      {
-        "q": "Simple Minds recorded what parenthetical 1985 hit for The Breakfast Club?",
-        "a": "Don't You (Forget About Me)",
-        "difficulty": "easy-medium",
-        "notes": "It plays over the film's final scene."
-      },
-      {
-        "q": "What 2010 CeeLo Green single has a radio-safe title replacing a stronger expletive?",
-        "a": "Forget You",
-        "difficulty": "easy-medium",
-        "notes": "The original version has a different two-word title."
-      },
-      {
-        "q": "What spell modifies or erases memory in the Harry Potter series?",
-        "a": "Obliviate (the Memory Charm)",
-        "difficulty": "easy-medium",
-        "notes": "Gilderoy Lockhart famously attempts it in Chamber of Secrets."
-      },
-      {
-        "q": "In Greek mythology, drinking from what Underworld river caused forgetfulness?",
-        "a": "Lethe",
+        "q": "Which English king accepted Magna Carta at Runnymede in 1215?",
+        "a": "King John",
         "difficulty": "medium",
-        "notes": "Lethe personified oblivion as well as naming the river."
+        "notes": "The charter established that the sovereign was subject to the rule of law."
       },
       {
-        "q": "What small blue flower's common name is a plea to be remembered?",
-        "a": "Forget-me-not",
-        "difficulty": "easy-medium",
-        "notes": "It commonly belongs to the genus Myosotis."
+        "q": "What 1868 political transformation restored imperial rule and ended Japan's Tokugawa shogunate?",
+        "a": "The Meiji Restoration",
+        "difficulty": "medium",
+        "notes": "The restoration began a period of rapid political, military and economic modernization."
       },
       {
-        "q": "What 1945 Alfred Hitchcock thriller stars Ingrid Bergman as a psychoanalyst treating an amnesiac man?",
-        "a": "Spellbound",
+        "q": "Which Baltic port city was the leading center of the medieval Hanseatic League?",
+        "a": "Lübeck",
         "difficulty": "medium-hard",
-        "notes": "Gregory Peck plays the man accused of murder."
+        "notes": "Lübeck's central position helped it lead the trading network of northern European towns."
+      },
+      {
+        "q": "What battle is depicted in the nearly 230-foot-long Bayeux Tapestry?",
+        "a": "The Battle of Hastings",
+        "difficulty": "medium",
+        "notes": "The 11th-century work is technically wool embroidery on linen and portrays events surrounding the 1066 Norman Conquest."
+      },
+      {
+        "q": "Who wrote the novel The Master and Margarita?",
+        "a": "Mikhail Bulgakov",
+        "difficulty": "medium-hard",
+        "notes": "Written mainly from 1928 to 1940, the novel was first published in censored form in the Soviet Union in 1966–67."
+      },
+      {
+        "q": "Which composer wrote the ballet The Rite of Spring?",
+        "a": "Igor Stravinsky",
+        "difficulty": "medium",
+        "notes": "Its famously turbulent premiere took place in Paris in 1913."
+      },
+      {
+        "q": "Which artist painted the melting clocks in The Persistence of Memory?",
+        "a": "Salvador Dalí",
+        "difficulty": "easy-medium",
+        "notes": "Dalí completed the small Surrealist oil painting in 1931."
+      },
+      {
+        "q": "Who painted Girl with a Pearl Earring?",
+        "a": "Johannes Vermeer",
+        "difficulty": "easy-medium",
+        "notes": "Painted around 1665, the work is a tronie rather than a commissioned portrait."
+      },
+      {
+        "q": "What is Oscar Wilde's only published novel?",
+        "a": "The Picture of Dorian Gray",
+        "difficulty": "medium",
+        "notes": "It first appeared in magazine form in 1890 and was expanded for book publication in 1891."
+      },
+      {
+        "q": "Which city hosted the first modern Olympic Games in 1896?",
+        "a": "Athens",
+        "difficulty": "easy-medium",
+        "notes": "The inaugural modern Games featured 241 male athletes from 14 nations."
+      },
+      {
+        "q": "Which Grand Slam tennis tournament is played on grass courts?",
+        "a": "Wimbledon",
+        "difficulty": "easy-medium",
+        "notes": "Wimbledon is the only one of tennis's four Grand Slam tournaments still played on grass."
+      },
+      {
+        "q": "The Stanley Cup is named for Lord Stanley of Preston who held what Canadian office?",
+        "a": "Governor General of Canada",
+        "difficulty": "medium-hard",
+        "notes": "Lord Stanley donated the original silver bowl in 1892 as a hockey challenge trophy."
+      },
+      {
+        "q": "What color jersey identifies the leader of the Tour de France's general classification?",
+        "a": "Yellow",
+        "difficulty": "easy-medium",
+        "notes": "The maillot jaune is worn by the rider with the lowest cumulative time."
+      },
+      {
+        "q": "What type of container served as the original goals in James Naismith's first basketball game?",
+        "a": "Peach baskets",
+        "difficulty": "medium",
+        "notes": "Naismith devised basketball in 1891 at a YMCA training school in Springfield, Massachusetts."
+      },
+      {
+        "q": "In what Mexican city was Caesar salad created in the 1920s?",
+        "a": "Tijuana",
+        "difficulty": "medium",
+        "notes": "Restaurateur Caesar Cardini is traditionally credited with creating it there in 1924."
+      },
+      {
+        "q": "The dessert pavlova is named after a famous performer in what art form?",
+        "a": "Ballet",
+        "difficulty": "medium",
+        "notes": "It honors Russian ballerina Anna Pavlova; Australia and New Zealand both claim the dessert's origin."
+      },
+      {
+        "q": "What citrus fruit provides Earl Grey tea's characteristic flavor?",
+        "a": "Bergamot orange",
+        "difficulty": "medium",
+        "notes": "The tea is flavored with fragrant oil from the bergamot peel."
+      },
+      {
+        "q": "The word ampersand evolved from what phrase used when reciting the & symbol?",
+        "a": "And per se and",
+        "difficulty": "medium-hard",
+        "notes": "The symbol itself began as a ligature of the Latin letters e and t, spelling et (and)."
+      },
+      {
+        "q": "What product did Nintendo originally manufacture when its founder began business in Kyoto in 1889?",
+        "a": "Hanafuda playing cards",
+        "difficulty": "medium",
+        "notes": "Nintendo's official history says Fusajiro Yamauchi began making and selling the Japanese cards in 1889."
       }
     ]
   },
@@ -863,12 +861,13 @@ const CATEGORIES = [
     "id": "bonus",
     "name": "Bonus Question",
     "shortName": "Bonus",
-    "blurb": "The named bonus question for this week.",
+    "blurb": "The published three-point bonus question for October 6.",
+    "infoBox": "<strong>Bonus:</strong> learn the answer, then review the ranking around it so differently worded versions do not trip you up.",
     "type": "quiz",
     "items": [
       {
-        "q": "A “prickle” is a group of what animals?",
-        "a": "Porcupines"
+        "q": "What is the 3rd largest island (by area) in the world?",
+        "a": "Borneo"
       }
     ]
   }
