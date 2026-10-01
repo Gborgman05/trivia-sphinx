@@ -105,4 +105,10 @@ Once the CSV is finalized:
    - Keep (or replace) the `bonus` category with the week's actual bonus question from Step 1. The bonus
      does not come from the CSV and should not have a `difficulty` field or badge.
 2. Update `README.md`'s first line to name the new date/categories, and mention the CSV filename.
-3. Leave `app.js` / `styles.css` alone unless the CSV introduces a new field they don't already render.
+3. Create or refresh the week's private Spotify playlist:
+   ```
+   python3 scripts/spotify_playlist.py trivia-YYYY-MM-DD-juanita-cantina.csv
+   ```
+   The first run requires `SPOTIFY_CLIENT_ID` and browser authorization; later runs reuse the gitignored
+   refresh token. Report the resulting playlist URL.
+4. Leave `app.js` / `styles.css` alone unless the CSV introduces a new field they don't already render.

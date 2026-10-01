@@ -1,0 +1,14 @@
+# Secrets / local credentials
+.env
+.spotify-token.json
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Local tooling state
+.claude/settings.local.json
+.superpowers/
+
+# macOS
+.DS_Store
