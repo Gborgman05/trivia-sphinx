@@ -1,859 +1,800 @@
 // Study content for "Beat the Geek" trivia night.
-// Categories confirmed from the Oct. 6, 2026 event listing at Juanita Cantina (Ben, 7:30pm):
-// TV Character Catchphrases, Ancient Rome, Rebuses, Disney Covers, and Potpourri.
-// Bonus: What is the 3rd largest island (by area) in the world?
-// The visual Rebuses round (round 3) is intentionally omitted. This is the curated
-// 120-question set from trivia-2026-10-06-juanita-cantina.csv.
+// Categories confirmed from the Oct. 13, 2026 event listing at Juanita Cantina (Ben, 7:30pm):
+// Current Events, Board Games, Pictures – Squares, Music – Songs with Repeating Titles, and Before and After.
+// Bonus: Where did Ben Affleck attend college? – 3 pts.
+// The visual Pictures – Squares round (round 3) is intentionally omitted. This is the curated
+// 120-question set from trivia-2026-10-13-juanita-cantina.csv.
+// Music links are Spotify-only this week (YouTube could not be vetted); no youtubeId/startSeconds.
 // difficulty preserves the CSV tiers: "easy-medium" | "medium" | "medium-hard".
 
 const CATEGORIES = [
   {
-    "id": "tv-character-catchphrases",
-    "name": "TV Character Catchphrases",
-    "shortName": "TV Catchphrases",
-    "blurb": "Match signature lines to the television characters and series that made them famous, from classic sitcoms to modern animation.",
-    "infoBox": "<strong>Study tip:</strong> connect each quotation to both the speaker and the show; either may be the missing part of a clue.",
+    "id": "current-events",
+    "name": "Current Events",
+    "shortName": "Current Events",
+    "blurb": "Headlines, sports results, awards, and milestones from roughly the past year.",
+    "infoBox": "<strong>Study tip:</strong> pair each event with its date, winner, and runner-up; questions may ask for either side.",
     "type": "quiz",
     "items": [
       {
-        "q": "Which animated TV dad is famous for exclaiming \"D'oh!\"?",
-        "a": "Homer Simpson",
+        "q": "Which team won Super Bowl LX in February 2026, and who did they beat?",
+        "a": "Seattle Seahawks (29-13 over the New England Patriots)",
         "difficulty": "easy-medium",
-        "notes": "The character is voiced by Dan Castellaneta on The Simpsons."
+        "notes": "Played Feb 8, 2026 at Levi's Stadium; the Seahawks' second title."
       },
       {
-        "q": "\"How you doin'?\" is the signature pickup line of which Friends character?",
-        "a": "Joey Tribbiani",
+        "q": "Who was named MVP of Super Bowl LX?",
+        "a": "Kenneth Walker III",
+        "difficulty": "medium-hard",
+        "notes": "First running back to win Super Bowl MVP since Terrell Davis (Super Bowl XXXII)."
+      },
+      {
+        "q": "Which country won the 2026 FIFA World Cup?",
+        "a": "Spain",
         "difficulty": "easy-medium",
-        "notes": "Matt LeBlanc played Joey throughout the sitcom's original run."
+        "notes": "Beat Argentina 1-0 after extra time in the July 19, 2026 final at MetLife Stadium; Spain's second title after 2010."
       },
       {
-        "q": "Which Diff'rent Strokes character made \"What'choo talkin' 'bout, Willis?\" his trademark response?",
-        "a": "Arnold Jackson",
+        "q": "Which Dodgers pitcher was named 2025 World Series MVP?",
+        "a": "Yoshinobu Yamamoto",
+        "difficulty": "medium",
+        "notes": "Dodgers beat the Blue Jays in 7 games; Game 7 went 11 innings, 5-4."
+      },
+      {
+        "q": "The New York Knicks won the 2026 NBA title, their first since 1973, by beating which team?",
+        "a": "San Antonio Spurs",
+        "difficulty": "medium",
+        "notes": "Knicks closed out the Finals in five games."
+      },
+      {
+        "q": "Which Knicks guard was named 2026 NBA Finals MVP?",
+        "a": "Jalen Brunson",
+        "difficulty": "medium",
+        "notes": "Scored 45 points in the clinching Game 5."
+      },
+      {
+        "q": "Which team beat the Vegas Golden Knights to win the 2026 Stanley Cup?",
+        "a": "Carolina Hurricanes",
+        "difficulty": "medium",
+        "notes": "Won the Final 4-2 in June 2026; their first Cup since 2006."
+      },
+      {
+        "q": "Which Hurricanes forward won the 2026 Conn Smythe Trophy as playoff MVP?",
+        "a": "Jordan Staal",
+        "difficulty": "medium-hard",
+        "notes": ""
+      },
+      {
+        "q": "Which film won Best Picture at the 2026 Academy Awards (98th Oscars)?",
+        "a": "One Battle After Another",
         "difficulty": "easy-medium",
-        "notes": "Gary Coleman played Arnold; published versions vary slightly in spelling but preserve this wording."
+        "notes": "Directed by Paul Thomas Anderson, who also won Best Director."
       },
       {
-        "q": "\"Did I do that?\" was the catchphrase of which accident-prone Family Matters character?",
-        "a": "Steve Urkel",
+        "q": "Which actor won Best Actor at the 2026 Oscars for his role in Sinners?",
+        "a": "Michael B. Jordan",
         "difficulty": "easy-medium",
-        "notes": "Jaleel White played the Winslows' nerdy neighbor Steve Urkel."
+        "notes": ""
       },
       {
-        "q": "Which physicist on The Big Bang Theory punctuated his pranks with \"Bazinga!\"?",
-        "a": "Sheldon Cooper",
+        "q": "Jessie Buckley won her first Oscar, Best Actress, for which 2025 film?",
+        "a": "Hamnet",
+        "difficulty": "medium",
+        "notes": ""
+      },
+      {
+        "q": "Whose album Debí Tirar Más Fotos won Album of the Year at the 2026 Grammys, the first fully Spanish-language winner of the award?",
+        "a": "Bad Bunny",
         "difficulty": "easy-medium",
-        "notes": "Jim Parsons played Sheldon Cooper."
+        "notes": "Grammys held Feb 1, 2026."
       },
       {
-        "q": "Which How I Met Your Mother character repeatedly urged his friends to \"Suit up!\"?",
-        "a": "Barney Stinson",
+        "q": "Who won the 2025 Nobel Peace Prize?",
+        "a": "María Corina Machado",
         "difficulty": "easy-medium",
-        "notes": "Neil Patrick Harris played the suit-obsessed Barney."
+        "notes": "Venezuelan opposition leader."
       },
       {
-        "q": "On Seinfeld, which minor character barks \"No soup for you!\" at customers who break his rules?",
-        "a": "The Soup Nazi",
+        "q": "Which Hungarian author won the 2025 Nobel Prize in Literature?",
+        "a": "László Krasznahorkai",
+        "difficulty": "medium-hard",
+        "notes": "The second Hungarian laureate in Literature after Imre Kertész (2002)."
+      },
+      {
+        "q": "Which Canadian Space Agency astronaut flew on Artemis II, the crewed lunar flyby that launched April 1, 2026?",
+        "a": "Jeremy Hansen",
+        "difficulty": "medium",
+        "notes": "Crew: Reid Wiseman, Victor Glover, Christina Koch, Jeremy Hansen; splashed down off San Diego April 10, 2026."
+      },
+      {
+        "q": "Which country won the 2026 Eurovision Song Contest in Vienna with the song \"Bangaranga\"?",
+        "a": "Bulgaria",
+        "difficulty": "medium",
+        "notes": "Performed by DARA; Bulgaria's first Eurovision win."
+      },
+      {
+        "q": "Which country finished first in the gold medal count at the 2026 Milan Cortina Winter Olympics?",
+        "a": "Norway",
+        "difficulty": "medium",
+        "notes": "Norway won 18 golds; the US won a record 12 golds, finishing second."
+      },
+      {
+        "q": "Who won the men's singles title at Wimbledon 2026?",
+        "a": "Jannik Sinner",
         "difficulty": "easy-medium",
-        "notes": "Larry Thomas played the character Yev Kassem in the episode The Soup Nazi."
+        "notes": "Beat Alexander Zverev in four sets in the final."
       },
       {
-        "q": "\"That's what she said\" became a reflexive punch line for which boss on the U.S. version of The Office?",
-        "a": "Michael Scott",
+        "q": "Which German player won his first Grand Slam singles title at the 2026 French Open?",
+        "a": "Alexander Zverev",
+        "difficulty": "medium",
+        "notes": "Beat Flavio Cobolli in five sets in the final."
+      },
+      {
+        "q": "Who won the 2026 Masters, becoming only the fourth player to win back-to-back?",
+        "a": "Rory McIlroy",
         "difficulty": "easy-medium",
-        "notes": "Steve Carell played Dunder Mifflin manager Michael Scott."
+        "notes": "Finished one stroke ahead of Scottie Scheffler; the others to go back-to-back were Nicklaus, Faldo and Woods."
       },
       {
-        "q": "Which Stone Age cartoon father shouts \"Yabba dabba doo!\"?",
-        "a": "Fred Flintstone",
+        "q": "Who won the 2026 Tour de France, his fifth title?",
+        "a": "Tadej Pogačar",
+        "difficulty": "medium",
+        "notes": "Equalled Anquetil, Merckx, Hinault and Indurain at five."
+      },
+      {
+        "q": "Which team won the 2026 College Football Playoff national championship, finishing a 16-0 season?",
+        "a": "Indiana Hoosiers",
         "difficulty": "easy-medium",
-        "notes": "Fred is the central character of The Flintstones."
+        "notes": "Beat Miami 27-21 on Jan 19, 2026; QB Fernando Mendoza won the Heisman Trophy."
       },
       {
-        "q": "Which Star Trek character is most associated with the Vulcan farewell \"Live long and prosper\"?",
-        "a": "Spock",
+        "q": "In the October 2025 Louvre jewel heist, thieves took roughly how many minutes to steal crown jewels worth about €88 million?",
+        "a": "About seven minutes",
+        "difficulty": "medium",
+        "notes": "Thieves used a basket lift to reach the Galerie d'Apollon on Oct 19, 2025."
+      },
+      {
+        "q": "How many days did the record-setting US government shutdown that ended in November 2025 last?",
+        "a": "43 days",
+        "difficulty": "medium",
+        "notes": "Ended Nov 12, 2025; the previous record was 34 days in 2018-19."
+      },
+      {
+        "q": "Who was elected mayor of New York City in November 2025, defeating Andrew Cuomo and Curtis Sliwa?",
+        "a": "Zohran Mamdani",
         "difficulty": "easy-medium",
-        "notes": "Spock accompanies the phrase with the Vulcan salute."
+        "notes": "Became the city's first Muslim mayor."
       },
       {
-        "q": "Captain Jean-Luc Picard's command \"Make it so\" comes from which Star Trek series?",
-        "a": "Star Trek: The Next Generation",
+        "q": "TIME's 2025 Person of the Year was not an individual but which group?",
+        "a": "The Architects of AI",
         "difficulty": "medium",
-        "notes": "Patrick Stewart played Captain Picard on the series."
+        "notes": "Included figures such as Sam Altman, Jensen Huang and Lisa Su."
       },
       {
-        "q": "Which Hawaii Five-O detective captain regularly ordered \"Book 'em, Danno!\"?",
-        "a": "Steve McGarrett",
+        "q": "What was Merriam-Webster's 2025 Word of the Year, referring to low-quality AI-generated content?",
+        "a": "Slop",
         "difficulty": "medium",
-        "notes": "Jack Lord played McGarrett in the original 1968 series."
+        "notes": "Oxford's 2025 Word of the Year was \"rage bait.\""
       },
       {
-        "q": "\"Just one more thing...\" is the deceptively casual refrain of which rumpled TV detective?",
-        "a": "Columbo",
+        "q": "Who became Japan's first female prime minister in October 2025?",
+        "a": "Sanae Takaichi",
         "difficulty": "medium",
-        "notes": "Peter Falk's Lieutenant Columbo often used the line as he turned back to a suspect."
+        "notes": "Elected by the Diet on Oct 21, 2025, succeeding Shigeru Ishiba."
       },
       {
-        "q": "Which lollipop-loving TV detective asked \"Who loves ya, baby?\"?",
-        "a": "Theo Kojak",
-        "difficulty": "medium",
-        "notes": "Telly Savalas played Lieutenant Theo Kojak on Kojak."
-      },
-      {
-        "q": "\"I love it when a plan comes together\" belongs to which leader of The A-Team?",
-        "a": "John \"Hannibal\" Smith",
-        "difficulty": "medium",
-        "notes": "George Peppard played Colonel John Hannibal Smith."
-      },
-      {
-        "q": "On Lost in Space, which nonhuman character warned \"Danger, Will Robinson!\"?",
-        "a": "The Robot",
-        "difficulty": "medium",
-        "notes": "The Robot served as a protector and companion to young Will Robinson."
-      },
-      {
-        "q": "\"Exterminate!\" is the battle cry of what recurring Doctor Who villains?",
-        "a": "The Daleks",
-        "difficulty": "medium",
-        "notes": "The Daleks debuted in Doctor Who in 1963."
-      },
-      {
-        "q": "Which Friday Night Lights coach leads the chant \"Clear eyes, full hearts, can't lose\"?",
-        "a": "Eric Taylor",
-        "difficulty": "medium",
-        "notes": "Kyle Chandler played Dillon Panthers coach Eric Taylor."
-      },
-      {
-        "q": "\"Everybody lies\" is the diagnostic credo of which title character on House?",
-        "a": "Dr. Gregory House",
-        "difficulty": "medium",
-        "notes": "Hugh Laurie played the brilliant and abrasive diagnostician."
-      },
-      {
-        "q": "\"The truth is out there\" is most closely associated with which believer on The X-Files?",
-        "a": "Fox Mulder",
-        "difficulty": "medium",
-        "notes": "David Duchovny played FBI agent Fox Mulder."
-      },
-      {
-        "q": "Sgt. Phil Esterhaus ended roll call with \"Let's be careful out there\" on what police drama?",
-        "a": "Hill Street Blues",
+        "q": "Which series won Outstanding Comedy Series at the 2026 Emmys, setting a record with 14 wins for a comedy?",
+        "a": "Widow's Bay",
         "difficulty": "medium-hard",
-        "notes": "Michael Conrad played Esterhaus during the show's early seasons."
+        "notes": "The Pitt won Outstanding Drama Series."
       },
       {
-        "q": "\"Would you believe...?\" introduced increasingly desperate bluffs by which bumbling secret agent?",
-        "a": "Maxwell Smart",
-        "difficulty": "medium-hard",
-        "notes": "Don Adams played Agent 86 on Get Smart."
-      },
-      {
-        "q": "Which Fantasy Island character announced arriving guests by shouting \"De plane! De plane!\"?",
-        "a": "Tattoo",
-        "difficulty": "medium-hard",
-        "notes": "Hervé Villechaize played Tattoo on the original series."
-      },
-      {
-        "q": "\"Kiss my grits!\" was the trademark put-down of which waitress on Alice?",
-        "a": "Florence \"Flo\" Castleberry",
-        "difficulty": "medium-hard",
-        "notes": "Polly Holliday played Flo and later carried the character into a spin-off."
-      },
-      {
-        "q": "Which Good Times character made \"Dy-no-mite!\" a 1970s television catchphrase?",
-        "a": "J.J. Evans",
-        "difficulty": "medium-hard",
-        "notes": "Jimmie Walker played James J.J. Evans Jr."
-      },
-      {
-        "q": "\"Marcia, Marcia, Marcia!\" is the frustrated cry of which Brady Bunch sister?",
-        "a": "Jan Brady",
-        "difficulty": "medium-hard",
-        "notes": "Eve Plumb played middle sister Jan Brady."
-      },
-      {
-        "q": "Which alien title character on Mork & Mindy used the Orkan greeting \"Na-Nu, Na-Nu\"?",
-        "a": "Mork",
-        "difficulty": "medium-hard",
-        "notes": "Robin Williams played Mork from the planet Ork."
-      },
-      {
-        "q": "\"You rang?\" was the deadpan response of which towering Addams Family servant?",
-        "a": "Lurch",
-        "difficulty": "medium-hard",
-        "notes": "Ted Cassidy played Lurch in the 1960s television series."
-      },
-      {
-        "q": "\"Nip it in the bud!\" was the emphatic advice of which deputy on The Andy Griffith Show?",
-        "a": "Barney Fife",
-        "difficulty": "medium-hard",
-        "notes": "Don Knotts played Mayberry deputy Barney Fife."
-      },
-      {
-        "q": "Which animated sci-fi character cries \"Wubba Lubba Dub-Dub\"?",
-        "a": "Rick Sanchez",
-        "difficulty": "medium-hard",
-        "notes": "Rick uses the phrase on Rick and Morty."
+        "q": "In October 2025, which company became the first to reach a $5 trillion market capitalization?",
+        "a": "Nvidia",
+        "difficulty": "easy-medium",
+        "notes": "Reached the mark on Oct 29, 2025."
       }
     ]
   },
   {
-    "id": "ancient-rome",
-    "name": "Ancient Rome",
-    "shortName": "Ancient Rome",
-    "blurb": "The Roman Republic and Empire: rulers, wars, engineering, religion, daily life, geography, and enduring Latin terms.",
-    "infoBox": "<strong>Study tip:</strong> distinguish the Republic from the Empire and pair major people with their offices, wars, and monuments.",
+    "id": "board-games",
+    "name": "Board Games",
+    "shortName": "Board Games",
+    "blurb": "Classic and modern tabletop games: designers, publishers, rules, award winners, and origin stories.",
+    "infoBox": "<strong>Study tip:</strong> link each game to its designer, year, and signature rule or component.",
     "type": "quiz",
     "items": [
       {
-        "q": "What two annually elected officials were the highest ordinary magistrates of the Roman Republic?",
-        "a": "Consuls",
-        "difficulty": "easy-medium",
-        "notes": "Each consul could veto the other; their one-year terms limited individual power."
-      },
-      {
-        "q": "Which Roman officials could use a veto to protect plebeians from actions by magistrates?",
-        "a": "Tribunes of the plebs",
+        "q": "Which German designer created The Settlers of Catan, first published in 1995?",
+        "a": "Klaus Teuber",
         "difficulty": "medium",
-        "notes": "The Latin word veto means \"I forbid.\""
+        "notes": ""
       },
       {
-        "q": "What was the name of Rome's earliest written law code, traditionally dated to 451-450 BCE?",
-        "a": "The Twelve Tables",
+        "q": "In Catan, what number rolled on the two dice activates the robber instead of producing resources?",
+        "a": "7",
         "difficulty": "easy-medium",
-        "notes": "The code was produced amid conflict between patricians and plebeians."
+        "notes": ""
       },
       {
-        "q": "During the Republic, what elite body advised magistrates and became highly influential in finance and foreign policy?",
-        "a": "The Senate",
-        "difficulty": "easy-medium",
-        "notes": "Its decrees carried great weight even though it was formally advisory."
-      },
-      {
-        "q": "In a Republican emergency, what temporary office could be appointed with extraordinary authority?",
-        "a": "Dictator",
+        "q": "Ticket to Ride, which won the 2004 Spiel des Jahres, was designed by which American designer?",
+        "a": "Alan R. Moon",
         "difficulty": "medium",
-        "notes": "Unlike the modern meaning, this was a recognized Roman magistracy appointed for a limited emergency."
+        "notes": "The original game's map is of North America."
       },
       {
-        "q": "Who became Rome's first emperor in 27 BCE?",
-        "a": "Augustus",
-        "difficulty": "easy-medium",
-        "notes": "Also known as Octavian, he ruled as princeps or \"first citizen.\""
-      },
-      {
-        "q": "Under which emperor did the Roman Empire reach its greatest territorial extent in 117 CE?",
-        "a": "Trajan",
+        "q": "Which designer created the cooperative game Pandemic, released in 2008?",
+        "a": "Matt Leacock",
         "difficulty": "medium",
-        "notes": "Trajan ruled from 98 to 117 CE and was one of the Five Good Emperors."
+        "notes": ""
       },
       {
-        "q": "What four-ruler system of power sharing was introduced by Emperor Diocletian?",
-        "a": "The Tetrarchy",
+        "q": "Wingspan, the 2019 bird-collecting engine builder from Stonemaier Games, was designed by whom?",
+        "a": "Elizabeth Hargrave",
+        "difficulty": "medium",
+        "notes": ""
+      },
+      {
+        "q": "Which Czech designer created the word-association game Codenames, published in 2015?",
+        "a": "Vlaada Chvátil",
         "difficulty": "medium-hard",
-        "notes": "It comprised two senior augusti and two junior caesars."
+        "notes": ""
       },
       {
-        "q": "Which emperor refounded Byzantium as Constantinople and made it an imperial capital?",
-        "a": "Constantine I",
+        "q": "In Codenames, how many 'assassin' cards are in each game, ending the game instantly for whichever team's operatives pick it?",
+        "a": "One",
         "difficulty": "medium",
-        "notes": "Constantine dedicated Constantinople in 330 CE."
+        "notes": "The 5x5 grid has 25 words: 9 and 8 team agents, 7 bystanders, 1 assassin."
       },
       {
-        "q": "The death of which emperor in 68 CE ended the Julio-Claudian dynasty?",
-        "a": "Nero",
+        "q": "Which woman patented The Landlord's Game in 1904, the forerunner of Monopoly?",
+        "a": "Elizabeth (Lizzie) Magie",
         "difficulty": "medium",
-        "notes": "Nero was the fifth Roman emperor and ruled from 54 to 68 CE."
+        "notes": "Parker Brothers bought her patent in 1935 for $500."
       },
       {
-        "q": "What was the name of the short sword closely associated with Roman legionaries?",
-        "a": "Gladius",
+        "q": "In 2013, Monopoly fans voted on Facebook to replace which classic token with a cat?",
+        "a": "The iron",
         "difficulty": "easy-medium",
-        "notes": "The classic gladius was a cut-and-thrust weapon roughly two feet long."
+        "notes": ""
       },
       {
-        "q": "What was the pilum carried by Roman legionaries?",
-        "a": "A javelin",
-        "difficulty": "medium",
-        "notes": "Legionaries threw the pilum before closing with the gladius."
-      },
-      {
-        "q": "A standard imperial Roman legion was commonly divided into ten units called what?",
-        "a": "Cohorts",
-        "difficulty": "medium",
-        "notes": "The cohort replaced the smaller maniple as the legion's principal tactical unit."
-      },
-      {
-        "q": "What professional Roman officer commanded a unit called a centuria?",
-        "a": "Centurion",
-        "difficulty": "easy-medium",
-        "notes": "Centurions were the principal professional officers of the Roman army."
-      },
-      {
-        "q": "Rome fought the three Punic Wars against what North African power?",
-        "a": "Carthage",
-        "difficulty": "easy-medium",
-        "notes": "The wars ran from 264 to 146 BCE and ended with Carthage's destruction."
-      },
-      {
-        "q": "On what river was the city of Rome founded?",
-        "a": "The Tiber",
-        "difficulty": "easy-medium",
-        "notes": "Rome lies about 15 miles inland from the Tyrrhenian Sea."
-      },
-      {
-        "q": "Which two major European rivers formed much of Rome's northern frontier?",
-        "a": "The Rhine and the Danube",
-        "difficulty": "medium",
-        "notes": "Roman territory generally extended west of the Rhine and south of the Danube."
-      },
-      {
-        "q": "What term did Romans use for a conquered territorial subdivision governed in Rome's name?",
-        "a": "Province",
-        "difficulty": "easy-medium",
-        "notes": "The Latin provincia originally meant a magistrate's sphere of authority."
-      },
-      {
-        "q": "What famous road begun in 312 BCE linked Rome southward toward Capua and later Brundisium?",
-        "a": "The Appian Way",
-        "difficulty": "medium",
-        "notes": "It was the first great Roman military road and was commissioned by Appius Claudius Caecus."
-      },
-      {
-        "q": "What force moved water through most Roman aqueduct channels?",
-        "a": "Gravity",
-        "difficulty": "easy-medium",
-        "notes": "Engineers maintained a very gradual downward slope across long distances."
-      },
-      {
-        "q": "What volcanic material did Roman builders mix with lime to make durable hydraulic cement?",
-        "a": "Pozzolana",
+        "q": "Which Monopoly property is statistically the most-landed-on square among the colored properties?",
+        "a": "Illinois Avenue",
         "difficulty": "medium-hard",
-        "notes": "The mixture strengthened mortar and concrete and improved water resistance."
+        "notes": "Boosted by Jail/Chance-card traffic; Jail itself is the most visited square overall."
       },
       {
-        "q": "What is the name of the circular opening at the center of the Pantheon's dome?",
-        "a": "The oculus",
+        "q": "Does Mr. Monopoly (Rich Uncle Pennybags) wear a monocle?",
+        "a": "No",
+        "difficulty": "medium",
+        "notes": "A classic Mandela effect: he has a top hat, mustache and bow tie but no monocle."
+      },
+      {
+        "q": "In Clue, what is the name of the murder victim in the original U.S. version (called Dr. Black in the UK Cluedo)?",
+        "a": "Mr. Boddy",
         "difficulty": "easy-medium",
-        "notes": "The open oculus is the rotunda's principal direct source of light."
+        "notes": "The game was devised by English musician Anthony Pratt and published in 1949."
       },
       {
-        "q": "What was the Colosseum called in ancient Rome?",
-        "a": "The Flavian Amphitheater",
+        "q": "Which French filmmaker, who also made the short film The Red Balloon, invented the game that became Risk?",
+        "a": "Albert Lamorisse",
         "difficulty": "medium-hard",
-        "notes": "Construction began under Vespasian, the first Flavian emperor; the name Colosseum arose later."
+        "notes": "The game debuted in France in 1957 as La Conquête du Monde."
       },
       {
-        "q": "The Vestal Virgins tended the sacred fire of which goddess?",
-        "a": "Vesta",
-        "difficulty": "easy-medium",
-        "notes": "Vesta was the Roman goddess of the hearth; her priestesses traditionally served for 30 years."
-      },
-      {
-        "q": "What kind of Roman religious official interpreted omens such as the flight and behavior of birds?",
-        "a": "An augur",
+        "q": "Which American architect invented Scrabble (originally called Criss-Crosswords) in 1938?",
+        "a": "Alfred Mosher Butts",
         "difficulty": "medium",
-        "notes": "Augurs sought signs of divine approval or disapproval before proposed actions."
+        "notes": "James Brunot bought the rights in 1948 and renamed it Scrabble."
       },
       {
-        "q": "Which Roman god was honored by the winter festival Saturnalia?",
-        "a": "Saturn",
+        "q": "In Scrabble, how many points is the letter Q worth?",
+        "a": "10",
         "difficulty": "easy-medium",
-        "notes": "The festival featured suspended business, gift-giving, and temporary social license."
+        "notes": ""
       },
       {
-        "q": "What Latin term named the male legal head of a Roman household?",
-        "a": "Paterfamilias",
+        "q": "In standard Scrabble, how many bonus points do you get for playing all seven tiles from your rack in one turn?",
+        "a": "50",
         "difficulty": "medium",
-        "notes": "He exercised patria potestas over descendants and household property, though that authority changed over time."
+        "notes": ""
       },
       {
-        "q": "What were the multi-story apartment or tenement buildings housing many ordinary Romans called?",
-        "a": "Insulae",
+        "q": "Which game's pie-shaped playing pieces are filled with wedges from six categories, and was created in 1979 by Chris Haney and Scott Abbott in Montreal?",
+        "a": "Trivial Pursuit",
+        "difficulty": "easy-medium",
+        "notes": "It was first sold in Canada in 1981."
+      },
+      {
+        "q": "Pictionary was created by a waiter in which U.S. city?",
+        "a": "Seattle",
         "difficulty": "medium",
-        "notes": "The singular is insula; shops and workshops commonly occupied street level."
+        "notes": "Rob Angel's Angel Games rolled the game out in 1985."
       },
       {
-        "q": "Spanish, French, Italian, Portuguese, and Romanian developed primarily from what language of Rome?",
-        "a": "Latin",
-        "difficulty": "easy-medium",
-        "notes": "These are called Romance languages because they descend from varieties of Latin used across the Roman world."
+        "q": "What 1983 wooden-block stacking game takes its name from the Swahili word for 'to build'?",
+        "a": "Jenga",
+        "difficulty": "medium",
+        "notes": "Created by Leslie Scott, who grew up speaking Swahili."
       },
       {
-        "q": "Which Roman poet wrote the epic Aeneid about the Trojan hero Aeneas?",
-        "a": "Virgil",
+        "q": "Candy Land was invented in 1948 by a retired schoolteacher recovering from which disease?",
+        "a": "Polio",
+        "difficulty": "medium",
+        "notes": "Eleanor Abbott designed it to entertain children in a San Diego hospital."
+      },
+      {
+        "q": "Which two-player guessing game, originally released in Dutch in 1979 as 'Wie is het?', has players flip down faces of characters?",
+        "a": "Guess Who?",
         "difficulty": "easy-medium",
-        "notes": "The 12-book Latin epic links Aeneas with the legendary origins of Roman greatness."
+        "notes": "Designed by Israeli inventors Ora and Theo Coster."
+      },
+      {
+        "q": "Connect Four is played on a grid with how many columns and rows?",
+        "a": "7 columns and 6 rows",
+        "difficulty": "medium",
+        "notes": ""
+      },
+      {
+        "q": "Carcassonne, designed by Klaus-Jürgen Wrede in 2000, has players place what type of pieces on the board to claim features?",
+        "a": "Meeples (followers)",
+        "difficulty": "medium",
+        "notes": "The tile-laying game is named for a fortified city in southern France."
+      },
+      {
+        "q": "Which designer's 2008 game Dominion launched the deck-building genre and won the 2009 Spiel des Jahres?",
+        "a": "Donald X. Vaccarino",
+        "difficulty": "medium-hard",
+        "notes": ""
+      },
+      {
+        "q": "What was the first game to win the Spiel des Jahres, in 1979?",
+        "a": "Hare and Tortoise (Hase und Igel)",
+        "difficulty": "medium-hard",
+        "notes": "Designed by Dave Parlett."
+      },
+      {
+        "q": "Azul, the 2018 Spiel des Jahres winner by Michael Kiesling, has players drafting colorful tiles to decorate the walls of a palace in which country?",
+        "a": "Portugal",
+        "difficulty": "medium",
+        "notes": "The tiles are inspired by Portuguese azulejos."
+      },
+      {
+        "q": "In the 2016 game Terraforming Mars, players take on the role of what, working to raise temperature, oxygen and ocean coverage?",
+        "a": "Corporations",
+        "difficulty": "medium",
+        "notes": "Designed by Jacob Fryxelius and published by FryxGames."
+      },
+      {
+        "q": "Diplomacy, designed by Allan B. Calhamer, has players controlling one of seven Great Powers of Europe starting in which year?",
+        "a": "1901",
+        "difficulty": "medium-hard",
+        "notes": "The game has no dice; movement is resolved by simultaneously written orders."
+      },
+      {
+        "q": "In Catan, which resource is needed along with brick to build a road?",
+        "a": "Lumber (wood)",
+        "difficulty": "easy-medium",
+        "notes": "Roads cost one brick and one lumber."
+      },
+      {
+        "q": "In Pandemic, players race to cure how many different diseases?",
+        "a": "Four",
+        "difficulty": "easy-medium",
+        "notes": "The diseases are blue, yellow, black and red."
       }
     ]
   },
   {
-    "id": "disney-covers",
-    "name": "Disney Covers",
-    "shortName": "Disney Covers",
-    "blurb": "Recognizable Disney songs reinterpreted by pop, rock, country, jazz, and alternative artists.",
+    "id": "songs-with-repeating-titles",
+    "name": "Music – Songs with Repeating Titles",
+    "shortName": "Repeating Titles",
+    "blurb": "Hit songs whose titles repeat a word or phrase, across decades and genres.",
     "infoBox": "<strong>How to practice:</strong> play each track with its title and performer hidden, then identify both before revealing the answer.",
     "type": "music",
     "items": [
       {
-        "title": "A Spoonful of Sugar",
-        "artist": "Kacey Musgraves",
-        "youtubeId": "eWsj9wC9zMU",
-        "spotifyUrl": "https://open.spotify.com/track/5ohYQZfcLlD4Lvf8lt3VCA",
-        "startSeconds": 20,
+        "title": "Bye Bye Bye",
+        "artist": "*NSYNC",
+        "spotifyUrl": "https://open.spotify.com/track/62bOmKYxYg7dhrC6gH9vFn",
         "difficulty": "easy-medium",
-        "notes": "Country-pop cover of the Mary Poppins song, released on We Love Disney (2015)."
+        "notes": "Lead single from No Strings Attached (2000); it became the Deadpool & Wolverine trailer song in 2024."
       },
       {
-        "title": "Part of Your World",
-        "artist": "Jessie J",
-        "youtubeId": "Qd__KQryieg",
-        "spotifyUrl": "https://open.spotify.com/track/4UW8c9JSzoyjErfmmMkInw",
-        "startSeconds": 20,
+        "title": "Ice Ice Baby",
+        "artist": "Vanilla Ice",
+        "spotifyUrl": "https://open.spotify.com/track/3XVozq1aeqsJwpXrEZrDJ9",
         "difficulty": "easy-medium",
-        "notes": "Pop-soul cover of the song from The Little Mermaid, released on We Love Disney (2015)."
+        "notes": "Samples the bassline of Queen and David Bowie's \"Under Pressure\"; first hip-hop single to reach #1 on the Billboard Hot 100."
       },
       {
-        "title": "Colors of the Wind",
-        "artist": "Tori Kelly",
-        "youtubeId": "XpIMGamlvwg",
-        "spotifyUrl": "https://open.spotify.com/track/7qgM0MdETmhd3mORTqvJRm",
-        "startSeconds": 20,
-        "difficulty": "easy-medium",
-        "notes": "R&B-pop cover of the Pocahontas song, released on We Love Disney (2015)."
+        "title": "Girls, Girls, Girls",
+        "artist": "Mötley Crüe",
+        "spotifyUrl": "https://open.spotify.com/track/3439OLNIeD3y68kVuoZUO5",
+        "difficulty": "medium",
+        "notes": "Title track of the band's 1987 album."
       },
       {
-        "title": "Friend Like Me",
-        "artist": "Ne-Yo",
-        "youtubeId": "r21fH-ysABs",
-        "spotifyUrl": "https://open.spotify.com/track/0GzjDErRS86SEetLDn2ZXN",
-        "startSeconds": 20,
-        "difficulty": "easy-medium",
-        "notes": "R&B cover of the Aladdin song, released on We Love Disney (2015)."
+        "title": "Fun, Fun, Fun",
+        "artist": "The Beach Boys",
+        "spotifyUrl": "https://open.spotify.com/track/7fW1OwQPexk5OWCj7CSpqU",
+        "difficulty": "medium",
+        "notes": "1964 hit about a girl who takes her dad's T-Bird; this is the remastered 2001 version from Shut Down Volume 2."
       },
       {
-        "title": "Zero to Hero",
-        "artist": "Ariana Grande",
-        "youtubeId": "4fTLqV17VZo",
-        "spotifyUrl": "https://open.spotify.com/track/21DxcOtDKlVOlmeYed1IG3",
-        "startSeconds": 20,
-        "difficulty": "easy-medium",
-        "notes": "Pop cover of the Hercules song, released on We Love Disney (2015)."
+        "title": "Da Da Da",
+        "artist": "Trio",
+        "spotifyUrl": "https://open.spotify.com/track/6S0O1LpQtGyALQ9TVurDMU",
+        "difficulty": "medium",
+        "notes": "German Neue Deutsche Welle hit (1982) full title \"Da Da Da, I Don't Love You You Don't Love Me, Aha Aha Aha\"; famously used in a Volkswagen Golf ad."
       },
       {
-        "title": "I Wan'na Be Like You",
+        "title": "Dance, Dance",
         "artist": "Fall Out Boy",
-        "youtubeId": "uiI5Xh2520U",
-        "spotifyUrl": "https://open.spotify.com/track/6zMNLIFrUss4qklFUdpzjp",
-        "startSeconds": 20,
+        "spotifyUrl": "https://open.spotify.com/track/0a7BloCiNzLDD9qSQHh5m7",
         "difficulty": "medium",
-        "notes": "Rock cover of the Jungle Book song, released on We Love Disney (2015)."
+        "notes": "From From Under the Cork Tree (2005)."
       },
       {
-        "title": "Rainbow Connection",
-        "artist": "Gwen Stefani",
-        "youtubeId": "538UpUeRmqw",
-        "spotifyUrl": "https://open.spotify.com/track/37guUG3IuyJBo0poxQ54gc",
-        "startSeconds": 20,
-        "difficulty": "medium",
-        "notes": "Pop cover of the Muppet Movie song, released on We Love Disney (2015)."
-      },
-      {
-        "title": "A Dream Is a Wish Your Heart Makes",
-        "artist": "Jessie Ware",
-        "youtubeId": "k2HX9_AB0qg",
-        "spotifyUrl": "https://open.spotify.com/track/4XECYwPN9YaGHTf7X9XJJA",
-        "startSeconds": 20,
-        "difficulty": "medium",
-        "notes": "Pop-soul cover of the Cinderella song, released on We Love Disney (2015)."
-      },
-      {
-        "title": "Under the Sea",
-        "artist": "Raven-Symoné",
-        "youtubeId": "SCysAd3hQos",
-        "spotifyUrl": "https://open.spotify.com/track/4HxukyGNRDjnZm3Q6jUDTT",
-        "startSeconds": 20,
-        "difficulty": "easy-medium",
-        "notes": "Pop cover of the Little Mermaid song, released on Disneymania 3 (2005)."
-      },
-      {
-        "title": "Zip-A-Dee-Doo-Dah",
-        "artist": "Miley Cyrus",
-        "youtubeId": "FPxdLa6ditw",
-        "spotifyUrl": "https://open.spotify.com/track/6MIPvQ8kOzEf8mwrqbgUj2",
-        "startSeconds": 20,
-        "difficulty": "medium",
-        "notes": "Pop-rock cover of the Song of the South standard, released on Disneymania 4 (2006)."
-      },
-      {
-        "title": "Poor Unfortunate Souls",
-        "artist": "Jonas Brothers",
-        "youtubeId": "t4lTWetaftw",
-        "spotifyUrl": "https://open.spotify.com/track/1alCMHZkJxkP18NNzvCLeb",
-        "startSeconds": 20,
-        "difficulty": "easy-medium",
-        "notes": "Pop-rock cover of the Little Mermaid villain song, released in 2006."
-      },
-      {
-        "title": "Kiss the Girl",
-        "artist": "Ashley Tisdale",
-        "youtubeId": "06t0tbr3aH4",
-        "spotifyUrl": "https://open.spotify.com/track/6kkFjjMbO9EL1YxNt8BKm3",
-        "startSeconds": 20,
-        "difficulty": "easy-medium",
-        "notes": "Pop cover of the Little Mermaid song, released in 2006."
-      },
-      {
-        "title": "Cruella De Vil",
-        "artist": "Selena Gomez",
-        "youtubeId": "Je9ZfezquCI",
-        "spotifyUrl": "https://open.spotify.com/track/6NO2DmPusZLT5KTsrfpGLW",
-        "startSeconds": 20,
-        "difficulty": "easy-medium",
-        "notes": "Pop-rock cover of the 101 Dalmatians song, recorded for Disneymania 6."
-      },
-      {
-        "title": "That's How You Know",
-        "artist": "Demi Lovato",
-        "youtubeId": "1KMIUfPQ_5o",
-        "spotifyUrl": "https://open.spotify.com/track/1jdJ8luWSATnyr4MOiIoHO",
-        "startSeconds": 20,
-        "difficulty": "medium",
-        "notes": "Pop cover of Amy Adams's Enchanted number, released on Disneymania 6 (2008)."
-      },
-      {
-        "title": "When You Wish Upon a Star",
-        "artist": "Billy Joel",
-        "youtubeId": "gXjGh-Ql5Po",
-        "spotifyUrl": "https://open.spotify.com/track/2NPFirx1Ig2Uy970OIBQDO",
-        "startSeconds": 20,
-        "difficulty": "easy-medium",
-        "notes": "Pop cover of the Pinocchio standard, released on Simply Mad About the Mouse (1991)."
-      },
-      {
-        "title": "You'll Be in My Heart",
-        "artist": "Usher",
-        "youtubeId": "dl_mFvd28R0",
-        "spotifyUrl": "https://open.spotify.com/track/1nayTAuWAW9qILHyobKlBa",
-        "startSeconds": 20,
-        "difficulty": "easy-medium",
-        "notes": "R&B cover of Phil Collins's Tarzan song, released on Disneymania (2002)."
-      },
-      {
-        "title": "This Is Halloween",
-        "artist": "Marilyn Manson",
-        "youtubeId": "jU6iP0WLsU8",
-        "spotifyUrl": "https://open.spotify.com/track/7aoInyY7amyKi0NFDLFZbP",
-        "startSeconds": 20,
-        "difficulty": "easy-medium",
-        "notes": "Industrial-rock cover from The Nightmare Before Christmas special edition (2006)."
-      },
-      {
-        "title": "Sally's Song",
-        "artist": "Amy Lee",
-        "youtubeId": "RQj2iOEx-V8",
-        "spotifyUrl": "https://open.spotify.com/track/3U0rLVR2IN3kvVQGfvQKEH",
-        "startSeconds": 20,
-        "difficulty": "medium",
-        "notes": "Gothic-rock cover from Nightmare Revisited (2008)."
-      },
-      {
-        "title": "Once Upon a Dream",
-        "artist": "Lana Del Rey",
-        "youtubeId": "8waJ7W3QcJc",
-        "spotifyUrl": "https://open.spotify.com/track/3sXq7EPSrhRY5TO0y6ePUy",
-        "startSeconds": 20,
-        "difficulty": "easy-medium",
-        "notes": "Dark pop cover of the Sleeping Beauty song, recorded for Maleficent (2014)."
-      },
-      {
-        "title": "Baby Mine",
-        "artist": "Arcade Fire",
-        "youtubeId": "qpYOstfcQBs",
-        "spotifyUrl": "https://open.spotify.com/track/2ufkOFn5LKYNoAdss0GUKR",
-        "startSeconds": 20,
-        "difficulty": "medium",
-        "notes": "Indie-rock cover of the Dumbo lullaby, recorded for the 2019 remake."
-      },
-      {
-        "title": "Lost in the Woods",
-        "artist": "Weezer",
-        "youtubeId": "QnEWs8D9zu8",
-        "spotifyUrl": "https://open.spotify.com/track/6bd3X6eXfamHGEHOHe86nn",
-        "startSeconds": 20,
-        "difficulty": "easy-medium",
-        "notes": "Rock cover of Jonathan Groff's Frozen 2 song, released on the 2019 soundtrack."
-      },
-      {
-        "title": "Into the Unknown",
-        "artist": "Panic! At The Disco",
-        "youtubeId": "jp-CVYGEsjg",
-        "spotifyUrl": "https://open.spotify.com/track/0v622a7rlXRYcT6m3xwutU",
-        "startSeconds": 20,
-        "difficulty": "easy-medium",
-        "notes": "Rock cover of Idina Menzel and AURORA's Frozen 2 song, released in 2019."
-      },
-      {
-        "title": "When She Loved Me",
-        "artist": "Bridgit Mendler",
-        "youtubeId": "yivyABmG0s8",
-        "spotifyUrl": "https://open.spotify.com/track/16oPtblayhsbzWxSrlLIN6",
-        "startSeconds": 20,
-        "difficulty": "medium",
-        "notes": "Pop cover of Sarah McLachlan's Toy Story 2 song, released on Disneymania 7 (2010)."
-      },
-      {
-        "title": "You've Got a Friend in Me",
-        "artist": "George Jones & Kathy Mattea",
-        "youtubeId": "j5OD1kVvGyY",
-        "spotifyUrl": "https://open.spotify.com/track/0JSiLxY5SBznAkT4ERoOKV",
-        "startSeconds": 20,
+        "title": "Cherry, Cherry",
+        "artist": "Neil Diamond",
+        "spotifyUrl": "https://open.spotify.com/track/24aHrSsj9oR5MdDBUlXynM",
         "difficulty": "medium-hard",
-        "notes": "Country duet cover of the Toy Story song, released in 1996."
+        "notes": "Neil Diamond's first Top 10 hit as a performer (1966)."
       },
       {
-        "title": "Let It Go",
-        "artist": "Rascal Flatts & Lucy Hale",
-        "youtubeId": "OrWddfkIhpc",
-        "spotifyUrl": "https://open.spotify.com/track/1clvTB87GDFoeImLrE0HuH",
-        "startSeconds": 20,
+        "title": "Money, Money, Money",
+        "artist": "ABBA",
+        "spotifyUrl": "https://open.spotify.com/track/3lKN03PDeBnXZS7sDukRBt",
         "difficulty": "medium",
-        "notes": "Country-pop duet cover of the Frozen anthem, released on We Love Disney (2015)."
+        "notes": "From the album Arrival (1976)."
       },
       {
-        "title": "Circle of Life",
-        "artist": "Disney Channel Circle of Stars",
-        "youtubeId": "oZeVPywKNcQ",
-        "spotifyUrl": "https://open.spotify.com/track/70IUh8iL1FyzDdYB6SF84x",
-        "startSeconds": 20,
-        "difficulty": "medium-hard",
-        "notes": "Disney Channel ensemble cover and remix of the Lion King opener, released in 2003."
-      },
-      {
-        "title": "Hakuna Matata",
-        "artist": "Baha Men",
-        "youtubeId": "jzc0W5eKhbU",
-        "spotifyUrl": "https://open.spotify.com/track/1RfK7agnEdpyxUlDKOvqVN",
-        "startSeconds": 20,
+        "title": "Boom, Boom, Boom, Boom!!",
+        "artist": "Vengaboys",
+        "spotifyUrl": "https://open.spotify.com/track/5N6M8yDiMV32T6Rkzh8EbW",
         "difficulty": "medium",
-        "notes": "Caribbean-pop cover of the Lion King song, released on Disneymania (2002)."
+        "notes": "Dutch Eurodance group's 1998 hit."
       },
       {
-        "title": "Can You Feel the Love Tonight / Nants' Ingonyama",
-        "artist": "Jason Derulo",
-        "youtubeId": "MIHyg5VoiCo",
-        "spotifyUrl": "https://open.spotify.com/track/6Z08ekE36sgK3J3jBIi285",
-        "startSeconds": 20,
+        "title": "Mmm Mmm Mmm Mmm",
+        "artist": "Crash Test Dummies",
+        "spotifyUrl": "https://open.spotify.com/track/76nvqWPFucUra1xCkN1tnD",
+        "difficulty": "easy-medium",
+        "notes": "Canadian band's 1993 breakout hit; Brad Roberts sings the deep lead vocal."
+      },
+      {
+        "title": "Everybody Everybody",
+        "artist": "Black Box",
+        "spotifyUrl": "https://open.spotify.com/track/6wBMTv8yTiNh50fqTkT0JC",
+        "difficulty": "medium-hard",
+        "notes": "1990 Italian house hit."
+      },
+      {
+        "title": "Baby, Baby",
+        "artist": "Amy Grant",
+        "spotifyUrl": "https://open.spotify.com/track/3IDsegNBHC4pjGCOMTQYlU",
         "difficulty": "medium",
-        "notes": "Pop and R&B cover of the Lion King songs, released on We Love Disney (2015)."
+        "notes": "Amy Grant's 1991 pop crossover hit from Heart in Motion."
       },
       {
-        "title": "I Just Can't Wait to Be King",
-        "artist": "Aaron Carter",
-        "youtubeId": "LCfEHbedWbk",
-        "spotifyUrl": "https://open.spotify.com/track/21of6iq6Ks76fbG34MJeHO",
-        "startSeconds": 20,
-        "difficulty": "medium-hard",
-        "notes": "Teen-pop cover of the Lion King song, released on Disneymania (2002)."
+        "title": "Bang Bang",
+        "artist": "Jessie J, Ariana Grande & Nicki Minaj",
+        "spotifyUrl": "https://open.spotify.com/track/0puf9yIluy9W0vpMEUoAnN",
+        "difficulty": "easy-medium",
+        "notes": "2014 pop collaboration; not to be confused with Cher's and Nancy Sinatra's \"Bang Bang (My Baby Shot Me Down)\"."
       },
       {
-        "title": "True to Your Heart",
-        "artist": "Keke Palmer",
-        "youtubeId": "9PUcfZCZcVU",
-        "spotifyUrl": "https://open.spotify.com/track/4viVOQNAlEptAKjavq4qq1",
-        "startSeconds": 20,
+        "title": "Down Down",
+        "artist": "Status Quo",
+        "spotifyUrl": "https://open.spotify.com/track/5vVZaiK2mIL9WE1GWikOE6",
         "difficulty": "medium-hard",
-        "notes": "Pop cover of the Mulan end-title song, released in 2008."
+        "notes": "The British rock band's only UK #1 single, from 1975."
+      },
+      {
+        "title": "Mony Mony",
+        "artist": "Billy Idol",
+        "spotifyUrl": "https://open.spotify.com/track/7gIQrP5rRbb0BX8lFEnTwg",
+        "difficulty": "medium",
+        "notes": "Billy Idol's 1987 cover of the Tommy James and the Shondells hit."
+      },
+      {
+        "title": "Na Na Hey Hey (Kiss Him Goodbye)",
+        "artist": "Steam",
+        "spotifyUrl": "https://open.spotify.com/track/2cyb9YEJF9x9p0snXC5PtF",
+        "difficulty": "medium",
+        "notes": "1969 #1 hit by a fictitious studio 'band'; later a sports-arena singalong."
+      },
+      {
+        "title": "Please Please Please",
+        "artist": "Sabrina Carpenter",
+        "spotifyUrl": "https://open.spotify.com/track/3en83k4guqoZjiGikLCXmF",
+        "difficulty": "easy-medium",
+        "notes": "From Short n' Sweet (2024); a remix featuring Dolly Parton is on the deluxe edition."
+      },
+      {
+        "title": "Que Sera, Sera",
+        "artist": "Doris Day",
+        "spotifyUrl": "https://open.spotify.com/track/3RwY5743QUDDkd8KKxJJcN",
+        "difficulty": "medium",
+        "notes": "Won the 1956 Best Original Song Oscar; from The Man Who Knew Too Much. Full title: Que Sera, Sera (Whatever Will Be, Will Be)."
+      },
+      {
+        "title": "Ring Ring",
+        "artist": "ABBA",
+        "spotifyUrl": "https://open.spotify.com/track/4RRbO7irEWPZ80DIHmtia4",
+        "difficulty": "medium",
+        "notes": "Title track of ABBA's 1973 debut album."
+      },
+      {
+        "title": "Round and Round",
+        "artist": "Ratt",
+        "spotifyUrl": "https://open.spotify.com/track/6QKToMy6096oooFMGEXije",
+        "difficulty": "medium",
+        "notes": "From Out of the Cellar (1984); peaked at #12 on the Hot 100."
+      },
+      {
+        "title": "Say Say Say",
+        "artist": "Paul McCartney & Michael Jackson",
+        "spotifyUrl": "https://open.spotify.com/track/5AbrdOBpQBsokNEoHCBdph",
+        "difficulty": "easy-medium",
+        "notes": "From Pipes of Peace (1983). Spotify track is the remastered 2015 version."
+      },
+      {
+        "title": "Sugar, Sugar",
+        "artist": "The Archies",
+        "spotifyUrl": "https://open.spotify.com/track/3iSws76HjaU7k49EqJVTfF",
+        "difficulty": "easy-medium",
+        "notes": "Fictional cartoon band; 1969 #1 hit."
+      },
+      {
+        "title": "Swish Swish",
+        "artist": "Katy Perry ft. Nicki Minaj",
+        "spotifyUrl": "https://open.spotify.com/track/4jgvPFeCE4V2HkYX6luV9B",
+        "difficulty": "easy-medium",
+        "notes": "From Witness (2017)."
+      },
+      {
+        "title": "Shake Shake Shake (Shake Your Booty)",
+        "artist": "KC and the Sunshine Band",
+        "spotifyUrl": "https://open.spotify.com/track/4vrYuVd5Hj7KKKfcSHYe50",
+        "difficulty": "medium",
+        "notes": "Spotify lists it as '(Shake Shake Shake) Shake Your Booty'."
+      },
+      {
+        "title": "Tonight, Tonight",
+        "artist": "The Smashing Pumpkins",
+        "spotifyUrl": "https://open.spotify.com/track/1ulWieXWAXHtK0qtMwN4DG",
+        "difficulty": "medium",
+        "notes": "From Mellon Collie and the Infinite Sadness (1995)."
+      },
+      {
+        "title": "Turn! Turn! Turn! (To Everything There Is a Season)",
+        "artist": "The Byrds",
+        "spotifyUrl": "https://open.spotify.com/track/524FErAnPu3GkH30PMcqRF",
+        "difficulty": "medium-hard",
+        "notes": "Lyrics adapted from Ecclesiastes; Pete Seeger wrote the music. Spotify track is from the 1967 compilation."
+      },
+      {
+        "title": "Wild Wild West",
+        "artist": "Will Smith ft. Dru Hill & Kool Moe Dee",
+        "spotifyUrl": "https://open.spotify.com/track/1gbAcoNHzrR7MmiMXYUIq2",
+        "difficulty": "easy-medium",
+        "notes": "From the 1999 film of the same name; samples Stevie Wonder's 'I Wish'."
+      },
+      {
+        "title": "Yummy Yummy Yummy",
+        "artist": "Ohio Express",
+        "spotifyUrl": "https://open.spotify.com/track/10eXLl6hZ8myKtORUXSYXD",
+        "difficulty": "medium-hard",
+        "notes": "1968 bubblegum hit."
+      },
+      {
+        "title": "Yakety Yak",
+        "artist": "The Coasters",
+        "spotifyUrl": "https://open.spotify.com/track/78KVBUfmHquq4ljOHSmM9F",
+        "difficulty": "medium",
+        "notes": "1958 #1 hit written by Leiber and Stoller."
+      },
+      {
+        "title": "Ob-La-Di, Ob-La-Da",
+        "artist": "The Beatles",
+        "spotifyUrl": "https://open.spotify.com/track/1gFNm7cXfG1vSMcxPpSxec",
+        "difficulty": "easy-medium",
+        "notes": "From The Beatles (White Album, 1968). Spotify track is the 2009 remaster."
       }
     ]
   },
   {
-    "id": "potpourri",
-    "name": "Potpourri",
-    "shortName": "Potpourri",
-    "blurb": "A mixed general-knowledge round spanning science, history, geography, arts, language, sports, food, and pop culture.",
-    "infoBox": "<strong>Expect variety:</strong> this round rewards broad recall rather than mastery of one theme.",
+    "id": "before-and-after",
+    "name": "Before and After",
+    "shortName": "Before & After",
+    "blurb": "Two titles or names that share an overlapping word and merge into one phrase.",
+    "infoBox": "<strong>Study tip:</strong> identify both halves first, then look for the word they share.",
     "type": "quiz",
     "items": [
       {
-        "q": "Which planet has a day longer than its year, taking about 243 Earth days to rotate but about 225 to orbit the Sun?",
-        "a": "Venus",
+        "q": "Margaret Mitchell's Civil War epic + Kenneth Grahame's tale of Mole, Rat, and Toad",
+        "a": "Gone with the Wind in the Willows",
         "difficulty": "medium",
-        "notes": "NASA lists Venus's rotation period as 243 Earth days and its orbital period as 225."
+        "notes": "(Gone with the Wind + The Wind in the Willows)"
       },
       {
-        "q": "How many hearts does an octopus have?",
-        "a": "Three",
+        "q": "Dinosaur-theme-park blockbuster + famous Manhattan avenue lined with luxury apartments",
+        "a": "Jurassic Park Avenue",
         "difficulty": "easy-medium",
-        "notes": "Two branchial hearts pump blood through the gills, while one systemic heart pumps it through the body."
+        "notes": "(Jurassic Park + Park Avenue)"
       },
       {
-        "q": "What mineral defines 10 on the Mohs scale of hardness?",
-        "a": "Diamond",
+        "q": "Disney's Simba movie + giant ape who climbs the Empire State Building",
+        "a": "The Lion King Kong",
         "difficulty": "easy-medium",
-        "notes": "The Mohs scale ranks ten reference minerals by scratch resistance, from talc at 1 to diamond at 10."
+        "notes": "(The Lion King + King Kong)"
       },
       {
-        "q": "Which chemical element has the symbol W, derived from its alternative name wolfram?",
-        "a": "Tungsten",
-        "difficulty": "medium",
-        "notes": "Tungsten has atomic number 74; W comes from wolfram, reflected in the ore name wolframite."
-      },
-      {
-        "q": "At what temperature do the Celsius and Fahrenheit scales show the same numerical value?",
-        "a": "Minus 40 degrees",
-        "difficulty": "medium",
-        "notes": "The conversion equations meet at −40, so −40 °C equals −40 °F."
-      },
-      {
-        "q": "What is the world's largest inland body of water?",
-        "a": "The Caspian Sea",
+        "q": "1987 Patrick Swayze film with the lift + ABC celebrity ballroom competition",
+        "a": "Dirty Dancing with the Stars",
         "difficulty": "easy-medium",
-        "notes": "The Caspian is also the world's largest salt lake and has no natural outlet."
+        "notes": "(Dirty Dancing + Dancing with the Stars)"
       },
       {
-        "q": "What European river flows through or along the borders of ten countries before reaching the Black Sea?",
-        "a": "The Danube",
+        "q": "Julia Roberts film with Richard Gere + 2022 Viola Davis action epic about Dahomey warriors",
+        "a": "Pretty Woman King",
         "difficulty": "medium",
-        "notes": "The Danube is Europe's second-longest river after the Volga."
+        "notes": "(Pretty Woman + The Woman King)"
       },
       {
-        "q": "The Bay of Fundy, famous for the world's highest tidal range, lies between which two Canadian provinces?",
-        "a": "New Brunswick and Nova Scotia",
+        "q": "Macaulay Culkin holiday comedy + video-game/horror franchise set in a haunted mansion",
+        "a": "Home Alone in the Dark",
         "difficulty": "medium",
-        "notes": "At Burntcoat Head, the tidal range can reach about 53 feet (16 metres)."
+        "notes": "(Home Alone + Alone in the Dark)"
       },
       {
-        "q": "What is Bolivia's constitutional capital?",
-        "a": "Sucre",
+        "q": "Natalie Portman ballet thriller + Tchaikovsky ballet with Odette and Odile",
+        "a": "Black Swan Lake",
+        "difficulty": "easy-medium",
+        "notes": "(Black Swan + Swan Lake)"
+      },
+      {
+        "q": "Post-apocalyptic Mel Gibson franchise + 1980s computer-generated TV host who stuttered",
+        "a": "Mad Max Headroom",
+        "difficulty": "medium",
+        "notes": "(Mad Max + Max Headroom)"
+      },
+      {
+        "q": "1982 Sean Penn teen comedy with Jeff Spicoli + Disney Channel film starring Zac Efron and Vanessa Hudgens",
+        "a": "Fast Times at Ridgemont High School Musical",
+        "difficulty": "medium",
+        "notes": "(Fast Times at Ridgemont High + High School Musical)"
+      },
+      {
+        "q": "Rob Reiner fairy-tale film (\"As you wish\") + 1935 James Whale sequel starring Elsa Lanchester",
+        "a": "The Princess Bride of Frankenstein",
+        "difficulty": "medium",
+        "notes": "(The Princess Bride + Bride of Frankenstein)"
+      },
+      {
+        "q": "George Lucas space saga + 15th-century English dynastic conflict between Lancaster and York",
+        "a": "Star Wars of the Roses",
+        "difficulty": "easy-medium",
+        "notes": "(Star Wars + Wars of the Roses)"
+      },
+      {
+        "q": "1977 John Travolta disco film + Nick Hornby memoir about being an Arsenal fan",
+        "a": "Saturday Night Fever Pitch",
+        "difficulty": "medium",
+        "notes": "(Saturday Night Fever + Fever Pitch)"
+      },
+      {
+        "q": "Bill Murray film about a time loop in Punxsutawney + Roland Emmerich climate disaster film",
+        "a": "Groundhog Day After Tomorrow",
+        "difficulty": "easy-medium",
+        "notes": "(Groundhog Day + The Day After Tomorrow)"
+      },
+      {
+        "q": "North American mountain range stretching from Canada to New Mexico + citrus-flavored caffeinated soda",
+        "a": "Rocky Mountain Dew",
+        "difficulty": "easy-medium",
+        "notes": "(Rocky Mountains + Mountain Dew)"
+      },
+      {
+        "q": "CBS sitcom about Sheldon, Leonard, and Penny + 2014 Stephen Hawking biopic starring Eddie Redmayne",
+        "a": "The Big Bang Theory of Everything",
+        "difficulty": "easy-medium",
+        "notes": "(The Big Bang Theory + The Theory of Everything)"
+      },
+      {
+        "q": "AMC drama about chemistry teacher Walter White + Will Smith and Martin Lawrence buddy-cop franchise",
+        "a": "Breaking Bad Boys",
+        "difficulty": "easy-medium",
+        "notes": "(Breaking Bad + Bad Boys)"
+      },
+      {
+        "q": "Netflix women's-prison dramedy about Piper Chapman + Netflix sci-fi anthology about technology's dark side",
+        "a": "Orange Is the New Black Mirror",
+        "difficulty": "medium",
+        "notes": "(Orange Is the New Black + Black Mirror)"
+      },
+      {
+        "q": "Netflix series set in Hawkins, Indiana + Chinua Achebe's 1958 novel about Okonkwo",
+        "a": "Stranger Things Fall Apart",
+        "difficulty": "medium",
+        "notes": "(Stranger Things + Things Fall Apart)"
+      },
+      {
+        "q": "ABC medical drama set at Seattle Grace + 2023 Palme d'Or-winning courtroom drama starring Sandra Hüller",
+        "a": "Grey's Anatomy of a Fall",
         "difficulty": "medium-hard",
-        "notes": "La Paz is the seat of government, but Sucre is the capital named in Bolivia's constitution."
+        "notes": "(Grey's Anatomy + Anatomy of a Fall)"
       },
       {
-        "q": "Which country is crossed by both the Equator and the Tropic of Capricorn?",
-        "a": "Brazil",
-        "difficulty": "medium-hard",
-        "notes": "The Equator crosses northern Brazil, while the Tropic of Capricorn crosses the country's south."
-      },
-      {
-        "q": "Which three writing systems appear on the Rosetta Stone?",
-        "a": "Egyptian hieroglyphs, Demotic script, and Ancient Greek",
-        "difficulty": "medium-hard",
-        "notes": "The same 196 BCE decree appears in all three, helping scholars decipher hieroglyphs."
-      },
-      {
-        "q": "Which English king accepted Magna Carta at Runnymede in 1215?",
-        "a": "King John",
-        "difficulty": "medium",
-        "notes": "The charter established that the sovereign was subject to the rule of law."
-      },
-      {
-        "q": "What 1868 political transformation restored imperial rule and ended Japan's Tokugawa shogunate?",
-        "a": "The Meiji Restoration",
-        "difficulty": "medium",
-        "notes": "The restoration began a period of rapid political, military and economic modernization."
-      },
-      {
-        "q": "Which Baltic port city was the leading center of the medieval Hanseatic League?",
-        "a": "Lübeck",
-        "difficulty": "medium-hard",
-        "notes": "Lübeck's central position helped it lead the trading network of northern European towns."
-      },
-      {
-        "q": "What battle is depicted in the nearly 230-foot-long Bayeux Tapestry?",
-        "a": "The Battle of Hastings",
-        "difficulty": "medium",
-        "notes": "The 11th-century work is technically wool embroidery on linen and portrays events surrounding the 1066 Norman Conquest."
-      },
-      {
-        "q": "Who wrote the novel The Master and Margarita?",
-        "a": "Mikhail Bulgakov",
-        "difficulty": "medium-hard",
-        "notes": "Written mainly from 1928 to 1940, the novel was first published in censored form in the Soviet Union in 1966–67."
-      },
-      {
-        "q": "Which composer wrote the ballet The Rite of Spring?",
-        "a": "Igor Stravinsky",
-        "difficulty": "medium",
-        "notes": "Its famously turbulent premiere took place in Paris in 1913."
-      },
-      {
-        "q": "Which artist painted the melting clocks in The Persistence of Memory?",
-        "a": "Salvador Dalí",
+        "q": "ABC sitcom about the Pritchetts and Dunphys + Seth MacFarlane cartoon about the Griffins",
+        "a": "Modern Family Guy",
         "difficulty": "easy-medium",
-        "notes": "Dalí completed the small Surrealist oil painting in 1931."
+        "notes": "(Modern Family + Family Guy)"
       },
       {
-        "q": "Who painted Girl with a Pearl Earring?",
-        "a": "Johannes Vermeer",
-        "difficulty": "easy-medium",
-        "notes": "Painted around 1665, the work is a tronie rather than a commissioned portrait."
-      },
-      {
-        "q": "What is Oscar Wilde's only published novel?",
-        "a": "The Picture of Dorian Gray",
+        "q": "HBO show about Carrie Bradshaw + 1998 Nicolas Cage and Meg Ryan romantic fantasy",
+        "a": "Sex and the City of Angels",
         "difficulty": "medium",
-        "notes": "It first appeared in magazine form in 1890 and was expanded for book publication in 1891."
+        "notes": "(Sex and the City + City of Angels)"
       },
       {
-        "q": "Which city hosted the first modern Olympic Games in 1896?",
-        "a": "Athens",
-        "difficulty": "easy-medium",
-        "notes": "The inaugural modern Games featured 241 male athletes from 14 nations."
+        "q": "Harper Lee novel about Atticus Finch + fictional street address of the Munster family",
+        "a": "To Kill a Mockingbird Lane",
+        "difficulty": "medium",
+        "notes": "(To Kill a Mockingbird + Mockingbird Lane)"
       },
       {
-        "q": "Which Grand Slam tennis tournament is played on grass courts?",
-        "a": "Wimbledon",
-        "difficulty": "easy-medium",
-        "notes": "Wimbledon is the only one of tennis's four Grand Slam tournaments still played on grass."
-      },
-      {
-        "q": "The Stanley Cup is named for Lord Stanley of Preston who held what Canadian office?",
-        "a": "Governor General of Canada",
+        "q": "Katniss Everdeen's dystopian series + Eric Berne's 1964 book on psychology of social interactions (also a Joe South hit)",
+        "a": "The Hunger Games People Play",
         "difficulty": "medium-hard",
-        "notes": "Lord Stanley donated the original silver bowl in 1892 as a hockey challenge trophy."
+        "notes": "(The Hunger Games + Games People Play)"
       },
       {
-        "q": "What color jersey identifies the leader of the Tour de France's general classification?",
-        "a": "Yellow",
+        "q": "Tolkien's fantasy trilogy + the planet with the most famous ring system",
+        "a": "Lord of the Rings of Saturn",
+        "difficulty": "medium",
+        "notes": "(The Lord of the Rings + Rings of Saturn)"
+      },
+      {
+        "q": "John Steinbeck novella about George and Lennie + Will Smith and Tommy Lee Jones alien-hunting film",
+        "a": "Of Mice and Men in Black",
         "difficulty": "easy-medium",
-        "notes": "The maillot jaune is worn by the rider with the lowest cumulative time."
+        "notes": "(Of Mice and Men + Men in Black)"
       },
       {
-        "q": "What type of container served as the original goals in James Naismith's first basketball game?",
-        "a": "Peach baskets",
+        "q": "Gal Gadot's Amazonian superhero + Susan Hill ghost story (adapted with Daniel Radcliffe)",
+        "a": "Wonder Woman in Black",
         "difficulty": "medium",
-        "notes": "Naismith devised basketball in 1891 at a YMCA training school in Springfield, Massachusetts."
+        "notes": "(Wonder Woman + The Woman in Black)"
       },
       {
-        "q": "In what Mexican city was Caesar salad created in the 1920s?",
-        "a": "Tijuana",
-        "difficulty": "medium",
-        "notes": "Restaurateur Caesar Cardini is traditionally credited with creating it there in 1924."
-      },
-      {
-        "q": "The dessert pavlova is named after a famous performer in what art form?",
-        "a": "Ballet",
-        "difficulty": "medium",
-        "notes": "It honors Russian ballerina Anna Pavlova; Australia and New Zealand both claim the dessert's origin."
-      },
-      {
-        "q": "What citrus fruit provides Earl Grey tea's characteristic flavor?",
-        "a": "Bergamot orange",
-        "difficulty": "medium",
-        "notes": "The tea is flavored with fragrant oil from the bergamot peel."
-      },
-      {
-        "q": "The word ampersand evolved from what phrase used when reciting the & symbol?",
-        "a": "And per se and",
+        "q": "Steven Soderbergh heist film starring George Clooney + Daniel Humm's NYC restaurant overlooking a park",
+        "a": "Ocean's Eleven Madison Park",
         "difficulty": "medium-hard",
-        "notes": "The symbol itself began as a ligature of the Latin letters e and t, spelling et (and)."
+        "notes": "(Ocean's Eleven + Eleven Madison Park)"
       },
       {
-        "q": "What product did Nintendo originally manufacture when its founder began business in Kyoto in 1889?",
-        "a": "Hanafuda playing cards",
+        "q": "\"Folsom Prison Blues\" singer, the Man in Black + Discovery game show where the host drives a taxi quizzing riders",
+        "a": "Johnny Cash Cab",
         "difficulty": "medium",
-        "notes": "Nintendo's official history says Fusajiro Yamauchi began making and selling the Japanese cards in 1889."
+        "notes": "(Johnny Cash + Cash Cab)"
+      },
+      {
+        "q": "School of Rock actor and Tenacious D frontman + the shopping day after Thanksgiving",
+        "a": "Jack Black Friday",
+        "difficulty": "easy-medium",
+        "notes": "(Jack Black + Black Friday)"
+      },
+      {
+        "q": "\"Roar\" and \"Firework\" pop star + Raymond Burr's fictional defense attorney",
+        "a": "Katy Perry Mason",
+        "difficulty": "easy-medium",
+        "notes": "(Katy Perry + Perry Mason)"
       }
     ]
   },
@@ -861,13 +802,14 @@ const CATEGORIES = [
     "id": "bonus",
     "name": "Bonus Question",
     "shortName": "Bonus",
-    "blurb": "The published three-point bonus question for October 6.",
-    "infoBox": "<strong>Bonus:</strong> learn the answer, then review the ranking around it so differently worded versions do not trip you up.",
+    "blurb": "The published three-point bonus question for October 13.",
+    "infoBox": "<strong>Bonus:</strong> learn the answer, then review related facts so differently worded versions do not trip you up.",
     "type": "quiz",
     "items": [
       {
-        "q": "What is the 3rd largest island (by area) in the world?",
-        "a": "Borneo"
+        "q": "Where did Ben Affleck attend college?",
+        "a": "Occidental College",
+        "notes": "Affleck briefly attended the University of Vermont before Occidental College in Los Angeles; he left without graduating."
       }
     ]
   }

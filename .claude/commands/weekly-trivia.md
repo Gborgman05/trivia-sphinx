@@ -110,5 +110,6 @@ Once the CSV is finalized:
    python3 scripts/spotify_playlist.py trivia-YYYY-MM-DD-juanita-cantina.csv
    ```
    The first run requires `SPOTIFY_CLIENT_ID` and browser authorization; later runs reuse the gitignored
-   refresh token. Report the resulting playlist URL.
+   refresh token. The playlist is named `<Music round category> : Trivia` (e.g. `Music – Songs with
+   Repeating Titles : Trivia`), taken from the CSV's round 4 category. Report the resulting playlist URL.
 4. Leave `app.js` / `styles.css` alone unless the CSV introduces a new field they don't already render.

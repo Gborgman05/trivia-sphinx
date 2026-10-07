@@ -32,8 +32,16 @@ CSV_NAME_PATTERN = re.compile(
 )
 
 
-def build_playlist_name(event_date):
-    return f"Beat the Geek — Juanita Cantina — {event_date}"
+def build_playlist_name(category):
+    return f"{category} : Trivia"
+
+
+def load_music_category(csv_path):
+    with Path(csv_path).open(newline="", encoding="utf-8") as source:
+        for row in csv.DictReader(source):
+            if row["round"] == "4" and row.get("category", "").strip():
+                return row["category"].strip()
+    raise ValueError("CSV has no round 4 category")
 
 
 def pkce_challenge(verifier):
@@ -316,7 +324,7 @@ def main(argv=None):
     redirect_uri = os.environ.get("SPOTIFY_REDIRECT_URI", DEFAULT_REDIRECT_URI)
     cache_path = root / ".spotify-token.json"
     event_date, uris = load_track_uris(csv_path)
-    playlist_name = args.name or build_playlist_name(event_date)
+    playlist_name = args.name or build_playlist_name(load_music_category(csv_path))
     description = (
         f"Beat the Geek study playlist for Juanita Cantina on {event_date}."
     )

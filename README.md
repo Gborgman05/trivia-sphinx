@@ -1,6 +1,6 @@
 # trivia-sphinx
 
-Study suite for this week's "Beat the Geek" trivia night categories (Juanita Cantina, Oct. 6, 2026): TV Character Catchphrases, Ancient Rome, Disney Covers, and Potpourri, plus the bonus question. (The visual round, this week "Rebuses," is intentionally skipped because it cannot be turned into reliable text study material.)
+Study suite for this week's "Beat the Geek" trivia night categories (Juanita Cantina, Oct. 13, 2026): Current Events, Board Games, Songs with Repeating Titles (music), and Before and After, plus the bonus question; source data is in `trivia-2026-10-13-juanita-cantina.csv`. (The visual round, this week "Pictures – Squares," is intentionally skipped because it cannot be turned into reliable text study material.)
 
 Static site, no build step. Run locally with any static file server, e.g.:
 
@@ -10,7 +10,7 @@ python3 -m http.server 8080
 
 Then open http://localhost:8080. Study progress ("known" cards) is saved per-browser in `localStorage`.
 
-Content lives in `data.js`. It's generated from `trivia-2026-10-06-juanita-cantina.csv` — a curated,
+Content lives in `data.js`. It's generated from `trivia-2026-10-13-juanita-cantina.csv` — a curated,
 120-question set (30 per round, across the 4 non-visual rounds) covering that week's real categories,
 with every fact and every music round YouTube/Spotify link individually vetted.
 

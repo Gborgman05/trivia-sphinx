@@ -43,10 +43,10 @@ class SpotifyPlaylistTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "Invalid Spotify track URL"):
                 load_track_uris(path)
 
-    def test_builds_dated_playlist_name(self):
+    def test_builds_category_playlist_name(self):
         self.assertEqual(
-            build_playlist_name("2026-10-06"),
-            "Beat the Geek — Juanita Cantina — 2026-10-06",
+            build_playlist_name("Music – Songs with Repeating Titles"),
+            "Music – Songs with Repeating Titles : Trivia",
         )
 
     def test_generates_standard_pkce_challenge(self):
