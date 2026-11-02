@@ -1,5 +1,6 @@
 import base64
 import hashlib
+import os
 import sys
 import tempfile
 import unittest
@@ -21,6 +22,42 @@ from scripts.spotify_playlist import (  # noqa: E402
 
 
 class SpotifyPlaylistTests(unittest.TestCase):
+    def test_loads_dotenv_value(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / ".env"
+            path.write_text(
+                "# Spotify settings\n"
+                'SPOTIFY_CLIENT_ID=\"from-file\"\n'
+                "SPOTIFY_REDIRECT_URI='http://127.0.0.1:9999/callback'\n",
+                encoding="utf-8",
+            )
+
+            with mock.patch.dict(os.environ, {}, clear=True):
+                spotify_playlist.load_dotenv(path)
+
+                self.assertEqual(os.environ["SPOTIFY_CLIENT_ID"], "from-file")
+                self.assertEqual(
+                    os.environ["SPOTIFY_REDIRECT_URI"],
+                    "http://127.0.0.1:9999/callback",
+                )
+
+    def test_dotenv_preserves_existing_environment(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / ".env"
+            path.write_text(
+                "SPOTIFY_CLIENT_ID=from-file\n",
+                encoding="utf-8",
+            )
+
+            with mock.patch.dict(
+                os.environ, {"SPOTIFY_CLIENT_ID": "from-shell"}, clear=True
+            ):
+                spotify_playlist.load_dotenv(path)
+
+                self.assertEqual(
+                    os.environ["SPOTIFY_CLIENT_ID"], "from-shell"
+                )
+
     def test_loads_music_tracks_in_csv_order(self):
         event_date, uris = load_track_uris(
             ROOT / "trivia-2026-10-06-juanita-cantina.csv"

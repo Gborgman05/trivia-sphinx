@@ -288,6 +288,30 @@ class SpotifyClient:
         return playlist, True
 
 
+def load_dotenv(path):
+    try:
+        lines = Path(path).read_text(encoding="utf-8").splitlines()
+    except FileNotFoundError:
+        return
+
+    for line in lines:
+        line = line.strip()
+        if not line or line.startswith("#"):
+            continue
+        key, separator, value = line.partition("=")
+        key = key.strip()
+        value = value.strip()
+        if not separator or not re.fullmatch(r"[A-Za-z_][A-Za-z0-9_]*", key):
+            continue
+        if (
+            len(value) >= 2
+            and value[0] == value[-1]
+            and value[0] in {"'", '"'}
+        ):
+            value = value[1:-1]
+        os.environ.setdefault(key, value)
+
+
 def latest_csv(root):
     matches = sorted(root.glob("trivia-????-??-??-juanita-cantina.csv"))
     if not matches:
@@ -317,6 +341,7 @@ def main(argv=None):
     if not csv_path.is_absolute():
         csv_path = Path.cwd() / csv_path
 
+    load_dotenv(root / ".env")
     client_id = os.environ.get("SPOTIFY_CLIENT_ID")
     if not client_id:
         raise SystemExit("Set SPOTIFY_CLIENT_ID to your Spotify app's Client ID.")

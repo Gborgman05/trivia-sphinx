@@ -26,10 +26,12 @@ artist + verified YouTube/Spotify links for the Music round, and sync the result
 Create or refresh a private playlist from the newest weekly CSV:
 
 ```bash
-export SPOTIFY_CLIENT_ID="your Spotify app client ID"
+printf 'SPOTIFY_CLIENT_ID=your Spotify app client ID\n' > .env
 python3 scripts/spotify_playlist.py
 ```
 
+The script automatically loads `.env`, which is gitignored. An explicitly exported
+`SPOTIFY_CLIENT_ID` takes precedence if you prefer to configure the shell instead.
 The Spotify app must allow the redirect URI `http://127.0.0.1:8888/callback`. The first run opens a
 browser for authorization; later runs reuse a locally cached refresh token. The token file is gitignored.
 The app owner must have Spotify Premium, and Development Mode users must be on the app's allowlist.
