@@ -1,757 +1,770 @@
 // Study content for "Beat the Geek" trivia night.
-// Categories confirmed from the Nov. 3, 2026 event listing at Juanita Cantina (Ben, 7:30pm):
-// Double D, U.S. Citizenship Test, Food Brand Logos, Songs of 2019, and Idiom Nexus.
-// Bonus: What is both the world's tallest stone structure and the world's tallest obelisk?
-// The visual Food Brand Logos round (round 3) is intentionally omitted. This is the curated
-// 120-question set from trivia-2026-11-03-juanita-cantina.csv.
-// Music links are Spotify-only because YouTube oEmbed verification was unavailable.
+// Categories confirmed for the Nov. 10, 2026 event at Juanita Cantina:
+// Current Events, Science - 'Ology's, Celeb Shots - Famous Chickens, Vitamin String Quartet, and Potpourri.
+// Bonus: What is Macklemore's real name?
+// The visual Celeb Shots - Famous Chickens round (round 3) is intentionally omitted. This is the curated
+// 120-question set from trivia-2026-11-10-juanita-cantina.csv.
 // difficulty preserves the CSV tiers: "easy-medium" | "medium" | "medium-hard".
 
 const CATEGORIES = [
   {
-    "id": "double-d",
-    "name": "Double D",
-    "shortName": "Double D",
-    "blurb": "General-knowledge clues whose answers contain at least two instances of the letter D.",
-    "infoBox": "<strong>Study tip:</strong> use the two-D pattern as a check after solving each clue, not as a substitute for the fact.",
+    "id": "current-events",
+    "name": "Current Events",
+    "shortName": "Current Events",
+    "blurb": "Major news from politics, science, business, sports, and culture in late October and early November 2026.",
+    "infoBox": "<strong>Study tip:</strong> connect each answer to the dated event in its notes.",
     "type": "quiz",
     "items": [
       {
-        "q": "Which Disney character is the hot-tempered sailor who first appeared in the 1934 short The Wise Little Hen?",
-        "a": "Donald Duck",
-        "difficulty": "easy-medium"
-      },
-      {
-        "q": "What tabletop fantasy role-playing game was first published by TSR in 1974?",
-        "a": "Dungeons & Dragons",
+        "q": "Which party won control of both the U.S. House and Senate in the 2026 midterm elections?",
+        "a": "The Democratic Party",
         "difficulty": "easy-medium",
-        "notes": "Created by Gary Gygax and Dave Arneson."
+        "notes": "Results reported Nov. 3-4 2026."
       },
       {
-        "q": "What surround-sound format succeeded Dolby Stereo and debuted theatrically with Batman Returns?",
-        "a": "Dolby Digital",
+        "q": "Which former Atlanta mayor became the first Black woman elected governor of Georgia?",
+        "a": "Keisha Lance Bottoms",
+        "difficulty": "medium",
+        "notes": "Elected Nov. 3 2026."
+      },
+      {
+        "q": "Which Brazilian president won reelection over Flávio Bolsonaro with 51.8% of the vote?",
+        "a": "Luiz Inácio Lula da Silva",
+        "difficulty": "easy-medium",
+        "notes": "Runoff held Oct. 25 2026."
+      },
+      {
+        "q": "Which country's student-led opposition defeated the party of longtime leader Aleksandar Vučić in a parliamentary election?",
+        "a": "Serbia",
+        "difficulty": "medium",
+        "notes": "Vučić conceded Oct. 25 2026."
+      },
+      {
+        "q": "Which North African country approved a resolution for its first foreign troop deployment since 1973 by authorizing forces for Niger?",
+        "a": "Algeria",
         "difficulty": "medium-hard",
-        "notes": "The format was initially called Dolby Stereo Digital."
+        "notes": "Parliament approved the deployment Oct. 25 2026."
       },
       {
-        "q": "What chain dropped the word Donuts from most of its branding in 2019?",
-        "a": "Dunkin' Donuts",
+        "q": "Which country launched a National Disaster Management Agency to prepare for megaquakes and a possible Mount Fuji eruption?",
+        "a": "Japan",
         "difficulty": "easy-medium",
-        "notes": "The corporate name remains Dunkin' Brands."
+        "notes": "The agency launched Nov. 2 2026."
       },
       {
-        "q": "Which actor played FBI agent Fox Mulder on The X-Files?",
-        "a": "David Duchovny",
-        "difficulty": "easy-medium"
-      },
-      {
-        "q": "Which actor won an Oscar for My Left Foot and later played Abraham Lincoln?",
-        "a": "Daniel Day-Lewis",
-        "difficulty": "easy-medium"
-      },
-      {
-        "q": "Which Ivorian striker captained his country and scored more than 100 Premier League goals for Chelsea?",
-        "a": "Didier Drogba",
-        "difficulty": "medium"
-      },
-      {
-        "q": "Which Argentine soccer star scored the infamous Hand of God goal at the 1986 World Cup?",
-        "a": "Diego Maradona",
-        "difficulty": "easy-medium"
-      },
-      {
-        "q": "Which World War II medic received the Medal of Honor despite refusing to carry a weapon?",
-        "a": "Desmond Doss",
+        "q": "Which West African country confirmed its first Ebola case in more than a decade?",
+        "a": "Nigeria",
         "difficulty": "medium",
-        "notes": "His story inspired the film Hacksaw Ridge."
+        "notes": "The imported case was confirmed Oct. 21 2026."
       },
       {
-        "q": "Which U.S. president warned about the military-industrial complex in his farewell address?",
-        "a": "Dwight D. Eisenhower",
-        "difficulty": "easy-medium"
+        "q": "Wildfire haze from which country caused school closures in Malaysia, flight cancellations and unhealthy air across Southeast Asia?",
+        "a": "Indonesia",
+        "difficulty": "easy-medium",
+        "notes": "Peatland fires and regional haze were reported Oct. 20 2026."
       },
       {
-        "q": "What 1974 David Bowie album includes the title track and Rebel Rebel?",
-        "a": "Diamond Dogs",
-        "difficulty": "medium"
+        "q": "NASA and NOAA reported that the 2026 ozone hole over which continent ranked seventh largest in 48 years of monitoring?",
+        "a": "Antarctica",
+        "difficulty": "easy-medium",
+        "notes": "Report published Nov. 4 2026."
       },
       {
-        "q": "What HBO Western series is set in a lawless South Dakota mining camp?",
-        "a": "Deadwood",
-        "difficulty": "easy-medium"
-      },
-      {
-        "q": "What 1987 film features Frances Baby Houseman and dance instructor Johnny Castle?",
-        "a": "Dirty Dancing",
-        "difficulty": "easy-medium"
-      },
-      {
-        "q": "What 1994 comedy stars Jim Carrey and Jeff Daniels as Lloyd Christmas and Harry Dunne?",
-        "a": "Dumb and Dumber",
-        "difficulty": "easy-medium"
-      },
-      {
-        "q": "What 2001 cult film stars Jake Gyllenhaal as a teenager visited by a figure in a rabbit costume?",
-        "a": "Donnie Darko",
-        "difficulty": "medium"
-      },
-      {
-        "q": "Which Hugh Lofting character can communicate with animals?",
-        "a": "Doctor Dolittle",
+        "q": "Which space telescope helped researchers find that nearby dwarf galaxies retain only a small fraction of the oxygen made by their stars?",
+        "a": "The Hubble Space Telescope",
         "difficulty": "medium",
-        "notes": "The character first appeared in print in 1920."
+        "notes": "Study of 37 dwarf galaxies reported Nov. 2 2026."
       },
       {
-        "q": "Which Marvel hero is attorney Matt Murdock?",
-        "a": "Daredevil",
-        "difficulty": "easy-medium"
+        "q": "What type of NASA vehicle did scientists use to study a solar flare in progress for the first time?",
+        "a": "A sounding rocket",
+        "difficulty": "medium-hard",
+        "notes": "The flare-alert research was published Nov. 4 2026."
       },
       {
-        "q": "Which U.S. state is officially named the State of Rhode Island and Providence Plantations in its former full name?",
-        "a": "Rhode Island",
+        "q": "Which space telescope had its sensitivity to faint planets boosted by as much as 15 times using a new starlight-subtraction technique?",
+        "a": "The James Webb Space Telescope",
         "difficulty": "medium",
-        "notes": "Voters shortened the official name to State of Rhode Island in 2020."
+        "notes": "Research reported Nov. 4 2026."
       },
       {
-        "q": "What Rockstar Games Western follows outlaw Arthur Morgan?",
-        "a": "Red Dead Redemption 2",
-        "difficulty": "easy-medium"
-      },
-      {
-        "q": "What 2010 U.S. financial reform law is named for two members of Congress?",
-        "a": "Dodd-Frank Act",
+        "q": "What defensive behavior did a 99-million-year-old lizard tail in amber provide direct fossil evidence for?",
+        "a": "Tail shedding",
         "difficulty": "medium",
-        "notes": "Named for Senator Chris Dodd and Representative Barney Frank."
+        "notes": "The micro-CT study was reported Oct. 20 2026."
       },
       {
-        "q": "What name do the children in Stranger Things give the alternate dimension parallel to their hometown?",
-        "a": "The Upside Down",
-        "difficulty": "easy-medium"
+        "q": "Which 2010 oil disaster was linked by a 13-year survey to a sustained 64% decline in deep-water fish populations?",
+        "a": "The Deepwater Horizon oil spill",
+        "difficulty": "easy-medium",
+        "notes": "Research reported Oct. 20 2026."
       },
       {
-        "q": "What fictional paper company employs the Scranton branch featured in The Office?",
-        "a": "Dunder Mifflin",
-        "difficulty": "easy-medium"
+        "q": "What twice-yearly HIV-prevention drug did the FDA tentatively approve in generic form for procurement through PEPFAR?",
+        "a": "Lenacapavir",
+        "difficulty": "medium-hard",
+        "notes": "Tentative approval was granted Nov. 2 2026; it enables U.S. government procurement but is not full approval for U.S. marketing."
       },
       {
-        "q": "What yoga pose is commonly named for an inverted V shape with hands and feet on the floor?",
-        "a": "Downward-Facing Dog",
-        "difficulty": "easy-medium"
+        "q": "Which state enacted restrictions on unsafe AI companion-chatbot behavior involving users under 18?",
+        "a": "New York",
+        "difficulty": "easy-medium",
+        "notes": "Legislation signed Oct. 28 2026."
       },
       {
-        "q": "What 1993 Richard Linklater film follows Texas teenagers on the last day of school in 1976?",
-        "a": "Dazed and Confused",
-        "difficulty": "medium"
-      },
-      {
-        "q": "What long-legged arachnid is also called a harvestman in common usage?",
-        "a": "Daddy longlegs",
+        "q": "Which country seized 30 servers containing advanced AI chips at Kuala Lumpur International Airport?",
+        "a": "Malaysia",
         "difficulty": "medium",
-        "notes": "True harvestmen are not spiders."
+        "notes": "Seizure announced Oct. 28 2026."
       },
       {
-        "q": "What statistical measure describes how spread out values are around their mean?",
-        "a": "Standard deviation",
-        "difficulty": "medium"
+        "q": "Which Chinese genomics company and its affiliates were blocked from sending goods to the United States over forced-labor allegations?",
+        "a": "BGI Group",
+        "difficulty": "medium-hard",
+        "notes": "U.S. action announced Oct. 28 2026."
       },
       {
-        "q": "What July 4 holiday commemorates the adoption of a document in 1776?",
-        "a": "Independence Day",
-        "difficulty": "easy-medium"
+        "q": "Which Facebook parent company raised $15 billion in a five-part bond sale to fund AI expansion?",
+        "a": "Meta Platforms",
+        "difficulty": "easy-medium",
+        "notes": "Offering announced Nov. 3 2026."
       },
       {
-        "q": "What document adopted by the Second Continental Congress announced the colonies' separation from Britain?",
-        "a": "Declaration of Independence",
-        "difficulty": "easy-medium"
+        "q": "Which Vermont aircraft maker received federal certification to fly potential customers aboard its ALIA electric vertical-takeoff aircraft?",
+        "a": "Beta Technologies",
+        "difficulty": "easy-medium",
+        "notes": "The certification was reported Oct. 23 2026."
       },
       {
-        "q": "In a division problem what term names the number that is being divided?",
-        "a": "Dividend",
-        "difficulty": "medium"
+        "q": "Which Major League Baseball team won the first World Series title in franchise history by defeating the Tampa Bay Rays?",
+        "a": "The Milwaukee Brewers",
+        "difficulty": "easy-medium",
+        "notes": "Milwaukee won Game 5 on Oct. 28 2026."
       },
       {
-        "q": "What 2004 comedy features the Average Joe's team competing against Globo Gym in Las Vegas?",
-        "a": "DodgeBall: A True Underdog Story",
-        "difficulty": "easy-medium"
+        "q": "Which second-year expansion team won its first WNBA championship by beating the Atlanta Dream in Game 7?",
+        "a": "The Golden State Valkyries",
+        "difficulty": "easy-medium",
+        "notes": "Championship won Oct. 31 2026."
+      },
+      {
+        "q": "Which Italian Mercedes driver became Formula One's youngest world champion at age 20?",
+        "a": "Andrea Kimi Antonelli",
+        "difficulty": "medium",
+        "notes": "Title secured Nov. 1 2026."
+      },
+      {
+        "q": "Which German player rose to No. 1 in the men's tennis rankings for the first time?",
+        "a": "Alexander Zverev",
+        "difficulty": "easy-medium",
+        "notes": "Ranking announced Nov. 2 2026."
+      },
+      {
+        "q": "Which Kazakhstani tennis player secured the 2026 year-end women's No. 1 ranking at the Pan Pacific Open?",
+        "a": "Elena Rybakina",
+        "difficulty": "medium",
+        "notes": "Achievement reported Oct. 29 2026."
+      },
+      {
+        "q": "Which American gymnast won the women's all-around title at the 2026 World Artistic Gymnastics Championships?",
+        "a": "Skye Blakely",
+        "difficulty": "medium",
+        "notes": "Final held Oct. 23 2026 in Rotterdam."
+      },
+      {
+        "q": "Which England captain became the first Englishman in 25 years to win the men's Ballon d'Or?",
+        "a": "Harry Kane",
+        "difficulty": "easy-medium",
+        "notes": "Award presented Oct. 26 2026."
+      },
+      {
+        "q": "Which film by Macedonian director Milcho Manchevski won the Tokyo International Film Festival's top prize?",
+        "a": "Sister Brother Manhole Cover",
+        "difficulty": "medium-hard",
+        "notes": "Tokyo Grand Prix announced Nov. 4 2026."
+      },
+      {
+        "q": "Which film directed by Javier Calvo and Javier Ambrossi won the 2026 London Film Festival audience award?",
+        "a": "La Bola Negra",
+        "difficulty": "medium-hard",
+        "notes": "Audience award announced Nov. 4 2026."
+      },
+      {
+        "q": "Which documentary filmmaker was named the inaugural winner of the David M. Rubenstein Prize for the Advancement of American History?",
+        "a": "Ken Burns",
+        "difficulty": "easy-medium",
+        "notes": "The New York Historical announced the award Oct. 28 2026."
       }
     ]
   },
   {
-    "id": "us-citizenship-test",
-    "name": "U.S. Citizenship Test",
-    "shortName": "Citizenship Test",
-    "blurb": "Core American government, history, rights, geography, and civics drawn from USCIS naturalization-test material.",
-    "infoBox": "<strong>Study tip:</strong> several official questions accept more than one answer; notes call out common alternatives.",
+    "id": "science-ologies",
+    "name": "Science - 'Ology's",
+    "shortName": "Science - 'Ology's",
+    "blurb": "Scientific fields ending in -ology, plus notable people and tools associated with them.",
+    "infoBox": "<strong>Study tip:</strong> break each field name into its subject root and the -ology suffix.",
     "type": "quiz",
     "items": [
       {
-        "q": "What is the supreme law of the land?",
-        "a": "The Constitution",
+        "q": "What scientific field studies insects?",
+        "a": "Entomology",
         "difficulty": "easy-medium"
       },
       {
-        "q": "What do we call the first ten amendments to the Constitution?",
-        "a": "The Bill of Rights",
+        "q": "What branch of zoology is devoted to birds?",
+        "a": "Ornithology",
         "difficulty": "easy-medium"
       },
       {
-        "q": "What are the first three words of the Constitution?",
-        "a": "We the People",
+        "q": "What scientific field studies fish?",
+        "a": "Ichthyology",
+        "difficulty": "medium"
+      },
+      {
+        "q": "What branch of biology studies fungi?",
+        "a": "Mycology",
         "difficulty": "easy-medium"
       },
       {
-        "q": "What is an amendment?",
-        "a": "A change or addition to the Constitution",
+        "q": "What scientific field studies viruses?",
+        "a": "Virology",
+        "difficulty": "easy-medium"
+      },
+      {
+        "q": "What field studies how organisms interact with one another and their environment?",
+        "a": "Ecology",
+        "difficulty": "easy-medium"
+      },
+      {
+        "q": "What field studies animal behavior, especially under natural conditions?",
+        "a": "Ethology",
+        "difficulty": "medium-hard"
+      },
+      {
+        "q": "What science studies Earth's physical structure, history, and the processes that shape it?",
+        "a": "Geology",
+        "difficulty": "easy-medium"
+      },
+      {
+        "q": "What branch of Earth science studies earthquakes and seismic waves?",
+        "a": "Seismology",
+        "difficulty": "easy-medium"
+      },
+      {
+        "q": "What branch of geology studies volcanism, including magma flow and eruptions?",
+        "a": "Volcanology",
+        "difficulty": "easy-medium"
+      },
+      {
+        "q": "What science studies the occurrence, distribution, movement, and properties of Earth's water?",
+        "a": "Hydrology",
+        "difficulty": "medium"
+      },
+      {
+        "q": "What science studies snow, ice, glaciers, and ice sheets?",
+        "a": "Glaciology",
+        "difficulty": "medium"
+      },
+      {
+        "q": "What science reconstructs life in past geologic time using fossils?",
+        "a": "Paleontology",
+        "difficulty": "easy-medium"
+      },
+      {
+        "q": "What atmospheric science focuses on short-term conditions such as wind, precipitation, and air pressure?",
+        "a": "Meteorology",
+        "difficulty": "easy-medium"
+      },
+      {
+        "q": "What field studies long-term patterns and averages of weather conditions?",
+        "a": "Climatology",
+        "difficulty": "medium"
+      },
+      {
+        "q": "What science studies the physical and biological characteristics of inland waters, such as lakes and ponds?",
+        "a": "Limnology",
+        "difficulty": "medium-hard"
+      },
+      {
+        "q": "What method dates wood and reconstructs past conditions by matching annual tree-ring patterns?",
+        "a": "Dendrochronology",
+        "difficulty": "medium-hard"
+      },
+      {
+        "q": "What field studies the distribution, frequency, and causes of disease in populations?",
+        "a": "Epidemiology",
+        "difficulty": "medium"
+      },
+      {
+        "q": "What medical science studies the causes, development, and structural or functional changes associated with disease?",
+        "a": "Pathology",
+        "difficulty": "medium"
+      },
+      {
+        "q": "What branch of biomedical science studies the immune system?",
+        "a": "Immunology",
+        "difficulty": "medium"
+      },
+      {
+        "q": "What medical specialty focuses on cancer?",
+        "a": "Oncology",
+        "difficulty": "easy-medium"
+      },
+      {
+        "q": "What medical specialty studies blood and blood disorders?",
+        "a": "Hematology",
+        "difficulty": "medium"
+      },
+      {
+        "q": "What field studies the harmful effects of chemicals on living organisms?",
+        "a": "Toxicology",
+        "difficulty": "medium"
+      },
+      {
+        "q": "What science studies the mind and behavior?",
+        "a": "Psychology",
+        "difficulty": "easy-medium"
+      },
+      {
+        "q": "What social science studies human society, institutions, and relationships among individuals and groups?",
+        "a": "Sociology",
+        "difficulty": "easy-medium"
+      },
+      {
+        "q": "What field studies human beings across biology, culture, language, and social organization?",
+        "a": "Anthropology",
+        "difficulty": "medium"
+      },
+      {
+        "q": "Which physician mapped deaths in London's 1854 cholera outbreak and is called the father of field epidemiology?",
+        "a": "John Snow",
+        "difficulty": "medium"
+      },
+      {
+        "q": "What scale used by geologists ranks minerals by their resistance to scratching from talc at 1 to diamond at 10?",
+        "a": "The Mohs hardness scale",
         "difficulty": "medium",
-        "notes": "USCIS accepts \"a change to the Constitution\" or \"an addition to the Constitution.\""
+        "notes": "Accept Mohs scale."
       },
       {
-        "q": "Name one right named in the Declaration of Independence.",
-        "a": "Life; liberty; or the pursuit of happiness",
-        "difficulty": "easy-medium",
-        "notes": "Any one of the three is accepted."
-      },
-      {
-        "q": "What does freedom of religion mean?",
-        "a": "You may practice any religion or no religion",
-        "difficulty": "easy-medium"
-      },
-      {
-        "q": "What is the economic system of the United States?",
-        "a": "A capitalist economy or market economy",
-        "difficulty": "medium",
-        "notes": "Either wording is accepted."
-      },
-      {
-        "q": "What does the rule of law mean?",
-        "a": "Everyone must follow the law",
-        "difficulty": "medium",
-        "notes": "Other accepted ideas include that leaders and government must obey the law and no one is above it."
-      },
-      {
-        "q": "Name one branch or part of the federal government.",
-        "a": "Congress; the president; or the courts",
-        "difficulty": "easy-medium",
-        "notes": "Legislative; executive; and judicial are also accepted."
-      },
-      {
-        "q": "What prevents one branch of government from becoming too powerful?",
-        "a": "Checks and balances or separation of powers",
+        "q": "Which scientist made a foundational contribution to cytology, or cell biology, by introducing the word cell after examining cork in his 1665 book Micrographia?",
+        "a": "Robert Hooke",
         "difficulty": "medium"
       },
       {
-        "q": "Who is in charge of the executive branch?",
-        "a": "The President",
-        "difficulty": "easy-medium"
-      },
-      {
-        "q": "Who makes federal laws?",
-        "a": "Congress",
-        "difficulty": "easy-medium",
-        "notes": "The Senate and House of Representatives are also accepted."
-      },
-      {
-        "q": "What are the two parts of the U.S. Congress?",
-        "a": "The Senate and House of Representatives",
-        "difficulty": "easy-medium"
-      },
-      {
-        "q": "How many U.S. senators are there?",
-        "a": "100",
-        "difficulty": "easy-medium"
-      },
-      {
-        "q": "For how many years is a U.S. senator elected?",
-        "a": "Six years",
-        "difficulty": "medium"
-      },
-      {
-        "q": "How many voting members are in the House of Representatives?",
-        "a": "435",
-        "difficulty": "medium"
-      },
-      {
-        "q": "For how many years is a U.S. representative elected?",
-        "a": "Two years",
-        "difficulty": "medium"
-      },
-      {
-        "q": "Why do some states have more representatives than other states?",
-        "a": "Because they have larger populations",
-        "difficulty": "medium"
-      },
-      {
-        "q": "For how many years is a U.S. president elected?",
-        "a": "Four years",
-        "difficulty": "easy-medium"
-      },
-      {
-        "q": "In what month do Americans vote for president?",
-        "a": "November",
-        "difficulty": "easy-medium"
-      },
-      {
-        "q": "If the president can no longer serve who becomes president?",
-        "a": "The Vice President",
-        "difficulty": "easy-medium"
-      },
-      {
-        "q": "Name one power of the federal government.",
-        "a": "Print money; declare war; create an army; make treaties; or conduct foreign policy",
-        "difficulty": "medium",
-        "notes": "Any one listed power is accepted."
-      },
-      {
-        "q": "Name one power reserved to the states.",
-        "a": "Provide schooling; provide police or fire protection; issue driver licenses; approve zoning and land use",
-        "difficulty": "medium-hard",
-        "notes": "Any one listed state power is accepted."
-      },
-      {
-        "q": "What is the capital of the United States?",
-        "a": "Washington DC",
-        "difficulty": "easy-medium"
-      },
-      {
-        "q": "Who was the first president of the United States?",
-        "a": "George Washington",
-        "difficulty": "easy-medium"
-      },
-      {
-        "q": "When was the Declaration of Independence adopted?",
-        "a": "July 4 1776",
-        "difficulty": "easy-medium"
-      },
-      {
-        "q": "What did the Emancipation Proclamation do?",
-        "a": "Freed enslaved people in the Confederacy",
-        "difficulty": "medium",
-        "notes": "USCIS also phrases this as freeing slaves in the Confederate states or most Southern states."
-      },
-      {
-        "q": "Which constitutional amendment abolished slavery?",
-        "a": "The 13th Amendment",
-        "difficulty": "medium"
-      },
-      {
-        "q": "What movement tried to end racial discrimination?",
-        "a": "The civil rights movement",
-        "difficulty": "easy-medium"
-      },
-      {
-        "q": "What ocean is on the West Coast of the United States?",
-        "a": "The Pacific Ocean",
-        "difficulty": "easy-medium"
+        "q": "Which ethologist decoded the honeybee dance and shared the 1973 Nobel Prize in Physiology or Medicine?",
+        "a": "Karl von Frisch",
+        "difficulty": "medium-hard"
       }
     ]
   },
   {
-    "id": "songs-of-2019",
-    "name": "Songs of 2019",
-    "shortName": "Songs of 2019",
-    "blurb": "Recognizable pop, hip-hop, R&B, alternative, and crossover tracks released during 2019.",
-    "infoBox": "<strong>How to practice:</strong> open the Spotify track, hide the screen, and identify both title and artist.",
+    "id": "vitamin-string-quartet",
+    "name": "Vitamin String Quartet",
+    "shortName": "Vitamin String Quartet",
+    "blurb": "Identify the original song and artist from Vitamin String Quartet instrumental covers.",
+    "infoBox": "<strong>How to practice:</strong> open the Spotify track, hide the screen, and identify both title and original artist.",
     "type": "music",
     "items": [
       {
+        "title": "All You Need Is Love",
+        "artist": "The Beatles",
+        "spotifyUrl": "https://open.spotify.com/track/3JrzKBSNLJT2pUpa08q4Q1",
+        "difficulty": "medium",
+        "notes": "Playback: Vitamin String Quartet cover."
+      },
+      {
+        "title": "Brown Eyed Girl",
+        "artist": "Van Morrison",
+        "spotifyUrl": "https://open.spotify.com/track/7LrPyPv6m1TWQ2ud1evM42",
+        "difficulty": "medium",
+        "notes": "Playback: Vitamin String Quartet cover."
+      },
+      {
+        "title": "Bohemian Rhapsody",
+        "artist": "Queen",
+        "spotifyUrl": "https://open.spotify.com/track/3KuuzvDu9YEFANLMcmdZuC",
+        "difficulty": "easy-medium",
+        "notes": "Playback: Vitamin String Quartet cover."
+      },
+      {
+        "title": "I Will Always Love You",
+        "artist": "Dolly Parton",
+        "spotifyUrl": "https://open.spotify.com/track/1Pz0hDCAXTTfcpNT5YrufQ",
+        "difficulty": "medium-hard",
+        "notes": "Playback: Vitamin String Quartet cover."
+      },
+      {
+        "title": "Defying Gravity",
+        "artist": "Idina Menzel and Kristin Chenoweth",
+        "spotifyUrl": "https://open.spotify.com/track/3rRYheHIu9WJjhd8xCoHRl",
+        "difficulty": "medium-hard",
+        "notes": "Playback: Vitamin String Quartet cover."
+      },
+      {
+        "title": "Mamma Mia",
+        "artist": "ABBA",
+        "spotifyUrl": "https://open.spotify.com/track/5EcJbRgrUs8iVeB5P5Ub58",
+        "difficulty": "easy-medium",
+        "notes": "Playback: Vitamin String Quartet cover."
+      },
+      {
+        "title": "Billie Jean",
+        "artist": "Michael Jackson",
+        "spotifyUrl": "https://open.spotify.com/track/7kD8PZ5JMJDs2KaXy0Dkgb",
+        "difficulty": "easy-medium",
+        "notes": "Playback: Vitamin String Quartet cover."
+      },
+      {
+        "title": "Get Lucky",
+        "artist": "Daft Punk featuring Pharrell Williams",
+        "spotifyUrl": "https://open.spotify.com/track/1bXSNCFYQZTFgN1LkalSYE",
+        "difficulty": "medium",
+        "notes": "Playback: Vitamin String Quartet cover."
+      },
+      {
+        "title": "Dancing on My Own",
+        "artist": "Robyn",
+        "spotifyUrl": "https://open.spotify.com/track/5tM6Oa5XitwpRCIX7tUcWi",
+        "difficulty": "medium-hard",
+        "notes": "Playback: Vitamin String Quartet cover."
+      },
+      {
+        "title": "The Killing Moon",
+        "artist": "Echo & the Bunnymen",
+        "spotifyUrl": "https://open.spotify.com/track/3KufRwzBWm08EdVccZAah2",
+        "difficulty": "medium-hard",
+        "notes": "Playback: Vitamin String Quartet cover."
+      },
+      {
+        "title": "Cheap Thrills",
+        "artist": "Sia",
+        "spotifyUrl": "https://open.spotify.com/track/4dRYlZtS7kYfWxkYfMPTe7",
+        "difficulty": "medium",
+        "notes": "Playback: Vitamin String Quartet cover."
+      },
+      {
+        "title": "Smells Like Teen Spirit",
+        "artist": "Nirvana",
+        "spotifyUrl": "https://open.spotify.com/track/0mPAmCEHLgv0cV6xar6Jj5",
+        "difficulty": "easy-medium",
+        "notes": "Playback: Vitamin String Quartet cover."
+      },
+      {
+        "title": "Enter Sandman",
+        "artist": "Metallica",
+        "spotifyUrl": "https://open.spotify.com/track/4L367t6kjlw3IchZDVsc8Z",
+        "difficulty": "medium",
+        "notes": "Playback: Vitamin String Quartet cover."
+      },
+      {
+        "title": "If I Ain't Got You",
+        "artist": "Alicia Keys",
+        "spotifyUrl": "https://open.spotify.com/track/3wNzuzxKGDSQ56HnQADR7I",
+        "difficulty": "medium",
+        "notes": "Playback: Vitamin String Quartet cover."
+      },
+      {
+        "title": "I Want It That Way",
+        "artist": "Backstreet Boys",
+        "spotifyUrl": "https://open.spotify.com/track/1XV0SrjeiLy2fxI8rdPANg",
+        "difficulty": "easy-medium",
+        "notes": "Playback: Vitamin String Quartet cover."
+      },
+      {
+        "title": "Losing My Religion",
+        "artist": "R.E.M.",
+        "spotifyUrl": "https://open.spotify.com/track/5IAGxdkAn1znAOBeJ2RflC",
+        "difficulty": "medium",
+        "notes": "Playback: Vitamin String Quartet cover."
+      },
+      {
+        "title": "Take On Me",
+        "artist": "a-ha",
+        "spotifyUrl": "https://open.spotify.com/track/0CftLJL4E0oU2Fwz7Cartb",
+        "difficulty": "easy-medium",
+        "notes": "Playback: Vitamin String Quartet cover."
+      },
+      {
+        "title": "Fireflies",
+        "artist": "Owl City",
+        "spotifyUrl": "https://open.spotify.com/track/70BySdHNM3mBSrK7pA1MwL",
+        "difficulty": "medium",
+        "notes": "Playback: Vitamin String Quartet cover."
+      },
+      {
+        "title": "Yellow",
+        "artist": "Coldplay",
+        "spotifyUrl": "https://open.spotify.com/track/3vOykP71BfLYgRtcAkAZ7v",
+        "difficulty": "easy-medium",
+        "notes": "Playback: Vitamin String Quartet cover."
+      },
+      {
+        "title": "Mr. Brightside",
+        "artist": "The Killers",
+        "spotifyUrl": "https://open.spotify.com/track/2bGZCAldsExKooSRt1tmya",
+        "difficulty": "easy-medium",
+        "notes": "Playback: Vitamin String Quartet cover."
+      },
+      {
+        "title": "Hey Ya!",
+        "artist": "Outkast",
+        "spotifyUrl": "https://open.spotify.com/track/2SJG7q3XqqMipNzWY12YYM",
+        "difficulty": "easy-medium",
+        "notes": "Playback: Vitamin String Quartet cover."
+      },
+      {
+        "title": "Thrift Shop",
+        "artist": "Macklemore & Ryan Lewis featuring Wanz",
+        "spotifyUrl": "https://open.spotify.com/track/08K0sJYB1Y2TxkGclD8wl9",
+        "difficulty": "medium-hard",
+        "notes": "Playback: Vitamin String Quartet cover."
+      },
+      {
+        "title": "Never Gonna Give You Up",
+        "artist": "Rick Astley",
+        "spotifyUrl": "https://open.spotify.com/track/4TijaNZQchZj9E86WK5jSH",
+        "difficulty": "easy-medium",
+        "notes": "Playback: Vitamin String Quartet cover."
+      },
+      {
+        "title": "thank u, next",
+        "artist": "Ariana Grande",
+        "spotifyUrl": "https://open.spotify.com/track/5tnxlzJHU3ExaYNauG3KdW",
+        "difficulty": "medium",
+        "notes": "Playback: Vitamin String Quartet cover."
+      },
+      {
+        "title": "Rolling in the Deep",
+        "artist": "Adele",
+        "spotifyUrl": "https://open.spotify.com/track/4OCRAoH6XZkszgqwTPacnP",
+        "difficulty": "easy-medium",
+        "notes": "Playback: Vitamin String Quartet cover."
+      },
+      {
+        "title": "Dynamite",
+        "artist": "BTS",
+        "spotifyUrl": "https://open.spotify.com/track/3r5qG8lJJhSppdKn9D5voW",
+        "difficulty": "medium-hard",
+        "notes": "Playback: Vitamin String Quartet cover."
+      },
+      {
+        "title": "Chandelier",
+        "artist": "Sia",
+        "spotifyUrl": "https://open.spotify.com/track/5A51C7Ank2IRW0TmhYkeoK",
+        "difficulty": "medium",
+        "notes": "Playback: Vitamin String Quartet cover."
+      },
+      {
+        "title": "Shape of You",
+        "artist": "Ed Sheeran",
+        "spotifyUrl": "https://open.spotify.com/track/5fAx5nkBA294M6MunnijOM",
+        "difficulty": "easy-medium",
+        "notes": "Playback: Vitamin String Quartet cover."
+      },
+      {
         "title": "bad guy",
         "artist": "Billie Eilish",
-        "spotifyUrl": "https://open.spotify.com/track/2Fxmhks0bxGSBdJ92vM42m",
-        "difficulty": "easy-medium",
-        "notes": "Released in March 2019 on When We All Fall Asleep Where Do We Go?"
-      },
-      {
-        "title": "Old Town Road (Remix)",
-        "artist": "Lil Nas X ft. Billy Ray Cyrus",
-        "spotifyUrl": "https://open.spotify.com/track/2YpeDb67231RjR0MgVLzsG",
-        "difficulty": "easy-medium",
-        "notes": "The remix was released in April 2019."
-      },
-      {
-        "title": "Señorita",
-        "artist": "Shawn Mendes & Camila Cabello",
-        "spotifyUrl": "https://open.spotify.com/track/0TK2YIli7K1leLovkQiNik",
-        "difficulty": "easy-medium",
-        "notes": "Released in June 2019."
-      },
-      {
-        "title": "Circles",
-        "artist": "Post Malone",
-        "spotifyUrl": "https://open.spotify.com/track/21jGcNKet2qwijlDFuPiPb",
-        "difficulty": "easy-medium",
-        "notes": "Released in August 2019."
-      },
-      {
-        "title": "Don't Start Now",
-        "artist": "Dua Lipa",
-        "spotifyUrl": "https://open.spotify.com/track/6WrI0LAC5M1Rw2MnX2ZvEg",
-        "difficulty": "easy-medium",
-        "notes": "Released in October 2019."
-      },
-      {
-        "title": "Dance Monkey",
-        "artist": "Tones and I",
-        "spotifyUrl": "https://open.spotify.com/track/2XU0oxnq2qxCpomAAuJY8K",
-        "difficulty": "easy-medium",
-        "notes": "Released in May 2019."
-      },
-      {
-        "title": "Sucker",
-        "artist": "Jonas Brothers",
-        "spotifyUrl": "https://open.spotify.com/track/4y3OI86AEP6PQoDE6olYhO",
-        "difficulty": "easy-medium",
-        "notes": "Released in March 2019."
-      },
-      {
-        "title": "Memories",
-        "artist": "Maroon 5",
-        "spotifyUrl": "https://open.spotify.com/track/2b8fOow8UzyDFAE27YhOZM",
-        "difficulty": "easy-medium",
-        "notes": "Released in September 2019."
+        "spotifyUrl": "https://open.spotify.com/track/5uLITeb0KGGgP7iYjqGCSL",
+        "difficulty": "medium",
+        "notes": "Playback: Vitamin String Quartet cover."
       },
       {
         "title": "Blinding Lights",
         "artist": "The Weeknd",
-        "spotifyUrl": "https://open.spotify.com/track/0VjIjW4GlUZAMYd2vXMi3b",
+        "spotifyUrl": "https://open.spotify.com/track/5x17OfFfF4UNy5XkRBZjWB",
         "difficulty": "easy-medium",
-        "notes": "Released in November 2019."
-      },
-      {
-        "title": "Watermelon Sugar",
-        "artist": "Harry Styles",
-        "spotifyUrl": "https://open.spotify.com/track/6UelLqGlWMcVH1E5c4H7lY",
-        "difficulty": "easy-medium",
-        "notes": "Released in November 2019 before becoming a 2020 hit."
-      },
-      {
-        "title": "Adore You",
-        "artist": "Harry Styles",
-        "spotifyUrl": "https://open.spotify.com/track/3jjujdWJ72nww5eGnfs2E7",
-        "difficulty": "medium",
-        "notes": "Released in December 2019."
-      },
-      {
-        "title": "Lover",
-        "artist": "Taylor Swift",
-        "spotifyUrl": "https://open.spotify.com/track/1dGr1c8CrMLDpV6mPbImSI",
-        "difficulty": "easy-medium",
-        "notes": "The title track was released as a single in August 2019."
-      },
-      {
-        "title": "You Need to Calm Down",
-        "artist": "Taylor Swift",
-        "spotifyUrl": "https://open.spotify.com/track/6RRNNciQGZEXnqk8SQ9yv5",
-        "difficulty": "easy-medium",
-        "notes": "Released in June 2019."
-      },
-      {
-        "title": "ME!",
-        "artist": "Taylor Swift ft. Brendon Urie",
-        "spotifyUrl": "https://open.spotify.com/track/2Rk4JlNc2TPmZe2af99d45",
-        "difficulty": "easy-medium",
-        "notes": "Released in April 2019."
-      },
-      {
-        "title": "7 rings",
-        "artist": "Ariana Grande",
-        "spotifyUrl": "https://open.spotify.com/track/6ocbgoVGwYJhOv1GgI9NsF",
-        "difficulty": "easy-medium",
-        "notes": "Released in January 2019."
-      },
-      {
-        "title": "break up with your girlfriend, i'm bored",
-        "artist": "Ariana Grande",
-        "spotifyUrl": "https://open.spotify.com/track/4kV4N9D1iKVxx1KLvtTpjS",
-        "difficulty": "medium",
-        "notes": "Released in February 2019."
-      },
-      {
-        "title": "ROXANNE",
-        "artist": "Arizona Zervas",
-        "spotifyUrl": "https://open.spotify.com/track/696DnlkuDOXcMAnKlTgXXK",
-        "difficulty": "medium",
-        "notes": "Released in October 2019."
-      },
-      {
-        "title": "The Box",
-        "artist": "Roddy Ricch",
-        "spotifyUrl": "https://open.spotify.com/track/0nbXyq5TXYPCO7pr3N8S4I",
-        "difficulty": "easy-medium",
-        "notes": "Released with Please Excuse Me for Being Antisocial in December 2019."
-      },
-      {
-        "title": "HIGHEST IN THE ROOM",
-        "artist": "Travis Scott",
-        "spotifyUrl": "https://open.spotify.com/track/3eekarcy7kvN4yt5ZFzltW",
-        "difficulty": "medium",
-        "notes": "Released in October 2019."
-      },
-      {
-        "title": "Panini",
-        "artist": "Lil Nas X",
-        "spotifyUrl": "https://open.spotify.com/track/1000nHvUdawXuUHgBod4Wv",
-        "difficulty": "medium",
-        "notes": "Released in June 2019."
-      },
-      {
-        "title": "bury a friend",
-        "artist": "Billie Eilish",
-        "spotifyUrl": "https://open.spotify.com/track/4SSnFejRGlZikf02HLewEF",
-        "difficulty": "medium",
-        "notes": "Released in January 2019."
-      },
-      {
-        "title": "Talk",
-        "artist": "Khalid",
-        "spotifyUrl": "https://open.spotify.com/track/0rTV5WefWd1J3OwIheTzxM",
-        "difficulty": "medium",
-        "notes": "Released in February 2019."
-      },
-      {
-        "title": "Beautiful People",
-        "artist": "Ed Sheeran ft. Khalid",
-        "spotifyUrl": "https://open.spotify.com/track/70eFcWOvlMObDhURTqT4Fv",
-        "difficulty": "medium",
-        "notes": "Released in June 2019."
-      },
-      {
-        "title": "I Don't Care",
-        "artist": "Ed Sheeran & Justin Bieber",
-        "spotifyUrl": "https://open.spotify.com/track/0hVXuCcriWRGvwMV1r5Yn9",
-        "difficulty": "easy-medium",
-        "notes": "Released in May 2019."
-      },
-      {
-        "title": "South of the Border",
-        "artist": "Ed Sheeran ft. Camila Cabello & Cardi B",
-        "spotifyUrl": "https://open.spotify.com/track/4vUmTMuQqjdnvlZmAH61Qk",
-        "difficulty": "medium",
-        "notes": "Released as a single in September 2019."
-      },
-      {
-        "title": "How Do You Sleep?",
-        "artist": "Sam Smith",
-        "spotifyUrl": "https://open.spotify.com/track/6b2RcmUt1g9N9mQ3CbjX2Y",
-        "difficulty": "medium",
-        "notes": "Released in July 2019."
-      },
-      {
-        "title": "Dancing with a Stranger",
-        "artist": "Sam Smith & Normani",
-        "spotifyUrl": "https://open.spotify.com/track/6Qs4SXO9dwPj5GKvVOv8Ki",
-        "difficulty": "easy-medium",
-        "notes": "Released in January 2019."
-      },
-      {
-        "title": "Lose You to Love Me",
-        "artist": "Selena Gomez",
-        "spotifyUrl": "https://open.spotify.com/track/4l0Mvzj72xxOpRrp6h8nHi",
-        "difficulty": "easy-medium",
-        "notes": "Released in October 2019."
-      },
-      {
-        "title": "Motivation",
-        "artist": "Normani",
-        "spotifyUrl": "https://open.spotify.com/track/0rIAC4PXANcKmitJfoqmVm",
-        "difficulty": "medium-hard",
-        "notes": "Released in August 2019."
-      },
-      {
-        "title": "Never Really Over",
-        "artist": "Katy Perry",
-        "spotifyUrl": "https://open.spotify.com/track/5PYQUBXc7NYeI1obMKSJK0",
-        "difficulty": "medium",
-        "notes": "Released in May 2019."
+        "notes": "Playback: Vitamin String Quartet cover."
       }
     ]
   },
   {
-    "id": "idiom-nexus",
-    "name": "Idiom Nexus",
-    "shortName": "Idiom Nexus",
-    "blurb": "Wordplay chains that join two familiar expressions at a shared boundary word.",
-    "infoBox": "<strong>Study tip:</strong> solve each half of the clue separately, then overlap the shared word once.",
+    "id": "potpourri",
+    "name": "Potpourri",
+    "shortName": "Potpourri",
+    "blurb": "A broad mix of history, geography, science, literature, entertainment, sports, food, language, and technology.",
+    "infoBox": "<strong>Study tip:</strong> use the subject label in each note to group related facts.",
     "type": "quiz",
     "items": [
       {
-        "q": "Lose your nerve + a fundamental weakness hidden by an imposing appearance",
-        "a": "Get cold feet of clay",
+        "q": "What 1648 settlement, negotiated in Münster and Osnabrück, ended the German phase of the Thirty Years' War?",
+        "a": "The Peace of Westphalia",
         "difficulty": "medium",
-        "notes": "(get cold feet + feet of clay)"
+        "notes": "History."
       },
       {
-        "q": "Feeling ill + endure a difficult situation",
-        "a": "Under the weather the storm",
-        "difficulty": "medium",
-        "notes": "(under the weather + weather the storm)"
-      },
-      {
-        "q": "Present your most favorable qualities + an innovative outlook",
-        "a": "Put your best foot forward thinking",
-        "difficulty": "medium",
-        "notes": "(put your best foot forward + forward thinking)"
-      },
-      {
-        "q": "Make people feel comfortable + completely chilled",
-        "a": "Break the ice cold",
+        "q": "Which ruler of the Mali Empire displayed his realm's wealth during a famous 1324 pilgrimage to Mecca?",
+        "a": "Mansa Musa",
         "difficulty": "easy-medium",
-        "notes": "(break the ice + ice-cold)"
+        "notes": "History."
       },
       {
-        "q": "Act too soon + wary because of bad experience",
-        "a": "Jump the gun-shy",
-        "difficulty": "medium",
-        "notes": "(jump the gun + gun-shy)"
-      },
-      {
-        "q": "Use your influence aggressively + continuously all day and night",
-        "a": "Throw your weight around the clock",
-        "difficulty": "medium",
-        "notes": "(throw your weight around + around the clock)"
-      },
-      {
-        "q": "Stay cheerful + still undecided",
-        "a": "Keep your chin up in the air",
+        "q": "Which artifact bears the same 196 BC decree in hieroglyphic, Demotic and Ancient Greek scripts?",
+        "a": "The Rosetta Stone",
         "difficulty": "easy-medium",
-        "notes": "(keep your chin up + up in the air)"
+        "notes": "History."
       },
       {
-        "q": "Return to the beginning + extraordinarily rare",
-        "a": "Back to square one in a million",
-        "difficulty": "easy-medium",
-        "notes": "(back to square one + one in a million)"
-      },
-      {
-        "q": "Avoid addressing the point + amateurish or inferior",
-        "a": "Beat around the bush league",
+        "q": "Which river flows directly through Vienna, Bratislava, Budapest and Belgrade?",
+        "a": "The Danube",
         "difficulty": "medium",
-        "notes": "(beat around the bush + bush league)"
+        "notes": "Geography."
       },
       {
-        "q": "Describe something exactly + madly in love",
-        "a": "Hit the nail on the head over heels",
-        "difficulty": "easy-medium",
-        "notes": "(hit the nail on the head + head over heels)"
-      },
-      {
-        "q": "Work very late + help a process run smoothly",
-        "a": "Burn the midnight oil the wheels",
+        "q": "Which African country is the only independent state whose entire territory lies more than 1,000 meters above sea level?",
+        "a": "Lesotho",
         "difficulty": "medium-hard",
-        "notes": "(burn the midnight oil + oil the wheels)"
+        "notes": "Geography."
       },
       {
-        "q": "Start an activity + extremely wealthy",
-        "a": "Get the ball rolling in dough",
-        "difficulty": "easy-medium",
-        "notes": "(get the ball rolling + rolling in dough)"
-      },
-      {
-        "q": "A tiny contribution to a large need + desired experiences to complete",
-        "a": "A drop in the bucket list",
-        "difficulty": "easy-medium",
-        "notes": "(a drop in the bucket + bucket list)"
-      },
-      {
-        "q": "Enjoy two different advantages + very different from each other",
-        "a": "The best of both worlds apart",
-        "difficulty": "easy-medium",
-        "notes": "(the best of both worlds + worlds apart)"
-      },
-      {
-        "q": "An obvious issue nobody discusses + capacity to become better",
-        "a": "The elephant in the room for improvement",
-        "difficulty": "easy-medium",
-        "notes": "(the elephant in the room + room for improvement)"
-      },
-      {
-        "q": "It is now your responsibility + judgment by the general public",
-        "a": "The ball is in your court of public opinion",
+        "q": "Which Central Asian nation is the world's largest landlocked country by area?",
+        "a": "Kazakhstan",
         "difficulty": "medium",
-        "notes": "(the ball is in your court + court of public opinion)"
+        "notes": "Geography."
       },
       {
-        "q": "Regard something skeptically + an exceptionally decent person",
-        "a": "Take it with a grain of salt of the earth",
-        "difficulty": "easy-medium",
-        "notes": "(take it with a grain of salt + salt of the earth)"
-      },
-      {
-        "q": "During both good and bad times + a risky or precarious situation",
-        "a": "Through thick and thin ice",
-        "difficulty": "easy-medium",
-        "notes": "(through thick and thin + thin ice)"
-      },
-      {
-        "q": "Away from familiar routes + a history of past performance",
-        "a": "Off the beaten track record",
+        "q": "Which metal has the highest melting point of all metals?",
+        "a": "Tungsten",
         "difficulty": "medium",
-        "notes": "(off the beaten track + track record)"
+        "notes": "Science."
       },
       {
-        "q": "Immediately and without warning + three successes by one player",
-        "a": "At the drop of a hat trick",
-        "difficulty": "easy-medium",
-        "notes": "(at the drop of a hat + hat trick)"
-      },
-      {
-        "q": "Unexpectedly + aristocratic ancestry",
-        "a": "Out of the blue blood",
+        "q": "What is the smallest bone in the human body?",
+        "a": "The stapes",
         "difficulty": "medium",
-        "notes": "(out of the blue + blue blood)"
+        "notes": "Science; accept stirrup."
       },
       {
-        "q": "A natural talent for gardening + show contempt with a gesture",
-        "a": "A green thumb your nose at",
+        "q": "Which planet became the first located through mathematical prediction when Johann Galle observed it in 1846?",
+        "a": "Neptune",
+        "difficulty": "medium",
+        "notes": "Science."
+      },
+      {
+        "q": "What was the pen name of the novelist born Mary Anne Evans?",
+        "a": "George Eliot",
+        "difficulty": "easy-medium",
+        "notes": "Literature."
+      },
+      {
+        "q": "Which Japanese court writer composed The Tale of Genji around the beginning of the 11th century?",
+        "a": "Murasaki Shikibu",
         "difficulty": "medium-hard",
-        "notes": "(a green thumb + thumb your nose at)"
+        "notes": "Literature."
       },
       {
-        "q": "A pointless pursuit + pursue a hopeless circular course",
-        "a": "A wild-goose chase your tail",
+        "q": "Which novel follows Okonkwo and the effects of colonial rule on the Igbo community of Umuofia?",
+        "a": "Things Fall Apart",
         "difficulty": "medium",
-        "notes": "(a wild-goose chase + chase your tail)"
+        "notes": "Literature."
       },
       {
-        "q": "Reveal a secret + a collection of useful techniques",
-        "a": "Let the cat out of the bag of tricks",
-        "difficulty": "easy-medium",
-        "notes": "(let the cat out of the bag + bag of tricks)"
-      },
-      {
-        "q": "A person uncomfortable in unfamiliar surroundings + a past matter no longer worth concern",
-        "a": "A fish out of water under the bridge",
-        "difficulty": "easy-medium",
-        "notes": "(a fish out of water + water under the bridge)"
-      },
-      {
-        "q": "A cherished person + the calm center of a cyclone",
-        "a": "The apple of my eye of the storm",
+        "q": "Which 1954 Akira Kurosawa epic about ronin defending a farming village was remade as a 1960 American Western?",
+        "a": "Seven Samurai",
         "difficulty": "medium",
-        "notes": "(the apple of my eye + eye of the storm)"
+        "notes": "Film and television."
       },
       {
-        "q": "Regret what cannot be changed + exploit something as much as possible",
-        "a": "Cry over spilled milk it for all it's worth",
+        "q": "Which 1950 Kurosawa film gave its name to an effect in which witnesses offer contradictory accounts of the same event?",
+        "a": "Rashomon",
         "difficulty": "medium",
-        "notes": "(cry over spilled milk + milk it for all it's worth)"
+        "notes": "Film and television."
       },
       {
-        "q": "Become the main focus + anxiety about performing publicly",
-        "a": "Take center stage fright",
+        "q": "Which HBO drama examines Baltimore institutions through characters including detective Jimmy McNulty?",
+        "a": "The Wire",
         "difficulty": "easy-medium",
-        "notes": "(take center stage + stage fright)"
+        "notes": "Film and television."
       },
       {
-        "q": "A personal recommendation + speak rudely or indiscreetly",
-        "a": "Word of mouth off",
+        "q": "Which composer completed the traditional performing version of Mozart's unfinished Requiem after Mozart's death?",
+        "a": "Franz Xaver Süssmayr",
+        "difficulty": "medium-hard",
+        "notes": "Music."
+      },
+      {
+        "q": "Indian musician Ravi Shankar was a virtuoso of which stringed instrument?",
+        "a": "The sitar",
+        "difficulty": "easy-medium",
+        "notes": "Music."
+      },
+      {
+        "q": "Which jazz singer was nicknamed Lady Day by saxophonist Lester Young?",
+        "a": "Billie Holiday",
         "difficulty": "medium",
-        "notes": "(word of mouth + mouth off)"
+        "notes": "Music."
       },
       {
-        "q": "Earn just enough to cover expenses + compromise with the other side",
-        "a": "Make ends meet halfway",
+        "q": "Which American won Olympic gold in light-heavyweight boxing in 1920 and four-man bobsleigh in 1932?",
+        "a": "Eddie Eagan",
+        "difficulty": "medium-hard",
+        "notes": "Sports."
+      },
+      {
+        "q": "What is the official marathon distance in kilometers?",
+        "a": "42.195 kilometers",
+        "difficulty": "medium",
+        "notes": "Sports; accept 42.195 km."
+      },
+      {
+        "q": "Which Green Bay Packers coach lends his name to the trophy awarded to each Super Bowl champion?",
+        "a": "Vince Lombardi",
         "difficulty": "easy-medium",
-        "notes": "(make ends meet + meet halfway)"
+        "notes": "Sports."
+      },
+      {
+        "q": "At a restaurant in which Mexican city was the Caesar salad created in 1924?",
+        "a": "Tijuana",
+        "difficulty": "medium",
+        "notes": "Food."
+      },
+      {
+        "q": "The spice saffron consists primarily of the dried red parts of a crocus known by what botanical term?",
+        "a": "Stigmas",
+        "difficulty": "medium-hard",
+        "notes": "Food."
+      },
+      {
+        "q": "What mold-inoculated grain starter is used to ferment foods including miso and soy sauce?",
+        "a": "Koji",
+        "difficulty": "medium-hard",
+        "notes": "Food."
+      },
+      {
+        "q": "The name of what symbol comes from a contraction of the phrase \"and per se and\"?",
+        "a": "The ampersand",
+        "difficulty": "medium",
+        "notes": "Language."
+      },
+      {
+        "q": "Which Bantu language serves as a major lingua franca in countries including Tanzania and Kenya?",
+        "a": "Swahili",
+        "difficulty": "easy-medium",
+        "notes": "Language."
+      },
+      {
+        "q": "What term describes a sentence that uses every letter of an alphabet at least once?",
+        "a": "A pangram",
+        "difficulty": "medium",
+        "notes": "Language."
+      },
+      {
+        "q": "Which inventor received a 1970 patent for an X-Y position indicator now known as the computer mouse?",
+        "a": "Douglas Engelbart",
+        "difficulty": "medium-hard",
+        "notes": "Technology."
+      },
+      {
+        "q": "Which two-dimensional code was invented by DENSO in 1994 for fast reading in automotive production?",
+        "a": "The QR code",
+        "difficulty": "easy-medium",
+        "notes": "Technology."
+      },
+      {
+        "q": "Which programming language was named for a BBC comedy series starring Graham Chapman and John Cleese rather than for a reptile?",
+        "a": "Python",
+        "difficulty": "easy-medium",
+        "notes": "Technology."
       }
     ]
   },
@@ -759,13 +772,13 @@ const CATEGORIES = [
     "id": "bonus",
     "name": "Bonus Question",
     "shortName": "Bonus",
-    "blurb": "The published three-point bonus question for November 3.",
-    "infoBox": "<strong>Bonus:</strong> connect the monument's material and shape to both records named in the clue.",
+    "blurb": "The published three-point bonus question for November 10.",
+    "infoBox": "<strong>Bonus:</strong> identify the performer behind the stage name.",
     "type": "quiz",
     "items": [
       {
-        "q": "What is both the world's tallest stone structure and the world's tallest obelisk?",
-        "a": "Washington Monument"
+        "q": "What is Macklemore's real name?",
+        "a": "Benjamin Hammond \"Ben\" Haggerty"
       }
     ]
   }

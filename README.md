@@ -1,6 +1,6 @@
 # trivia-sphinx
 
-Study suite for this week's "Beat the Geek" trivia night categories (Juanita Cantina, Nov. 3, 2026): Double D, U.S. Citizenship Test, Songs of 2019, and Idiom Nexus, plus the bonus question. (The visual round, this week "Food Brand Logos," is intentionally skipped because it cannot be turned into reliable text study material.)
+Study suite for this week's "Beat the Geek" trivia night categories (Juanita Cantina, Nov. 10, 2026): Current Events, Science - 'Ology's, Vitamin String Quartet, and Potpourri, plus the bonus question. (The visual round, this week "Celeb Shots - Famous Chickens," is intentionally skipped because it cannot be turned into reliable text study material.)
 
 Static site, no build step. Run locally with any static file server, e.g.:
 
@@ -10,7 +10,7 @@ python3 -m http.server 8080
 
 Then open http://localhost:8080. Study progress ("known" cards) is saved per-browser in `localStorage`.
 
-Content lives in `data.js`. It's generated from `trivia-2026-11-03-juanita-cantina.csv` — a curated,
+Content lives in `data.js`. It's generated from `trivia-2026-11-10-juanita-cantina.csv` — a curated,
 120-question set (30 per round, across the 4 non-visual rounds) covering that week's real categories,
 with every fact and every included music link individually vetted.
 
